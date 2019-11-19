@@ -1,34 +1,46 @@
 package com.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-public class Patient extends User {
-    private MedicalRecord file;
-    private Examination examination;
+public class Patient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Patient() {
-        super();
-    }
+    @Column(unique = true, nullable = false)
+    private String email;
 
-    public Patient(MedicalRecord file, Examination examination) {
-        this.file = file;
-        this.examination = examination;
-    }
+    @Column(nullable = false)
+    private String password;
 
-    public MedicalRecord getFile() {
-        return file;
-    }
+    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
+    private String firstName;
 
-    public void setFile(MedicalRecord file) {
-        this.file = file;
-    }
+    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
+    private String lastName;
 
-    public Examination getExamination() {
-        return examination;
-    }
+    @Column(columnDefinition = "VARCHAR(10)", unique = true, nullable = false)
+    private String phoneNumber;
 
-    public void setExamination(Examination examination) {
-        this.examination = examination;
-    }
-}
+    @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+    private String address;
+
+    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
+    private String city;
+
+    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
+    private String country;
+
+    @Column(columnDefinition = "VARCHAR(13)", unique = true, nullable = false)
+    private String healthInsuranceID;
+
+
+    @OneToOne(mappedBy = "patient", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private MedicalRecord medicalRecord;
+
+
+    @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Examination> examinations = new HashSet<>();}
