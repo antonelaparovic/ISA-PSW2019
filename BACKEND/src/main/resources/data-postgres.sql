@@ -1,0 +1,1 @@
+insert into diagnose (id, title, description) values (5, 'Marko', 'Marković');

@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
 public class ClinicAdministrator<UserStatus> {
 
     @Id
@@ -29,8 +30,8 @@ public class ClinicAdministrator<UserStatus> {
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Clinic clinic;
 
-    @Enumerated(EnumType.STRING)
-    private UserStatus status;
+   // @Enumerated(EnumType.STRING)
+  //  private UserStatus status;
 
     @OneToMany(mappedBy = "clinicAdministrator", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Examination> examinations = new HashSet<>();

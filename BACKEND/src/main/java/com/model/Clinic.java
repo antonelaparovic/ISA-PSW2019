@@ -11,7 +11,7 @@ public class Clinic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     @Column(columnDefinition = "VARCHAR(50)",nullable = false)
     private String name;
     @Column(nullable = false)
