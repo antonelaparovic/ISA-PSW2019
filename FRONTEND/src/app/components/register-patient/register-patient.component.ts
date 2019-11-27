@@ -4,6 +4,9 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
 import {PatientService} from '../../services/patient.service';
 import {PatientStatus} from '../../models/patientStatus';
+import {Role} from '../../models/role';
+import {User} from '../../models/user';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-register-patient',
@@ -15,11 +18,13 @@ export class RegisterPatientComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   patient: Patient;
+  user:User;
 
   constructor(
     private patientService: PatientService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -62,13 +67,22 @@ export class RegisterPatientComponent implements OnInit {
       PatientStatus.AWAITING
     );
 
+    this.user=new User();
+    this.user.email=this.f.email.value;
+    this.user.password=this.f.password.value;
+    this.user.role=Role.PATIENT;
+
     this.createPatient();
   }
 
   private createPatient() {
-    this.patientService.addPatient(this.patient).subscribe(
+    this.patientService.newPatient(this.patient).subscribe(
       data => {
+        this.userService.addUser(this.user);
+        this.patientService.addPatient(this.patient);
         this.router.navigate(['/patient/login']);
+        console.log(this.user.role);
+        console.log(this.patient.email);
       },
       error => {
         alert('Error registration patient');

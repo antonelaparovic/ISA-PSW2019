@@ -45,21 +45,4 @@ public class PatientController {
             return "Email already exists";
     }
 
-    @PostMapping("/patient/login")
-    public ResponseEntity<Patient> getPatientByEmail(@RequestBody Patient patient){
-        Patient exist = patientService.getPatient(patient.getEmail());
-
-        if(exist==null){
-            System.out.println("wrong email");
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-        }else{
-            if(patient.getPassword().equals(exist.getPassword())){
-                System.out.println("password ok");
-                return new ResponseEntity<>(exist,HttpStatus.OK);
-            }else{
-                System.out.println("wrong password");
-                return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-            }
-        }
-    }
 }

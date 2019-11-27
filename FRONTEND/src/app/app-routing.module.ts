@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {LoginPatientComponent} from './components/login-patient/login-patient.component'
+import {LoginComponent} from './components/login/login.component'
 import {RegisterPatientComponent} from './components/register-patient/register-patient.component'
+import {PatientPageComponent} from './components/patient-page/patient-page.component'
+
 const routes: Routes = [
   {
     path: '',
-    component: LoginPatientComponent,
+    component: LoginComponent,
   },
   {
     path: 'patient/login',
-    component: LoginPatientComponent,
+    component: LoginComponent,
   },
   {
     path: 'patient/register',
     component: RegisterPatientComponent,
+  },
+  {
+    path: 'patient/home',
+    component: PatientPageComponent,
   }
 ];
 
