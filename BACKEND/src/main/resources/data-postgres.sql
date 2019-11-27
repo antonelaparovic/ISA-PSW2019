@@ -1,2 +1,2 @@
 insert into diagnose (id, title, description) values (5, 'Marko', 'Marković');
-insert into patient (id,insuranceid,address,city,country,email,name,number,password,status,surname) values (1,1231231231231,'Adresa','Grad','Drzava','mail@mail.com','Ime',26535566,'Sifra2019','APPROVED','Prezime');
+insert into patient (id,insuranceid,address,city,country,email,name,number,password,status,surname) values (45,1231231231231,'Adresa','Grad','Drzava','mail@mail.com','Ime',26535566,'Sifra2019','APPROVED','Prezime');

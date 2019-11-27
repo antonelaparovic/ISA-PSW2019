@@ -12,14 +12,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import {DemoMaterialModule} from './material-module';
 
-import { LoginPatientComponent } from './components/login-patient/login-patient.component';
+import { LoginComponent } from './components/login/login.component';
 import { RegisterPatientComponent } from './components/register-patient/register-patient.component';
+import { PatientPageComponent } from './components/patient-page/patient-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPatientComponent,
-    RegisterPatientComponent
+    LoginComponent,
+    RegisterPatientComponent,
+    PatientPageComponent
   ],
   imports: [
     BrowserModule,
