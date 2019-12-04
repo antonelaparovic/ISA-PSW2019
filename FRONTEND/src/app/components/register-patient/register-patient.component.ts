@@ -67,10 +67,7 @@ export class RegisterPatientComponent implements OnInit {
       PatientStatus.AWAITING
     );
 
-    this.user=new User();
-    this.user.email=this.f.email.value;
-    this.user.password=this.f.password.value;
-    this.user.role=Role.PATIENT;
+    this.user=new User(this.f.email.value,this.f.password.value,Role.PATIENT);
 
     this.createPatient();
   }
@@ -79,10 +76,9 @@ export class RegisterPatientComponent implements OnInit {
     this.patientService.newPatient(this.patient).subscribe(
       data => {
         this.userService.addUser(this.user);
+        console.log(this.user);
         this.patientService.addPatient(this.patient);
-        this.router.navigate(['/patient/login']);
-        console.log(this.user.role);
-        console.log(this.patient.email);
+        this.router.navigate(['/login']);
       },
       error => {
         alert('Error registration patient');
