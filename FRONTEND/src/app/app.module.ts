@@ -15,13 +15,17 @@ import {DemoMaterialModule} from './material-module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterPatientComponent } from './components/register-patient/register-patient.component';
 import { PatientPageComponent } from './components/patient-page/patient-page.component';
+import { DoctorPageComponent } from './components/doctor-page/doctor-page.component';
+import { PatientProfileComponent } from './components/patient-profile/patient-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterPatientComponent,
-    PatientPageComponent
+    PatientPageComponent,
+    DoctorPageComponent,
+    PatientProfileComponent
   ],
   imports: [
     BrowserModule,

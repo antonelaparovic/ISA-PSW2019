@@ -1,4 +1,4 @@
-import { PatientStatus } from './PatientStatus';
+import { PatientStatus } from './patientStatus';
 
 export class Patient{
 
