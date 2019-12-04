@@ -45,4 +45,31 @@ public class PatientController {
             return "Email already exists";
     }
 
+    @PostMapping(value = "/patient/edit")
+    public String Edit(@RequestBody PatientDTO patient) {
+
+        Patient pat = patientService.getPatient(patient.getEmail());
+        if(pat != null){
+            pat.setEmail(patient.getEmail());
+            pat.setPassword(patient.getPassword());
+            pat.setName(patient.getName());
+            pat.setSurname(patient.getSurname());
+            pat.setNumber(patient.getNumber());
+            pat.setCity(patient.getCity());
+            pat.setCountry(patient.getCountry());
+            pat.setAddress(patient.getAddress());
+            pat.setInsuranceID(patient.getInsuranceID());
+            pat.setStatus(PatientStatus.APPROVED);
+
+            boolean r=patientService.editPatient(pat);
+            if(r==true){
+            System.out.println("Edit account with email:" + pat.getEmail());
+            return "uspesno";}
+            else{return "neuspesno";}
+        }
+        else
+            return "Error edit account";
+
+    }
+
 }
