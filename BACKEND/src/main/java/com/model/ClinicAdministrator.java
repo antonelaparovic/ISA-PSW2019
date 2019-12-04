@@ -18,13 +18,13 @@ public class ClinicAdministrator<UserStatus> {
     private String password;
 
     @Column(columnDefinition = "VARCHAR(30)", nullable = false)
-    private String firstName;
+    private String name;
 
     @Column(columnDefinition = "VARCHAR(30)", nullable = false)
-    private String lastName;
+    private String surname;
 
     @Column(columnDefinition = "VARCHAR(10)", unique = true, nullable = false)
-    private String phoneNumber;
+    private String phone;
 
 
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
