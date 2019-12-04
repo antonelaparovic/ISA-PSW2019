@@ -5,6 +5,9 @@ import {RegisterPatientComponent} from './components/register-patient/register-p
 import {PatientPageComponent} from './components/patient-page/patient-page.component'
 import { DoctorPageComponent } from './components/doctor-page/doctor-page.component';
 import {PatientProfileComponent} from './components/patient-profile/patient-profile.component'
+import { MedicalRecordPageComponent } from './components/medical-record-page/medical-record-page.component';
+import { MedicalHistoryPageComponent } from './components/medical-history-page/medical-history-page.component';
+import { ClinicsPatientPageComponent } from './components/clinics-patient-page/clinics-patient-page.component';
 
 const routes: Routes = [
   {
@@ -30,6 +33,17 @@ const routes: Routes = [
   {
     path:'patient/profile',
     component: PatientProfileComponent
+  },{
+    path:'patient/medicalRecord',
+    component: MedicalRecordPageComponent
+  },
+  {
+    path:'patient/medicalHistory',
+    component: MedicalHistoryPageComponent
+  },
+  {
+    path:'patient/clinics',
+    component: ClinicsPatientPageComponent
   }
 ];
 

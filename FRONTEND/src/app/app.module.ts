@@ -17,6 +17,9 @@ import { RegisterPatientComponent } from './components/register-patient/register
 import { PatientPageComponent } from './components/patient-page/patient-page.component';
 import { DoctorPageComponent } from './components/doctor-page/doctor-page.component';
 import { PatientProfileComponent } from './components/patient-profile/patient-profile.component';
+import { MedicalRecordPageComponent } from './components/medical-record-page/medical-record-page.component';
+import { MedicalHistoryPageComponent } from './components/medical-history-page/medical-history-page.component';
+import { ClinicsPatientPageComponent } from './components/clinics-patient-page/clinics-patient-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { PatientProfileComponent } from './components/patient-profile/patient-pr
     RegisterPatientComponent,
     PatientPageComponent,
     DoctorPageComponent,
-    PatientProfileComponent
+    PatientProfileComponent,
+    MedicalRecordPageComponent,
+    MedicalHistoryPageComponent,
+    ClinicsPatientPageComponent
   ],
   imports: [
     BrowserModule,
