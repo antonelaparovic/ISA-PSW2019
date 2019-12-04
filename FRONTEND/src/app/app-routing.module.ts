@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './components/login/login.component'
 import {RegisterPatientComponent} from './components/register-patient/register-patient.component'
 import {PatientPageComponent} from './components/patient-page/patient-page.component'
+import { DoctorPageComponent } from './components/doctor-page/doctor-page.component';
+import {PatientProfileComponent} from './components/patient-profile/patient-profile.component'
 
 const routes: Routes = [
   {
@@ -10,7 +12,7 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'patient/login',
+    path: 'login',
     component: LoginComponent,
   },
   {
@@ -20,6 +22,14 @@ const routes: Routes = [
   {
     path: 'patient/home',
     component: PatientPageComponent,
+  },
+  {
+    path:'doctor/home',
+    component: DoctorPageComponent
+  },
+  {
+    path:'patient/profile',
+    component: PatientProfileComponent
   }
 ];
 
