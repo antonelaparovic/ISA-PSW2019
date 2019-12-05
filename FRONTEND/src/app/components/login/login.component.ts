@@ -6,6 +6,7 @@ import {User} from '../../models/user';
 import {Role} from '../../models/role';
 import {UserService} from '../../services/user.service';
 import {DoctorService} from '../../services/doctor.service';
+import { Doctor } from 'src/app/models/doctor';
 
 
 export class Patient{
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
   private loginForm: FormGroup;
   private submitted = false;
   private patient: Patient;
+  private doctor:Doctor;
   private user:User;
 
   constructor(
