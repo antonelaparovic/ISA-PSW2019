@@ -2,7 +2,7 @@
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === true">
       <mat-toolbar>Menu</mat-toolbar>
-      <mat-nav-list *ngIf = "isNone()">
+        <mat-nav-list *ngIf = "isNone()">
           <a mat-list-item routerLink="/login">Login</a>
           <a mat-list-item routerLink="/patient/register">Register</a>
         </mat-nav-list>
@@ -15,6 +15,10 @@
           <a mat-list-item (click)="onLogout()">Logout</a>
         </mat-nav-list>
   
+        <mat-nav-list *ngIf="isDoctor()">
+          <a mat-list-item routerLink="/doctor/profile">Profile</a>
+          <a mat-list-item (click)="onLogout()">Logout</a>
+        </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar>
