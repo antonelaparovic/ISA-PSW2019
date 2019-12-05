@@ -1,13 +1,3 @@
-var __values = (this && this.__values) || function (o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
-    if (m) return m.call(o);
-    return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-};
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["polyfills-es5"], {
         /***/ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-jit-polyfills.js": 
         /*!******************************************************************************************************!*\
@@ -10619,7 +10609,6 @@ var __values = (this && this.__values) || function (o) {
                         return resolvePromise(new this(null), REJECTED, error);
                     };
                     ZoneAwarePromise.race = function (values) {
-                        var e_1, _b;
                         var resolve;
                         var reject;
                         var promise = new this(function (res, rej) {
@@ -10632,26 +10621,16 @@ var __values = (this && this.__values) || function (o) {
                         function onReject(error) {
                             reject(error);
                         }
-                        try {
-                            for (var values_1 = __values(values), values_1_1 = values_1.next(); !values_1_1.done; values_1_1 = values_1.next()) {
-                                var value = values_1_1.value;
-                                if (!isThenable(value)) {
-                                    value = this.resolve(value);
-                                }
-                                value.then(onResolve, onReject);
+                        for (var _i = 0, values_1 = values; _i < values_1.length; _i++) {
+                            var value = values_1[_i];
+                            if (!isThenable(value)) {
+                                value = this.resolve(value);
                             }
-                        }
-                        catch (e_1_1) { e_1 = { error: e_1_1 }; }
-                        finally {
-                            try {
-                                if (values_1_1 && !values_1_1.done && (_b = values_1.return)) _b.call(values_1);
-                            }
-                            finally { if (e_1) throw e_1.error; }
+                            value.then(onResolve, onReject);
                         }
                         return promise;
                     };
                     ZoneAwarePromise.all = function (values) {
-                        var e_2, _b;
                         var resolve;
                         var reject;
                         var promise = new this(function (res, rej) {
@@ -10678,18 +10657,9 @@ var __values = (this && this.__values) || function (o) {
                             valueIndex++;
                         };
                         var this_1 = this;
-                        try {
-                            for (var values_2 = __values(values), values_2_1 = values_2.next(); !values_2_1.done; values_2_1 = values_2.next()) {
-                                var value = values_2_1.value;
-                                _loop_3(value);
-                            }
-                        }
-                        catch (e_2_1) { e_2 = { error: e_2_1 }; }
-                        finally {
-                            try {
-                                if (values_2_1 && !values_2_1.done && (_b = values_2.return)) _b.call(values_2);
-                            }
-                            finally { if (e_2) throw e_2.error; }
+                        for (var _i = 0, values_2 = values; _i < values_2.length; _i++) {
+                            var value = values_2[_i];
+                            _loop_3(value);
                         }
                         // Make the unresolvedCount zero-based again.
                         unresolvedCount -= 2;
@@ -13224,11 +13194,11 @@ var __values = (this && this.__values) || function (o) {
           \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
         /*! no static exports found */
         /***/ (function (module, exports, __webpack_require__) {
-            __webpack_require__(/*! D:\ISA-PSW2019\FRONTEND\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js");
+            __webpack_require__(/*! D:\ISA-PSW2019\ISA-PSW2019\FRONTEND\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js");
             __webpack_require__(/*! zone.js/dist/zone-legacy */ "./node_modules/zone.js/dist/zone-legacy.js");
-            __webpack_require__(/*! D:\ISA-PSW2019\FRONTEND\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\jit-polyfills.js */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
-            __webpack_require__(/*! D:\ISA-PSW2019\FRONTEND\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-jit-polyfills.js */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-jit-polyfills.js");
-            module.exports = __webpack_require__(/*! D:\ISA-PSW2019\FRONTEND\src\polyfills.ts */ "./src/polyfills.ts");
+            __webpack_require__(/*! D:\ISA-PSW2019\ISA-PSW2019\FRONTEND\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\jit-polyfills.js */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
+            __webpack_require__(/*! D:\ISA-PSW2019\ISA-PSW2019\FRONTEND\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-jit-polyfills.js */ "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-jit-polyfills.js");
+            module.exports = __webpack_require__(/*! D:\ISA-PSW2019\ISA-PSW2019\FRONTEND\src\polyfills.ts */ "./src/polyfills.ts");
             /***/ 
         })
     }, [[1, "runtime"]]]);
