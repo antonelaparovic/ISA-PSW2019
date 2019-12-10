@@ -6,10 +6,24 @@ import {User} from '../../models/user';
 import {Role} from '../../models/role';
 import {UserService} from '../../services/user.service';
 import {DoctorService} from '../../services/doctor.service';
-import { Doctor } from 'src/app/models/doctor';
+import { NurseService } from 'src/app/services/nurse.service';
 
 
 export class Patient{
+  constructor(
+    public email:string,
+    public password: string
+    ){}
+}
+
+export class Nurse{
+  constructor(
+    public email:string,
+    public password: string
+    ){}
+}
+
+export class Doctor{
   constructor(
     public email:string,
     public password: string
@@ -28,6 +42,7 @@ export class LoginComponent implements OnInit {
   private submitted = false;
   private patient: Patient;
   private doctor:Doctor;
+  private nurse:Nurse;
   private user:User;
 
   constructor(
@@ -35,7 +50,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private userService: UserService,
-    private doctorService:DoctorService
+    private doctorService:DoctorService,
+    private nurseService:NurseService,
   ) { }
 
   ngOnInit() {
@@ -60,6 +76,15 @@ export class LoginComponent implements OnInit {
     this.f.email.value,
     this.f.password.value
   )
+  this.nurse=new Nurse(
+    this.f.email.value,
+    this.f.password.value
+  )
+  this.doctor=new Doctor(
+    this.f.email.value,
+    this.f.password.value
+  )
+
     this.user=this.userService.getUser(this.f.email.value);
     console.log(this.user);
     this.attemptLogin();
@@ -90,6 +115,22 @@ export class LoginComponent implements OnInit {
           if (data !== null) {
             console.log('Successful logged in');
             this.router.navigate(['/doctor/home']);
+          } else {
+            console.log('Login error');
+          }
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    } else if (this.user.role === Role.NURSE) {
+      console.log(this.user);
+      this.nurseService.loginNurse(this.user).subscribe(
+        data => {
+          console.log(data);
+          if (data !== null) {
+            console.log('Successful logged in');
+            this.router.navigate(['/nurse/home']);
           } else {
             console.log('Login error');
           }

@@ -9,6 +9,8 @@ import { MedicalRecordPageComponent } from './components/medical-record-page/med
 import { MedicalHistoryPageComponent } from './components/medical-history-page/medical-history-page.component';
 import { ClinicsPageComponent } from './components/clinics-page/clinics-page.component';
 import { DoctorProfileComponent } from './components/doctor-profile/doctor-profile.component';
+import {NursePageComponent} from './components/nurse-page/nurse-page.component';
+import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
 
 const routes: Routes = [
   {
@@ -34,6 +36,14 @@ const routes: Routes = [
   {
     path:'doctor/profile',
     component: DoctorProfileComponent
+  },
+  {
+    path:'nurse/home',
+    component: NursePageComponent
+  },
+  {
+    path:'nurse/profile',
+    component: NurseProfileComponent
   },
   {
     path:'patient/profile',
