@@ -14,7 +14,7 @@ public class Room {
     private String label;
 
     @Enumerated(EnumType.STRING)
-    private ExaminationKind kind;
+    private ExaminationKind kind;     // ??
 
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Clinic clinic;
