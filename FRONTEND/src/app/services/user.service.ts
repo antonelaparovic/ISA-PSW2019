@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {Router} from '@angular/router';
 import {Role} from '../models/role';
 import {HttpClient} from '@angular/common/http';
+import { Nurse } from '../models/nurse';
 
 
 export const TOKEN='LoggedInUser';
@@ -14,10 +15,12 @@ export class UserService{
     users: Array<User>=new Array<User>();
     doctor: User;
     patient: User;
+    nurse : User;
     user:User= new User('', '', Role.NONE);
     constructor(private router: Router, private http: HttpClient) {
       this.doctor = new User('doctor@email.com', 'Doctor123', Role.DOCTOR);
       this.patient = new User('patient@email.com', 'Patient123', Role.PATIENT);
+      this.nurse = new User('nurse@email.com', 'Nurse123', Role.NURSE);
       this.users.push(this.doctor);
       this.users.push(this.patient);
       localStorage.setItem(TOKEN, JSON.stringify(this.user));
