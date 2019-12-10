@@ -14,7 +14,7 @@ export class PatientService{
     urlPatient = environment.baseUrl + environment.patient;
     listPatients: Array<Patient>= new Array<Patient>();
     patient:Patient;
-  
+
     constructor(
       private http: HttpClient,
       private userService: UserService
@@ -22,11 +22,11 @@ export class PatientService{
       this.patient = new Patient('patient@email.com', 'Patient123', 'Patient', 'Patientic', '47258','Adresa', 'Grad', 'Drzava', '1111111111111', PatientStatus.AWAITING);
       this.listPatients.push(this.patient);
     }
-  
+
     public newPatient(patient) {
       return this.http.post(this.urlPatient + '/register', patient);
     }
-  
+
     public loginPatient(patient) {
       this.userService.setToken(patient);
       console.log("loginPatient"+patient);
@@ -36,13 +36,13 @@ export class PatientService{
     public editPatient(patient){
       return this.http.post(this.urlPatient + '/edit', patient,{responseType: 'text'});
     }
-  
+
     public addPatient(p: Patient) {
       if(this.getPatient(p.email)===null){
         this.listPatients.push(p);
       }
     }
-  
+
     public getPatient(email: string) {
       if ( this.listPatients.length === 0) {
         return null;
@@ -70,6 +70,6 @@ export class PatientService{
         }
       }
     }
-  
+
 
 }
