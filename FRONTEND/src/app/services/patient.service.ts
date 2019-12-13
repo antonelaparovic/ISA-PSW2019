@@ -68,6 +68,20 @@ export class PatientService{
         }
       }
     }
+
+    public getAllPatients(): Array<Patient> {
+      this.http.get(this.urlPatient + '/all').subscribe((data: Patient[]) => {
+          for (const c of data) {
+            this.patient = new Patient(c.email,c.password,c.name,c.surname,c.number,c.address,c.city,c.country,c.insuranceID,c.status);
+            this.addPatient(this.patient);
+          }
+        },
+        error => {
+          console.log(error);
+        }
+      );
+      return this.listPatients;
+    }
   
 
 }
