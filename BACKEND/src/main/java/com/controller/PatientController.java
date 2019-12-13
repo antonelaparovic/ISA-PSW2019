@@ -1,7 +1,10 @@
 package com.controller;
 
 
+import com.model.Role;
+import com.model.User;
 import com.repository.PatientRepo;
+import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +15,17 @@ import com.model.Patient;
 import com.model.PatientStatus;
 import com.service.PatientService;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class PatientController {
 
     @Autowired
     private PatientService patientService;
+
+    @Autowired
+    private UserService userService;
 
     @PostMapping(value = "/patient/register")
     public String Register(@RequestBody PatientDTO patient){
@@ -37,8 +45,17 @@ public class PatientController {
             newPatient.setInsuranceID(patient.getInsuranceID());
             newPatient.setStatus(PatientStatus.APPROVED);
 
-            patientService.addPatient(newPatient);
-            System.out.println("New account with email:" + newPatient.getEmail());
+            boolean added=patientService.addPatient(newPatient);
+            if(added == true){
+                System.out.println("New account with email: " + newPatient.getEmail());
+                User u = new User(patient.getEmail(), patient.getPassword(), Role.PATIENT);
+                userService.save(u);
+            }
+            else
+            {
+                System.out.println("Email already exists: " + newPatient.getEmail());
+            }
+
             return "";
         }
         else
@@ -49,20 +66,24 @@ public class PatientController {
     public String Edit(@RequestBody PatientDTO patient) {
 
         Patient pat = patientService.getPatient(patient.getEmail());
-        if(pat != null){
-            pat.setEmail(patient.getEmail());
-            pat.setPassword(patient.getPassword());
-            pat.setName(patient.getName());
-            pat.setSurname(patient.getSurname());
-            pat.setNumber(patient.getNumber());
-            pat.setCity(patient.getCity());
-            pat.setCountry(patient.getCountry());
-            pat.setAddress(patient.getAddress());
-            pat.setInsuranceID(patient.getInsuranceID());
-            pat.setStatus(PatientStatus.APPROVED);
+        User u = userService.getUser(pat.getEmail());
 
-            boolean r=patientService.editPatient(pat);
-            if(r==true){
+        if(pat != null){
+            pat.setEmail(pat.getEmail());
+            pat.setPassword(pat.getPassword());
+            pat.setName(pat.getName());
+            pat.setSurname(pat.getSurname());
+            pat.setNumber(pat.getNumber());
+            pat.setCity(pat.getCity());
+            pat.setCountry(pat.getCountry());
+            pat.setAddress(pat.getAddress());
+            pat.setInsuranceID(pat.getInsuranceID());
+            pat.setStatus(PatientStatus.APPROVED);
+            u.setPassword(pat.getPassword());
+
+            boolean editedPatient=patientService.editPatient(pat);
+            boolean editedUser=userService.editUser(u);
+            if(editedPatient==true || editedUser==true){
             System.out.println("Edit account with email:" + pat.getEmail());
             return "uspesno";}
             else{return "neuspesno";}
@@ -70,6 +91,12 @@ public class PatientController {
         else
             return "Error edit account";
 
+    }
+
+
+    @GetMapping(value = "patient/all")
+    public ResponseEntity<List<Patient>> all() {
+        return new ResponseEntity<>(patientService.findall(), HttpStatus.OK);
     }
 
 }
