@@ -9,12 +9,13 @@ import {DoctorService} from '../../services/doctor.service';
 import { NurseService } from 'src/app/services/nurse.service';
 
 
-export class Patient{
+export class LoginUser {
   constructor(
-    public email:string,
+    public email: string,
     public password: string
-    ){}
+  ) {}
 }
+
 
 export class Nurse{
   constructor(
@@ -40,10 +41,10 @@ export class LoginComponent implements OnInit {
 
   private loginForm: FormGroup;
   private submitted = false;
-  private patient: Patient;
   private doctor:Doctor;
   private nurse:Nurse;
   private user:User;
+  private loginUser:LoginUser;
 
   constructor(
     private patientService: PatientService,
@@ -72,10 +73,10 @@ export class LoginComponent implements OnInit {
     return;
   
 
-  this.patient=new Patient(
+  this.loginUser=new LoginUser(
     this.f.email.value,
     this.f.password.value
-  )
+  )/*
   this.nurse=new Nurse(
     this.f.email.value,
     this.f.password.value
@@ -84,14 +85,14 @@ export class LoginComponent implements OnInit {
     this.f.email.value,
     this.f.password.value
   )
-
+*/
     this.user=this.userService.getUser(this.f.email.value);
     console.log(this.user);
     this.attemptLogin();
   }
 
   public attemptLogin() {
-    if (this.user.role === Role.PATIENT) {
+    if (this.user.role === Role.PATIENT && this.loginUser.password === this.user.password) {
       console.log(this.user);
       this.patientService.loginPatient(this.user).subscribe(
         data => {
