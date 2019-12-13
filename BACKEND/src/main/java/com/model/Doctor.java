@@ -28,6 +28,18 @@ public class Doctor  {
     @Column(columnDefinition = "VARCHAR(11)", unique = true, nullable = false)
     private String number;
 
+    @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+    private String address;
+
+    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
+    private String country;
+
+    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
+    private String city;
+
+    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
+    private String specialization;
+
     @Column(nullable = false)
     private LocalTime workHoursFrom;
 
@@ -53,20 +65,17 @@ public class Doctor  {
 
     }
 
-    public Doctor(Long id, String email, String password, String name, String surname, String number, LocalTime workHoursFrom, LocalTime workHoursTo, Clinic clinic, Set<Examination> examinations, ExaminationType specialized, Set<DoctorOff> timeOffDoctors, DoctorStatus status) {
+    public Doctor(Long id, String email, String password, String name, String surname, String number, String address, String country, String city, String specialization) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
         this.surname = surname;
         this.number = number;
-        this.workHoursFrom = workHoursFrom;
-        this.workHoursTo = workHoursTo;
-        this.clinic = clinic;
-        this.examinations = examinations;
-        this.specialized = specialized;
-        this.timeOffDoctors = timeOffDoctors;
-        this.status = status;
+        this.address = address;
+        this.country = country;
+        this.city = city;
+        this.specialization = specialization;
     }
 
     public Long getId() {
@@ -115,6 +124,38 @@ public class Doctor  {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
     }
 
     public LocalTime getWorkHoursFrom() {
@@ -172,4 +213,5 @@ public class Doctor  {
     public void setStatus(DoctorStatus status) {
         this.status = status;
     }
+
 }
