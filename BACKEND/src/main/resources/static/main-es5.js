@@ -1,13 +1,3 @@
-var __values = (this && this.__values) || function (o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
-    if (m) return m.call(o);
-    return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-};
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
         /***/ "./$$_lazy_route_resource lazy recursive": 
         /*!******************************************************!*\
@@ -49,7 +39,7 @@ var __values = (this && this.__values) || function (o) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!-- page-header -->\r\n<div class=\"page-header\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                <div class=\"page-caption\">\r\n                    <h1 class=\"page-title\">Clinics in the clinical centre</h1>\r\n                    <div class=\"text-center mt-4\">\r\n                        <button mat-raised-button color=\"primary\" (click)=\"openAddDialog()\">Add new\r\n                            clinic</button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!-- /.page-header-->\r\n\r\n<!-- page-content -->\r\n<div class=\"card-section\">\r\n    <div class=\"container\">\r\n        <div class=\"card-block bg-white mb30\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                    <!-- section-title -->\r\n                    <div class=\"section-title mb-0\">\r\n                        <table mat-table [dataSource]=\"clinicsDataSource\" class=\"mat-elevation-z8 table\" matSort>\r\n\r\n                            <ng-container matColumnDef=\"name\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">\r\n                                    {{element.name}}\r\n                                </td>\r\n                            </ng-container>\r\n\r\n                            <ng-container matColumnDef=\"address\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.address}} </td>\r\n                            </ng-container>\r\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\r\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n                        </table>\r\n                    </div>\r\n                    <!-- /.section-title -->\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!-- /.page-content -->");
+            /* harmony default export */ __webpack_exports__["default"] = ("<!-- page-header -->\r\n<div class=\"page-header\">\r\n  <div class=\"container\">\r\n      <div class=\"row\">\r\n          <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n              <div class=\"page-caption\">\r\n                  <h1 class=\"page-title\">Clinics in the clinical centre</h1>\r\n                  <div class=\"text-center mt-4\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n<!-- /.page-header-->\r\n\r\n<!-- page-content -->\r\n<div class=\"card-section\">\r\n  <div class=\"container\">\r\n      <div class=\"card-block bg-white mb30\">\r\n          <div class=\"row\">\r\n              <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                  <!-- section-title -->\r\n                  <div class=\"section-title mb-0\">\r\n                      <table mat-table [dataSource]=\"clinicDataSource\" class=\"mat-elevation-z8 table\" matSort>\r\n\r\n                          <ng-container matColumnDef=\"name\">\r\n                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>\r\n                              <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">\r\n                                  {{element.name}}\r\n                              </td>\r\n                          </ng-container>\r\n\r\n                          <ng-container matColumnDef=\"address\">\r\n                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>\r\n                              <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.address}} </td>\r\n                          </ng-container>\r\n                          <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\r\n                          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n                      </table>\r\n                      <mat-paginator [pageSize]=itemsPerPage showFirstLastButtons></mat-paginator>\r\n                  </div>\r\n                  <!-- /.section-title -->\r\n              </div>\r\n          </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n<!-- /.page-content -->");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/doctor-page/doctor-page.component.html": 
@@ -82,7 +72,7 @@ var __values = (this && this.__values) || function (o) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-8 offset-md-2\">\r\n              <mat-card>\r\n                <h3>Login</h3>\r\n                <hr>\r\n                <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n      \r\n                  <div class=\"form-group\">\r\n                    <label for=\"email\">Email</label>\r\n                    <input type=\"email\" id=\"email\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\">\r\n                    <div *ngIf=\"submitted && f.email.errors\" class=\"invalid-feedback\">\r\n                      <div *ngIf=\"f.email.errors.required\">Email is required</div>\r\n                      <div *ngIf=\"f.email.errors.email\">Email must be a valid email address</div>\r\n                    </div>\r\n                  </div>\r\n      \r\n                  <div class=\"form-group\">\r\n                    <label for=\"password\">Password</label>\r\n                    <input type=\"password\" id=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\">\r\n                    <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\r\n                      <div *ngIf=\"f.password.errors.required\">Password is required</div>\r\n                      <div *ngIf=\"f.password.errors.minlength\">Password must be at least 8 characters long</div>\r\n                      <div *ngIf=\"f.password.errors.pattern\">Password must contain at least 1 lowercase, 1 uppercase letter and 1 number</div>\r\n                    </div>\r\n                  </div>\r\n      \r\n                  <div class=\"form-group\">\r\n                    <a routerLink=\"/patient/register\">Don't have an account? Register here.</a>\r\n                  </div>\r\n      \r\n                  <button mat-raised-button color=\"primary\" class=\"pull-right\">Login</button>\r\n      \r\n                </form>\r\n              </mat-card>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\n        <div class=\"container\">\n          <div class=\"row\">\n            <div class=\"col-md-8 offset-md-2\">\n              <mat-card>\n                <h3>Login</h3>\n                <hr>\n                <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n      \n                  <div class=\"form-group\">\n                    <label for=\"email\">Email</label>\n                    <input type=\"email\" id=\"email\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\">\n                    <div *ngIf=\"submitted && f.email.errors\" class=\"invalid-feedback\">\n                      <div *ngIf=\"f.email.errors.required\">Email is required</div>\n                      <div *ngIf=\"f.email.errors.email\">Email must be a valid email address</div>\n                    </div>\n                  </div>\n      \n                  <div class=\"form-group\">\n                    <label for=\"password\">Password</label>\n                    <input type=\"password\" id=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\">\n                    <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\n                      <div *ngIf=\"f.password.errors.required\">Password is required</div>\n                      <div *ngIf=\"f.password.errors.minlength\">Password must be at least 8 characters long</div>\n                      <div *ngIf=\"f.password.errors.pattern\">Password must contain at least 1 lowercase, 1 uppercase letter and 1 number</div>\n                    </div>\n                  </div>\n      \n                  <div class=\"form-group\">\n                    <a routerLink=\"/patient/register\">Don't have an account? Register here.</a>\n                  </div>\n      \n                  <button mat-raised-button color=\"primary\" class=\"pull-right\">Login</button>\n      \n                </form>\n              </mat-card>\n            </div>\n          </div>\n        </div>\n      </div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/medical-history-page/medical-history-page.component.html": 
@@ -93,7 +83,7 @@ var __values = (this && this.__values) || function (o) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<p>medical-history-page works!</p>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<p>medical-history-page works!</p>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/medical-record-page/medical-record-page.component.html": 
@@ -104,7 +94,7 @@ var __values = (this && this.__values) || function (o) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<p>medical-record-page works!</p>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<p>medical-record-page works!</p>\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/nurse-page/nurse-page.component.html": 
@@ -115,7 +105,7 @@ var __values = (this && this.__values) || function (o) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<h1>WELCOME NURSE</h1>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<h1>WELCOME NURSE</h1>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/nurse-profile/nurse-profile.component.html": 
@@ -126,7 +116,7 @@ var __values = (this && this.__values) || function (o) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<p>nurse-profile works!</p>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<p>nurse-profile works!</p>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/patient-page/patient-page.component.html": 
@@ -159,7 +149,7 @@ var __values = (this && this.__values) || function (o) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-8 offset-md-2\">\r\n          <mat-card>\r\n            <h3>Registration</h3>\r\n            <hr>\r\n            <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"email\">Email</label>\r\n                <input type=\"email\" id=\"email\" formControlName=\"email\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('email').errors }\">\r\n  \r\n                <div *ngIf=\"submitted && registerForm.get('email').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('email').errors['required']\">Email is required</div>\r\n                  <div *ngIf=\"registerForm.get('email').errors['email']\">Email must be a valid email address</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"password\">Password</label>\r\n                <input type=\"password\" id=\"password\" formControlName=\"password\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('password').errors }\">\r\n                <div *ngIf=\"submitted && registerForm.get('password').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('password').errors['required']\">Password is required</div>\r\n                  <div *ngIf=\"registerForm.get('password').errors['minlength']\">Password must be at least 8 characters\r\n                    long</div>\r\n                  <div *ngIf=\"registerForm.get('password').errors['pattern']\">Password must contain at least 1 lowercase,\r\n                    1 uppercase letter\r\n                    and 1 number</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"name\">First Name</label>\r\n                <input type=\"text\" id=\"name\" formControlName=\"name\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('name').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('name').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\" registerForm.get('name').errors['required']\">First Name is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"surname\">Last Name</label>\r\n                <input type=\"text\" id=\"surname\" formControlName=\"surname\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('surname').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('surname').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('surname').errors['required']\">Last Name is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"address\">Address</label>\r\n                <input type=\"text\" id=\"address\" formControlName=\"address\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('address').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('address').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('address').errors['required']\">Address is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"city\">City</label>\r\n                <input type=\"text\" id=\"city\" formControlName=\"city\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('city').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('city').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('city').errors['required']\">City is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"country\">Country</label>\r\n                <input type=\"text\" id=\"country\" formControlName=\"country\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('country').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('country').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('country').errors['required']\">Country is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"number\">Phone Number</label>\r\n                <input type=\"number\" id=\"number\" formControlName=\"number\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('number').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('number').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('number').errors['required']\">Phone Number is required</div>\r\n                  <div *ngIf=\"registerForm.get('number').errors['minlength']\">A phone number must have at least 9\r\n                    digits\r\n                  </div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"insuranceID\">Health Insurance ID</label>\r\n                <input type=\"text\" id=\"insuranceID\" formControlName=\"insuranceID\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted &&  registerForm.get('insuranceID').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('insuranceID').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('insuranceID').errors['required']\">Health Insurance ID is required\r\n                  </div>\r\n                  <div\r\n                    *ngIf=\"registerForm.get('insuranceID').errors['minlength'] ||registerForm.get('insuranceID').errors['maxlength']\">\r\n                    Health\r\n                    Insurance ID must contain exactly 13 characters</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <a routerLink=\"/patient/login\">Already have an account? Login here.</a>\r\n              </div>\r\n  \r\n              <button mat-raised-button color=\"primary\" class=\"pull-right\">Register</button>\r\n  \r\n            </form>\r\n          </mat-card>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 offset-md-2\">\n          <mat-card>\n            <h3>Registration</h3>\n            <hr>\n            <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\n  \n              <div class=\"form-group\">\n                <label for=\"email\">Email</label>\n                <input type=\"email\" id=\"email\" formControlName=\"email\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('email').errors }\">\n  \n                <div *ngIf=\"submitted && registerForm.get('email').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('email').errors['required']\">Email is required</div>\n                  <div *ngIf=\"registerForm.get('email').errors['email']\">Email must be a valid email address</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"password\">Password</label>\n                <input type=\"password\" id=\"password\" formControlName=\"password\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('password').errors }\">\n                <div *ngIf=\"submitted && registerForm.get('password').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('password').errors['required']\">Password is required</div>\n                  <div *ngIf=\"registerForm.get('password').errors['minlength']\">Password must be at least 8 characters\n                    long</div>\n                  <div *ngIf=\"registerForm.get('password').errors['pattern']\">Password must contain at least 1 lowercase,\n                    1 uppercase letter\n                    and 1 number</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"name\">First Name</label>\n                <input type=\"text\" id=\"name\" formControlName=\"name\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('name').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('name').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\" registerForm.get('name').errors['required']\">First Name is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"surname\">Last Name</label>\n                <input type=\"text\" id=\"surname\" formControlName=\"surname\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('surname').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('surname').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('surname').errors['required']\">Last Name is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"address\">Address</label>\n                <input type=\"text\" id=\"address\" formControlName=\"address\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('address').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('address').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('address').errors['required']\">Address is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"city\">City</label>\n                <input type=\"text\" id=\"city\" formControlName=\"city\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('city').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('city').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('city').errors['required']\">City is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"country\">Country</label>\n                <input type=\"text\" id=\"country\" formControlName=\"country\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('country').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('country').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('country').errors['required']\">Country is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"number\">Phone Number</label>\n                <input type=\"number\" id=\"number\" formControlName=\"number\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('number').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('number').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('number').errors['required']\">Phone Number is required</div>\n                  <div *ngIf=\"registerForm.get('number').errors['minlength']\">A phone number must have at least 9\n                    digits\n                  </div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"insuranceID\">Health Insurance ID</label>\n                <input type=\"text\" id=\"insuranceID\" formControlName=\"insuranceID\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted &&  registerForm.get('insuranceID').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('insuranceID').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('insuranceID').errors['required']\">Health Insurance ID is required\n                  </div>\n                  <div\n                    *ngIf=\"registerForm.get('insuranceID').errors['minlength'] ||registerForm.get('insuranceID').errors['maxlength']\">\n                    Health\n                    Insurance ID must contain exactly 13 characters</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <a routerLink=\"/patient/login\">Already have an account? Login here.</a>\n              </div>\n  \n              <button mat-raised-button color=\"primary\" class=\"pull-right\">Register</button>\n  \n            </form>\n          </mat-card>\n        </div>\n      </div>\n    </div>\n  </div>");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
@@ -707,13 +697,30 @@ var __values = (this && this.__values) || function (o) {
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClinicsPageComponent", function () { return ClinicsPageComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+            /* harmony import */ var src_app_services_clinic_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/clinic.service */ "./src/app/services/clinic.service.ts");
             var ClinicsPageComponent = /** @class */ (function () {
-                function ClinicsPageComponent() {
+                function ClinicsPageComponent(clinicService) {
+                    this.clinicService = clinicService;
+                    this.displayedColumns = ['name', 'address'];
+                    this.clinicDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
+                    this.clinics = new Array();
                 }
                 ClinicsPageComponent.prototype.ngOnInit = function () {
+                    this.all();
+                };
+                ClinicsPageComponent.prototype.all = function () {
+                    this.clinicDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.clinicService.getAllClinics());
+                    this.clinicDataSource.paginator = this.paginator;
                 };
                 return ClinicsPageComponent;
             }());
+            ClinicsPageComponent.ctorParameters = function () { return [
+                { type: src_app_services_clinic_service__WEBPACK_IMPORTED_MODULE_3__["ClinicService"] }
+            ]; };
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"], { static: true })
+            ], ClinicsPageComponent.prototype, "paginator", void 0);
             ClinicsPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-clinics-page',
@@ -871,11 +878,11 @@ var __values = (this && this.__values) || function (o) {
         /*!*****************************************************!*\
           !*** ./src/app/components/login/login.component.ts ***!
           \*****************************************************/
-        /*! exports provided: Patient, Nurse, Doctor, LoginComponent */
+        /*! exports provided: LoginUser, Nurse, Doctor, LoginComponent */
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Patient", function () { return Patient; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginUser", function () { return LoginUser; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Nurse", function () { return Nurse; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Doctor", function () { return Doctor; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function () { return LoginComponent; });
@@ -888,12 +895,12 @@ var __values = (this && this.__values) || function (o) {
             /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
             /* harmony import */ var _services_doctor_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/doctor.service */ "./src/app/services/doctor.service.ts");
             /* harmony import */ var src_app_services_nurse_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/nurse.service */ "./src/app/services/nurse.service.ts");
-            var Patient = /** @class */ (function () {
-                function Patient(email, password) {
+            var LoginUser = /** @class */ (function () {
+                function LoginUser(email, password) {
                     this.email = email;
                     this.password = password;
                 }
-                return Patient;
+                return LoginUser;
             }());
             var Nurse = /** @class */ (function () {
                 function Nurse(email, password) {
@@ -936,16 +943,23 @@ var __values = (this && this.__values) || function (o) {
                     this.submitted = true;
                     if (this.loginForm.invalid)
                         return;
-                    this.patient = new Patient(this.f.email.value, this.f.password.value);
-                    this.nurse = new Nurse(this.f.email.value, this.f.password.value);
-                    this.doctor = new Doctor(this.f.email.value, this.f.password.value);
+                    this.loginUser = new LoginUser(this.f.email.value, this.f.password.value); /*
+                    this.nurse=new Nurse(
+                      this.f.email.value,
+                      this.f.password.value
+                    )
+                    this.doctor=new Doctor(
+                      this.f.email.value,
+                      this.f.password.value
+                    )
+                  */
                     this.user = this.userService.getUser(this.f.email.value);
                     console.log(this.user);
                     this.attemptLogin();
                 };
                 LoginComponent.prototype.attemptLogin = function () {
                     var _this = this;
-                    if (this.user.role === _models_role__WEBPACK_IMPORTED_MODULE_5__["Role"].PATIENT) {
+                    if (this.user.role === _models_role__WEBPACK_IMPORTED_MODULE_5__["Role"].PATIENT && this.loginUser.password === this.user.password) {
                         console.log(this.user);
                         this.patientService.loginPatient(this.user).subscribe(function (data) {
                             console.log(data);
@@ -1502,6 +1516,27 @@ var __values = (this && this.__values) || function (o) {
             ], DemoMaterialModule);
             /***/ 
         }),
+        /***/ "./src/app/models/clinic.ts": 
+        /*!**********************************!*\
+          !*** ./src/app/models/clinic.ts ***!
+          \**********************************/
+        /*! exports provided: Clinic */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Clinic", function () { return Clinic; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            var Clinic = /** @class */ (function () {
+                function Clinic(name, address, description, id) {
+                    this.name = name;
+                    this.address = address;
+                    this.description = description;
+                    this.id = id;
+                }
+                return Clinic;
+            }());
+            /***/ 
+        }),
         /***/ "./src/app/models/doctor.ts": 
         /*!**********************************!*\
           !*** ./src/app/models/doctor.ts ***!
@@ -1629,6 +1664,73 @@ var __values = (this && this.__values) || function (o) {
             }());
             /***/ 
         }),
+        /***/ "./src/app/services/clinic.service.ts": 
+        /*!********************************************!*\
+          !*** ./src/app/services/clinic.service.ts ***!
+          \********************************************/
+        /*! exports provided: ClinicService */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClinicService", function () { return ClinicService; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+            /* harmony import */ var _models_clinic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/clinic */ "./src/app/models/clinic.ts");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            var ClinicService = /** @class */ (function () {
+                function ClinicService(http) {
+                    this.http = http;
+                    this.urlClinic = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].clinic;
+                    this.listClinics = new Array();
+                    this.getAllClinics();
+                }
+                ClinicService.prototype.addClinic = function (c) {
+                    if (this.getClinic(c.name) === null) {
+                        this.listClinics.push(c);
+                    }
+                };
+                ClinicService.prototype.getClinic = function (name) {
+                    if (this.listClinics.length === 0) {
+                        return null;
+                    }
+                    for (var _i = 0, _a = this.listClinics; _i < _a.length; _i++) {
+                        var u = _a[_i];
+                        if (u.name === name) {
+                            return u;
+                        }
+                    }
+                    return null;
+                };
+                ClinicService.prototype.getClinicByName = function (name) {
+                    return this.http.get(this.urlClinic + '/' + name);
+                };
+                ClinicService.prototype.getAllClinics = function () {
+                    var _this = this;
+                    this.http.get(this.urlClinic + '/all').subscribe(function (data) {
+                        for (var _i = 0, data_1 = data; _i < data_1.length; _i++) {
+                            var c = data_1[_i];
+                            _this.clinic = new _models_clinic__WEBPACK_IMPORTED_MODULE_3__["Clinic"](c.name, c.address, c.description, c.id);
+                            _this.addClinic(_this.clinic);
+                            console.log(_this.clinic);
+                        }
+                    }, function (error) {
+                        console.log(error);
+                    });
+                    return this.listClinics;
+                };
+                return ClinicService;
+            }());
+            ClinicService.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
+            ]; };
+            ClinicService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root'
+                })
+            ], ClinicService);
+            /***/ 
+        }),
         /***/ "./src/app/services/doctor.service.ts": 
         /*!********************************************!*\
           !*** ./src/app/services/doctor.service.ts ***!
@@ -1669,47 +1771,27 @@ var __values = (this && this.__values) || function (o) {
                     }
                 };
                 DoctorService.prototype.getDoctor = function (email) {
-                    var e_1, _a;
                     if (this.listDoctors.length === 0) {
                         return null;
                     }
-                    try {
-                        for (var _b = __values(this.listDoctors), _c = _b.next(); !_c.done; _c = _b.next()) {
-                            var u = _c.value;
-                            if (u.email === email) {
-                                return u;
-                            }
+                    for (var _i = 0, _a = this.listDoctors; _i < _a.length; _i++) {
+                        var u = _a[_i];
+                        if (u.email === email) {
+                            return u;
                         }
-                    }
-                    catch (e_1_1) { e_1 = { error: e_1_1 }; }
-                    finally {
-                        try {
-                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-                        }
-                        finally { if (e_1) throw e_1.error; }
                     }
                     return null;
                 };
                 DoctorService.prototype.setDoctor = function (p) {
-                    var e_2, _a;
-                    try {
-                        for (var _b = __values(this.listDoctors), _c = _b.next(); !_c.done; _c = _b.next()) {
-                            var p1 = _c.value;
-                            if (p1.email === p.email) {
-                                p1.name = p.name;
-                                p1.number = p.number;
-                                p1.surname = p.surname;
-                                p1.password = p.password;
-                                return;
-                            }
+                    for (var _i = 0, _a = this.listDoctors; _i < _a.length; _i++) {
+                        var p1 = _a[_i];
+                        if (p1.email === p.email) {
+                            p1.name = p.name;
+                            p1.number = p.number;
+                            p1.surname = p.surname;
+                            p1.password = p.password;
+                            return;
                         }
-                    }
-                    catch (e_2_1) { e_2 = { error: e_2_1 }; }
-                    finally {
-                        try {
-                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-                        }
-                        finally { if (e_2) throw e_2.error; }
                     }
                 };
                 return DoctorService;
@@ -1765,47 +1847,27 @@ var __values = (this && this.__values) || function (o) {
                     }
                 };
                 NurseService.prototype.getNurse = function (email) {
-                    var e_3, _a;
                     if (this.listNurses.length === 0) {
                         return null;
                     }
-                    try {
-                        for (var _b = __values(this.listNurses), _c = _b.next(); !_c.done; _c = _b.next()) {
-                            var u = _c.value;
-                            if (u.email === email) {
-                                return u;
-                            }
+                    for (var _i = 0, _a = this.listNurses; _i < _a.length; _i++) {
+                        var u = _a[_i];
+                        if (u.email === email) {
+                            return u;
                         }
-                    }
-                    catch (e_3_1) { e_3 = { error: e_3_1 }; }
-                    finally {
-                        try {
-                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-                        }
-                        finally { if (e_3) throw e_3.error; }
                     }
                     return null;
                 };
                 NurseService.prototype.setNurse = function (p) {
-                    var e_4, _a;
-                    try {
-                        for (var _b = __values(this.listNurses), _c = _b.next(); !_c.done; _c = _b.next()) {
-                            var p1 = _c.value;
-                            if (p1.email === p.email) {
-                                p1.name = p.name;
-                                p1.number = p.number;
-                                p1.surname = p.surname;
-                                p1.password = p.password;
-                                return;
-                            }
+                    for (var _i = 0, _a = this.listNurses; _i < _a.length; _i++) {
+                        var p1 = _a[_i];
+                        if (p1.email === p.email) {
+                            p1.name = p.name;
+                            p1.number = p.number;
+                            p1.surname = p.surname;
+                            p1.password = p.password;
+                            return;
                         }
-                    }
-                    catch (e_4_1) { e_4 = { error: e_4_1 }; }
-                    finally {
-                        try {
-                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-                        }
-                        finally { if (e_4) throw e_4.error; }
                     }
                 };
                 return NurseService;
@@ -1836,22 +1898,19 @@ var __values = (this && this.__values) || function (o) {
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
             /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
-            /* harmony import */ var _models_patientStatus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../models/patientStatus */ "./src/app/models/patientStatus.ts");
             var PatientService = /** @class */ (function () {
                 function PatientService(http, userService) {
                     this.http = http;
                     this.userService = userService;
                     this.urlPatient = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseUrl + _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].patient;
                     this.listPatients = new Array();
-                    this.patient = new _models_patient__WEBPACK_IMPORTED_MODULE_2__["Patient"]('patient@email.com', 'Patient123', 'Patient', 'Patientic', '47258', 'Adresa', 'Grad', 'Drzava', '1111111111111', _models_patientStatus__WEBPACK_IMPORTED_MODULE_6__["PatientStatus"].AWAITING);
-                    this.listPatients.push(this.patient);
+                    this.getAllPatients();
                 }
                 PatientService.prototype.newPatient = function (patient) {
                     return this.http.post(this.urlPatient + '/register', patient);
                 };
                 PatientService.prototype.loginPatient = function (patient) {
                     this.userService.setToken(patient);
-                    console.log("loginPatient" + patient);
                     return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseUrl + '/login', patient, { responseType: 'text' });
                 };
                 PatientService.prototype.editPatient = function (patient) {
@@ -1863,51 +1922,44 @@ var __values = (this && this.__values) || function (o) {
                     }
                 };
                 PatientService.prototype.getPatient = function (email) {
-                    var e_5, _a;
                     if (this.listPatients.length === 0) {
                         return null;
                     }
-                    try {
-                        for (var _b = __values(this.listPatients), _c = _b.next(); !_c.done; _c = _b.next()) {
-                            var u = _c.value;
-                            if (u.email === email) {
-                                return u;
-                            }
+                    for (var _i = 0, _a = this.listPatients; _i < _a.length; _i++) {
+                        var u = _a[_i];
+                        if (u.email === email) {
+                            return u;
                         }
-                    }
-                    catch (e_5_1) { e_5 = { error: e_5_1 }; }
-                    finally {
-                        try {
-                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-                        }
-                        finally { if (e_5) throw e_5.error; }
                     }
                     return null;
                 };
                 PatientService.prototype.setPatient = function (p) {
-                    var e_6, _a;
-                    try {
-                        for (var _b = __values(this.listPatients), _c = _b.next(); !_c.done; _c = _b.next()) {
-                            var p1 = _c.value;
-                            if (p1.email === p.email) {
-                                p1.name = p.name;
-                                p1.number = p.number;
-                                p1.country = p.country;
-                                p1.address = p.address;
-                                p1.surname = p.surname;
-                                p1.city = p.city;
-                                p1.password = p.password;
-                                return;
-                            }
+                    for (var _i = 0, _a = this.listPatients; _i < _a.length; _i++) {
+                        var p1 = _a[_i];
+                        if (p1.email === p.email) {
+                            p1.name = p.name;
+                            p1.number = p.number;
+                            p1.country = p.country;
+                            p1.address = p.address;
+                            p1.surname = p.surname;
+                            p1.city = p.city;
+                            p1.password = p.password;
+                            return;
                         }
                     }
-                    catch (e_6_1) { e_6 = { error: e_6_1 }; }
-                    finally {
-                        try {
-                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+                };
+                PatientService.prototype.getAllPatients = function () {
+                    var _this = this;
+                    this.http.get(this.urlPatient + '/all').subscribe(function (data) {
+                        for (var _i = 0, data_2 = data; _i < data_2.length; _i++) {
+                            var c = data_2[_i];
+                            _this.patient = new _models_patient__WEBPACK_IMPORTED_MODULE_2__["Patient"](c.email, c.password, c.name, c.surname, c.number, c.address, c.city, c.country, c.insuranceID, c.status);
+                            _this.addPatient(_this.patient);
                         }
-                        finally { if (e_6) throw e_6.error; }
-                    }
+                    }, function (error) {
+                        console.log(error);
+                    });
+                    return this.listPatients;
                 };
                 return PatientService;
             }());
@@ -1938,21 +1990,17 @@ var __values = (this && this.__values) || function (o) {
             /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
             /* harmony import */ var _models_role__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/role */ "./src/app/models/role.ts");
             /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
             var TOKEN = 'LoggedInUser';
             var UserService = /** @class */ (function () {
                 function UserService(router, http) {
                     this.router = router;
                     this.http = http;
+                    this.urlUser = src_environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].user;
                     this.users = new Array();
                     this.user = new _models_user__WEBPACK_IMPORTED_MODULE_1__["User"]('', '', _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].NONE);
-                    this.doctor = new _models_user__WEBPACK_IMPORTED_MODULE_1__["User"]('doctor@email.com', 'Doctor123', _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].DOCTOR);
-                    this.patient = new _models_user__WEBPACK_IMPORTED_MODULE_1__["User"]('patient@email.com', 'Patient123', _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].PATIENT);
-                    this.nurse = new _models_user__WEBPACK_IMPORTED_MODULE_1__["User"]('nurse@email.com', 'Nurse123', _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].NURSE);
-                    this.users.push(this.doctor);
-                    this.users.push(this.patient);
+                    this.getAllUsers();
                     localStorage.setItem(TOKEN, JSON.stringify(this.user));
-                    console.log("konstruktor userServisa");
-                    console.log(this.user);
                 }
                 UserService.prototype.addUser = function (u) {
                     if (this.getUser(u.email) === null) {
@@ -1960,24 +2008,14 @@ var __values = (this && this.__values) || function (o) {
                     }
                 };
                 UserService.prototype.getUser = function (email) {
-                    var e_7, _a;
                     if (this.users.length === 0) {
-                        return;
+                        return null;
                     }
-                    try {
-                        for (var _b = __values(this.users), _c = _b.next(); !_c.done; _c = _b.next()) {
-                            var u = _c.value;
-                            if (u.email === email) {
-                                return u;
-                            }
+                    for (var _i = 0, _a = this.users; _i < _a.length; _i++) {
+                        var u = _a[_i];
+                        if (u.email === email) {
+                            return u;
                         }
-                    }
-                    catch (e_7_1) { e_7 = { error: e_7_1 }; }
-                    finally {
-                        try {
-                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-                        }
-                        finally { if (e_7) throw e_7.error; }
                     }
                     return null;
                 };
@@ -1994,28 +2032,19 @@ var __values = (this && this.__values) || function (o) {
                     }
                 };
                 UserService.prototype.setUser = function (u) {
-                    var e_8, _a;
-                    try {
-                        for (var _b = __values(this.users), _c = _b.next(); !_c.done; _c = _b.next()) {
-                            var p1 = _c.value;
-                            if (p1.email === u.email) {
-                                p1.password = u.password;
-                                return;
-                            }
+                    for (var _i = 0, _a = this.users; _i < _a.length; _i++) {
+                        var p1 = _a[_i];
+                        if (p1.email === u.email) {
+                            p1.password = u.password;
+                            return;
                         }
-                    }
-                    catch (e_8_1) { e_8 = { error: e_8_1 }; }
-                    finally {
-                        try {
-                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-                        }
-                        finally { if (e_8) throw e_8.error; }
                     }
                 };
                 UserService.prototype.logout = function () {
                     this.router.navigate(['']);
                     this.user = new _models_user__WEBPACK_IMPORTED_MODULE_1__["User"]('', '', _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].NONE);
-                    return localStorage.setItem(TOKEN, JSON.stringify(this.user));
+                    localStorage.removeItem(TOKEN);
+                    localStorage.setItem(TOKEN, JSON.stringify(this.user));
                 };
                 UserService.prototype.isNone = function () {
                     if (this.isLoggedIn()) {
@@ -2035,6 +2064,34 @@ var __values = (this && this.__values) || function (o) {
                 UserService.prototype.isNurse = function () {
                     if (this.isLoggedIn()) {
                         return this.user.role === _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].NURSE;
+                    }
+                };
+                UserService.prototype.getAllUsers = function () {
+                    var _this = this;
+                    this.http.get(this.urlUser + '/all').subscribe(function (data) {
+                        for (var _i = 0, data_3 = data; _i < data_3.length; _i++) {
+                            var c = data_3[_i];
+                            _this.u = new _models_user__WEBPACK_IMPORTED_MODULE_1__["User"](c.email, c.password, _this.whichRole(c.role.toString()));
+                            _this.addUser(_this.u);
+                        }
+                    }, function (error) {
+                        console.log(error);
+                    });
+                    console.log(this.users);
+                    return this.users;
+                };
+                UserService.prototype.whichRole = function (role) {
+                    if (role === 'PATIENT') {
+                        return _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].PATIENT;
+                    }
+                    else if (role === 'DOCTOR') {
+                        return _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].DOCTOR;
+                    }
+                    else if (role === 'NURSE') {
+                        return _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].NURSE;
+                    }
+                    else {
+                        return null;
                     }
                 };
                 return UserService;
@@ -2070,6 +2127,7 @@ var __values = (this && this.__values) || function (o) {
                 patient: '/patient',
                 doctor: '/doctor',
                 nurse: '/nurse',
+                clinic: '/clinic',
                 clinicalCentreAdmin: '/clinical-centre-admin',
             };
             /*
@@ -2110,7 +2168,7 @@ var __values = (this && this.__values) || function (o) {
           \***************************/
         /*! no static exports found */
         /***/ (function (module, exports, __webpack_require__) {
-            module.exports = __webpack_require__(/*! D:\ISA-PSW2019\FRONTEND\src\main.ts */ "./src/main.ts");
+            module.exports = __webpack_require__(/*! D:\ISA-PSW2019\ISA-PSW2019\FRONTEND\src\main.ts */ "./src/main.ts");
             /***/ 
         })
     }, [[0, "runtime", "vendor"]]]);

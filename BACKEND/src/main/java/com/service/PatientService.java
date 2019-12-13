@@ -16,8 +16,7 @@ public class PatientService {
     @Autowired
     private PatientRepo repo;
 
-    public List<Patient> findall()
-    {
+    public List<Patient> findall() {
         return repo.findAll();
     }
 
@@ -31,22 +30,18 @@ public class PatientService {
 
     public boolean addPatient(Patient p){
         List<Patient> tmp = findall();
-        if(tmp.size() == 0)
-        {
+        if(tmp.size() == 0) {
             repo.save(p);
             return true;
         }
         for(Patient p1 : tmp)
-            if(p1.getEmail().equals(p.getEmail()))
-            {
+            if(p1.getEmail().equals(p.getEmail())) {
                 return  false;
             }
-            else
-            {
+            else {
                 repo.save(p);
                 return true;
             }
-
         return false;
     }
 

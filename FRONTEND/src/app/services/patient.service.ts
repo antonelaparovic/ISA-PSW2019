@@ -19,8 +19,7 @@ export class PatientService{
       private http: HttpClient,
       private userService: UserService
     ) {
-      this.patient = new Patient('patient@email.com', 'Patient123', 'Patient', 'Patientic', '47258','Adresa', 'Grad', 'Drzava', '1111111111111', PatientStatus.AWAITING);
-      this.listPatients.push(this.patient);
+      this.getAllPatients();
     }
   
     public newPatient(patient) {
@@ -29,7 +28,6 @@ export class PatientService{
   
     public loginPatient(patient) {
       this.userService.setToken(patient);
-      console.log("loginPatient"+patient);
       return this.http.post(environment.baseUrl + '/login', patient, {responseType: 'text'});
     }
 
@@ -69,6 +67,20 @@ export class PatientService{
           return;
         }
       }
+    }
+
+    public getAllPatients(): Array<Patient> {
+      this.http.get(this.urlPatient + '/all').subscribe((data: Patient[]) => {
+          for (const c of data) {
+            this.patient = new Patient(c.email,c.password,c.name,c.surname,c.number,c.address,c.city,c.country,c.insuranceID,c.status);
+            this.addPatient(this.patient);
+          }
+        },
+        error => {
+          console.log(error);
+        }
+      );
+      return this.listPatients;
     }
   
 

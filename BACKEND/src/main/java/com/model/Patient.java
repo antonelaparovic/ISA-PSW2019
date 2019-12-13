@@ -38,7 +38,7 @@ public class Patient {
     private String InsuranceID;
 
     @OneToOne(mappedBy = "patient", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private MedicalRecord medialRecord;
+    private MedicalRecord medicalRecord;
 
     @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Examination> examinations = new HashSet<>();
@@ -103,8 +103,8 @@ public class Patient {
         return InsuranceID;
     }
 
-    public MedicalRecord getMedialRecord() {
-        return medialRecord;
+    public MedicalRecord getMedicalRecord() {
+        return medicalRecord;
     }
 
     public Set<Examination> getExaminations() {
@@ -151,8 +151,8 @@ public class Patient {
         InsuranceID = insuranceID;
     }
 
-    public void setMedialRecord(MedicalRecord medialRecord) {
-        this.medialRecord = medialRecord;
+    public void setMedicalRecord(MedicalRecord medicalRecord) {
+        this.medicalRecord = medicalRecord;
     }
 
     public void setExaminations(Set<Examination> examinations) {
