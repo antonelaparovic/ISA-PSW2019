@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {Role} from '../models/role';
 import {HttpClient} from '@angular/common/http';
 import { Nurse } from '../models/nurse';
+import { environment } from 'src/environments/environment';
 
 
 export const TOKEN='LoggedInUser';
@@ -12,20 +13,12 @@ export const TOKEN='LoggedInUser';
     providedIn:'root'
 })
 export class UserService{
+    urlUser = environment.baseUrl + environment.user;
     users: Array<User>=new Array<User>();
-    doctor: User;
-    patient: User;
-    nurse : User;
     user:User= new User('', '', Role.NONE);
+    u:User;
     constructor(private router: Router, private http: HttpClient) {
-      this.doctor = new User('doctor@email.com', 'Doctor123', Role.DOCTOR);
-      this.patient = new User('patient@email.com', 'Patient123', Role.PATIENT);
-      this.nurse = new User('nurse@email.com', 'Nurse123', Role.NURSE);
-      this.users.push(this.doctor);
-      this.users.push(this.patient);
       localStorage.setItem(TOKEN, JSON.stringify(this.user));
-      console.log("konstruktor userServisa");
-      console.log(this.user);
     }
 
     public addUser(u: User){
@@ -37,7 +30,7 @@ export class UserService{
     
   public getUser(email: string) {
     if ( this.users.length === 0) {
-      return;
+      return null;
     }
     for (const u of this.users) {
       if ( u.email === email) {
@@ -75,7 +68,8 @@ export class UserService{
     public logout(){
       this.router.navigate(['']);
       this.user =  new User('', '', Role.NONE);
-      return localStorage.setItem(TOKEN, JSON.stringify(this.user));
+      localStorage.removeItem(TOKEN);
+      localStorage.setItem(TOKEN, JSON.stringify(this.user));
     }
 
     public isNone() {
@@ -100,6 +94,34 @@ export class UserService{
         if (this.isLoggedIn()) {
           return this.user.role === Role.NURSE;
         }
+      }
+
+      public getAllUsers(): Array<User> {
+        this.http.get(this.urlUser + '/all').subscribe((data: User[]) => {
+            for (const c of data) {
+                this.u = new User(c.email, c.password, this.whichRole(c.role.toString()));
+                this.addUser(this.u);
+            }
+          },
+          error => {
+            console.log(error);
+          }
+        );
+        console.log(this.users);
+        return this.users;
+      }
+
+      public whichRole(role: string) {
+        if (role === 'PATIENT') {
+          return Role.PATIENT;
+        } else if (role === 'DOCTOR') {
+          return  Role.DOCTOR;
+        } else if (role === 'NURSE') {
+          return  Role.NURSE;
+        }  else {
+          return null;
+        }
+    
       }
 
 
