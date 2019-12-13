@@ -61,8 +61,43 @@
                   </div>
                 </div>
               </div>
+              
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" formControlName="address" class="form-control"
+                       [ngClass]="{ 'is-invalid': submitted && doctorForm.get('address').errors }" />
+                <div *ngIf="submitted && doctorForm.get('address').errors" class="invalid-feedback">
+                  <div *ngIf="doctorForm.get('address').errors['required']">Address is required</div>
+                </div>
+              </div>
   
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" formControlName="city"  class="form-control"
+                       [ngClass]="{ 'is-invalid': submitted && doctorForm.get('city').errors }" />
+                <div *ngIf="submitted && doctorForm.get('city').errors" class="invalid-feedback">
+                  <div *ngIf="doctorForm.get('city').errors['required']">City is required</div>
+                </div>
+              </div>
   
+              <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" formControlName="country" class="form-control"
+                       [ngClass]="{ 'is-invalid': submitted && doctorForm.get('country').errors }" />
+                <div *ngIf="submitted && doctorForm.get('country').errors" class="invalid-feedback">
+                  <div *ngIf="doctorForm.get('country').errors['required']">Country is required</div>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="specialization">Specialization</label>
+                <input type="text" id="specialization" formControlName="specialization" class="form-control"
+                       [ngClass]="{ 'is-invalid': submitted && doctorForm.get('specialization').errors }" />
+                <div *ngIf="submitted && doctorForm.get('specialization').errors" class="invalid-feedback">
+                  <div *ngIf="doctorForm.get('specialization').errors['required']">Specialization is required</div>
+                </div>
+              </div>
+              
               <button mat-raised-button color="primary" class="pull-right">Save</button>
   
             </form>
