@@ -8,33 +8,8 @@ import {UserService} from '../services/user.service';
 @Injectable({
     providedIn:'root'
 })
-<<<<<<< Updated upstream
-=======
-export class NurseService {
-  urlNurse = environment.baseUrl + environment.nurse;
-  listNurses: Array<Nurse> = new Array<Nurse>();
-  nurse:Nurse;
 
-  constructor(
-    private http: HttpClient,
-    private userService: UserService
-  ) { 
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
-    this.getAllNurses();
-  }
 
-  public newNurse(nurse) {
-    return this.http.post(this.urlNurse + '/register', nurse);
-  }
-
-  public loginNurse(nurse) {
-    this.userService.setToken(nurse);
-    return this.http.post(environment.baseUrl + '/login', nurse, {responseType: 'text'});
-  }
->>>>>>> Stashed changes
 
 export class NurseService{
 
@@ -95,7 +70,7 @@ export class NurseService{
         }
       }
     }
-<<<<<<< Updated upstream
+
 
     public getAllNurses(): Array<Nurse> {
       this.http.get(this.urlNurse + '/all').subscribe((data: Nurse[]) => {
@@ -113,41 +88,3 @@ export class NurseService{
   
 
 }
-=======
-  }
-
-  public getAllNurses(): Array<Nurse> {
-    this.http.get(this.urlNurse + '/all').subscribe((data: Nurse[]) => {
-        for (const c of data) {
-          this.nurse = new Nurse(c.email,c.password,c.name,c.surname,c.number,c.address,c.city,c.country);
-          this.addNurse(this.nurse);
-        }
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    return this.listNurses;
-  }
-
-  
-  public getAllNurses(): Array<Nurse> {
-    this.http.get(this.urlNurse + '/all').subscribe((data: Nurse[]) => {
-        for (const c of data) {
-          this.nurse = new Nurse(c.email,c.password,c.name,c.surname,c.number,c.address,c.city,c.country);
-          this.addNurse(this.nurse);
-        }
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    return this.listNurses;
-  }
-
-}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
