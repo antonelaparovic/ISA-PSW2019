@@ -18,8 +18,7 @@ export class DoctorService {
     private http: HttpClient,
     private userService: UserService
   ) { 
-    this.doctor = new Doctor("doctor@email.com", "Doctor123", "Doktor", "Doktoric", "123456789");
-    this.listDoctors.push(this.doctor);
+    this.getAllDoctors();
   }
 
   public newDoctor(doctor) {
@@ -61,8 +60,26 @@ export class DoctorService {
         p1.number = p.number;
         p1.surname = p.surname;
         p1.password = p.password;
+        p1.address = p.address;
+        p1.city = p.city;
+        p1.country = p.country;
+        p1.specialization = p.specialization;
         return;
       }
     }
+  }
+
+  public getAllDoctors(): Array<Doctor> {
+    this.http.get(this.urlDoctor + '/all').subscribe((data: Doctor[]) => {
+        for (const c of data) {
+          this.doctor = new Doctor(c.email,c.password,c.name,c.surname,c.number,c.address,c.city,c.country,c.specialization);
+          this.addDoctor(this.doctor);
+        }
+      },
+      error => {
+        console.log(error);
+      }
+    );
+    return this.listDoctors;
   }
 }
