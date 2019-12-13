@@ -8,6 +8,7 @@ export class Nurse{
     surname: string;
     number: string;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     city: string;
     adress: string;
     country: string;
@@ -21,11 +22,19 @@ export class Nurse{
   
     constructor(email: string, password: string, name: string, surname: string, number1: string, address: string, city: string, country: string) {
 >>>>>>> Stashed changes
+=======
+    address: string;
+    city: string;
+    country: string;
+  
+    constructor(email: string, password: string, name: string, surname: string, number1: string, address: string, city: string, country: string) {
+>>>>>>> Stashed changes
       this.email = email;
       this.name = name;
       this.password = password;
       this.surname = surname;
       this.number = number1;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
       this.address = adress;
       this.city = city;
@@ -36,5 +45,10 @@ export class Nurse{
       this.address=address;
 >>>>>>> Stashed changes
       
+=======
+      this.address=address;
+      this.city=city;
+      this.country=country;
+>>>>>>> Stashed changes
     }
 }
