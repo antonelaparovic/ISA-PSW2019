@@ -27,7 +27,7 @@ public class DoctorService {
         return repo.findAll(page);
     }
 
-    public boolean addPatient(Doctor p){
+    public boolean addDoctor(Doctor p){
         List<Doctor> tmp = findall();
         if(tmp.size() == 0)
         {
