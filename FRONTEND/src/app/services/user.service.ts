@@ -18,6 +18,7 @@ export class UserService{
     user:User= new User('', '', Role.NONE);
     u:User;
     constructor(private router: Router, private http: HttpClient) {
+      this.getAllUsers();
       localStorage.setItem(TOKEN, JSON.stringify(this.user));
     }
 
