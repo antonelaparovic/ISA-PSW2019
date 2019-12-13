@@ -16,21 +16,6 @@ export class LoginUser {
   ) {}
 }
 
-
-export class Nurse{
-  constructor(
-    public email:string,
-    public password: string
-    ){}
-}
-
-export class Doctor{
-  constructor(
-    public email:string,
-    public password: string
-    ){}
-}
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -41,8 +26,6 @@ export class LoginComponent implements OnInit {
 
   private loginForm: FormGroup;
   private submitted = false;
-  private doctor:Doctor;
-  private nurse:Nurse;
   private user:User;
   private loginUser:LoginUser;
 
@@ -76,16 +59,7 @@ export class LoginComponent implements OnInit {
   this.loginUser=new LoginUser(
     this.f.email.value,
     this.f.password.value
-  )/*
-  this.nurse=new Nurse(
-    this.f.email.value,
-    this.f.password.value
   )
-  this.doctor=new Doctor(
-    this.f.email.value,
-    this.f.password.value
-  )
-*/
     this.user=this.userService.getUser(this.f.email.value);
     console.log(this.user);
     this.attemptLogin();
@@ -108,7 +82,7 @@ export class LoginComponent implements OnInit {
           console.log(error);
         }
       );
-    } else if (this.user.role === Role.DOCTOR) {
+    } else if (this.user.role === Role.DOCTOR && this.loginUser.password === this.user.password) {
       console.log(this.user);
       this.doctorService.loginDoctor(this.user).subscribe(
         data => {
@@ -124,7 +98,7 @@ export class LoginComponent implements OnInit {
           console.log(error);
         }
       );
-    } else if (this.user.role === Role.NURSE) {
+    } else if (this.user.role === Role.NURSE && this.loginUser.password === this.user.password) {
       console.log(this.user);
       this.nurseService.loginNurse(this.user).subscribe(
         data => {

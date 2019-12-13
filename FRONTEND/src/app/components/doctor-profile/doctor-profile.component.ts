@@ -41,6 +41,10 @@ export class DoctorProfileComponent implements OnInit {
       name: new FormControl(this.selectedDoctor.name, [Validators.required]),
       surname: new FormControl(this.selectedDoctor.surname, [Validators.required]),
       number: new FormControl(this.selectedDoctor.number, [Validators.required, Validators.minLength(9)]),
+      address: new FormControl(this.selectedDoctor.address, [Validators.required]),
+      city: new FormControl(this.selectedDoctor.city, [Validators.required]),
+      country: new FormControl(this.selectedDoctor.country, [Validators.required]),
+      specialization: new FormControl(this.selectedDoctor.specialization, [Validators.required]),
     });
   }
 
@@ -62,6 +66,10 @@ export class DoctorProfileComponent implements OnInit {
       this.f.name.value,
       this.f.surname.value,
       this.f.number.value,
+      this.f.address.value,
+      this.f.city.value,
+      this.f.country.value,
+      this.f.specialization.value
     );
 
     this.user=new User(this.f.email.value,this.f.password.value,Role.DOCTOR);
@@ -78,7 +86,7 @@ export class DoctorProfileComponent implements OnInit {
           this.router.navigate(['/doctor/home']);
         },
         error => {
-          alert('Error edit patient');
+          alert('Error edit doctor');
         }
       );
     }

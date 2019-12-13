@@ -1,4 +1,5 @@
 package com.controller;
+
 import com.model.Role;
 import com.model.User;
 import com.repository.NurseRepo;
@@ -15,9 +16,11 @@ import com.service.NurseService;
 
 import java.util.List;
 
+
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class NurseController {
+
 
     @Autowired
     private NurseService nurseService;
@@ -81,6 +84,7 @@ public class NurseController {
             boolean editedUser=userService.editUser(u);
             if(editedNurse==true || editedUser==true){
                 System.out.println("Edit account with email:" + pat.getEmail());
+
                 return "uspesno";}
             else{return "neuspesno";}
         }
@@ -90,9 +94,11 @@ public class NurseController {
     }
 
 
+
     @GetMapping(value = "nurse/all")
     public ResponseEntity<List<Nurse>> all() {
         return new ResponseEntity<>(nurseService.findall(), HttpStatus.OK);
     }
 
 }
+
