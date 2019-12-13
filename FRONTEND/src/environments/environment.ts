@@ -9,6 +9,7 @@ export const environment = {
   patient: '/patient',
   doctor: '/doctor',
   nurse: '/nurse',
+  clinic: '/clinic',
   clinicalCentreAdmin: '/clinical-centre-admin',
 };
 
