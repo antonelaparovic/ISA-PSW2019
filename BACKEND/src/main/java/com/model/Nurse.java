@@ -21,6 +21,17 @@ public class Nurse {
     @Column(columnDefinition = "VARCHAR(11)", unique = true, nullable = false)
     private String number;
 
+    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
+    private String country;
+
+
+    @Column(nullable = false)
+    private LocalTime workHoursFrom;
+
+    @Column(nullable = false)
+    private LocalTime workHoursTo;
+
+
 
     @Column(unique = true, nullable = false)
     private String email;
@@ -34,8 +45,7 @@ public class Nurse {
     @Column(nullable = false)
     private String city;
 
-    @Column(nullable = false)
-    private String country;
+
 
     @Column(columnDefinition = "VARCHAR(30)", nullable = false)
     private String firstName;
@@ -46,11 +56,7 @@ public class Nurse {
     @Column(columnDefinition = "VARCHAR(11)", unique = true, nullable = false)
     private String phoneNumber;
 
-    @Column(nullable = false)
-    private LocalTime workHoursFrom;
 
-    @Column(nullable = false)
-    private LocalTime workHoursTo;
 
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Clinic clinic;
@@ -67,11 +73,12 @@ public class Nurse {
     public Nurse(Long id, String email, String password, String name, String surname, String number, String city, String address, String country){
         this.id=id;
         this.email=email;
-        this.password=password;
+
         this.name=name;
         this.surname=surname;
-        this.number=number;
+        this.password=password;
         this.address=address;
+        this.number=number;
         this.city=city;
         this.country=country;
         }
