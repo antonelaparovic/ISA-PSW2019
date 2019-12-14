@@ -1,4 +1,3 @@
-import { Settings } from 'http2';
 
 export class Nurse{
     
