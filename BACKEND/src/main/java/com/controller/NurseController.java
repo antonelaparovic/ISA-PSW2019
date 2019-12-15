@@ -1,21 +1,18 @@
 package com.controller;
 
+
+import com.dtos.NurseDTO;
+import com.model.Nurse;
 import com.model.Role;
 import com.model.User;
-import com.repository.NurseRepo;
+import com.service.NurseService;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import com.dtos.NurseDTO;
-import com.model.Nurse;
-
-import com.service.NurseService;
 
 import java.util.List;
-
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200"})
@@ -101,4 +98,3 @@ public class NurseController {
     }
 
 }
-
