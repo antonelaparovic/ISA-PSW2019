@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>medical-record-page works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"page-header\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                <div class=\"page-caption\">\n                    <h1 class=\"page-title\">Medical record</h1>\n                    <div class=\"text-center mt-4\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-header-->\n  \n  <!-- page-content -->\n  <div class=\"card-section\">\n    <div class=\"container\">\n        <div class=\"card-block bg-white mb30\">\n            <div class=\"row\">\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                    <!-- section-title -->\n                    <div class=\"section-title mb-0\">\n                        <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8 table\" matSort>\n  \n                            <ng-container matColumnDef=\"Height\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Height </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">{{element.height}}</td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Weight\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.weight}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"BloodType\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Blood type </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.bloodType}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Allergies\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Allergies </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.allergies}} </td>\n                            </ng-container>\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        </table>\n                    </div>\n                    <!-- /.section-title -->\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-content -->");
 
 /***/ }),
 
@@ -1146,21 +1146,67 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************************************!*\
   !*** ./src/app/components/medical-record-page/medical-record-page.component.ts ***!
   \*********************************************************************************/
-/*! exports provided: MedicalRecordPageComponent */
+/*! exports provided: Table, MedicalRecordPageComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Table", function() { return Table; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicalRecordPageComponent", function() { return MedicalRecordPageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var src_app_services_medical_record_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/medical-record.service */ "./src/app/services/medical-record.service.ts");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
 
 
+
+
+
+class Table {
+    constructor(height, weight, bloodType, allergies) {
+        this.height = height;
+        this.weight = weight;
+        this.bloodType = bloodType;
+        this.allergies = allergies;
+    }
+}
 let MedicalRecordPageComponent = class MedicalRecordPageComponent {
-    constructor() { }
+    constructor(medicalRecordService, userService) {
+        this.medicalRecordService = medicalRecordService;
+        this.userService = userService;
+        this.displayedColumns = ['Height', 'Weight', 'BloodType', 'Allergies'];
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
+        this.records = new Array();
+        this.listTable = new Array();
+        this.records = this.medicalRecordService.getAllRecords();
+        this.user = JSON.parse(userService.isLoggedIn());
+    }
     ngOnInit() {
+        this.all();
+    }
+    all() {
+        this.fillData();
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.listTable);
+    }
+    fillData() {
+        /*for (let i = 0; i < this.records.length; i++) {
+          const element = this.records[i];
+                const table=new Table(element.height,element.weight,element.bloodType,element.allergies);
+                this.listTable.push(table);
+                
+        }*/
+        const table = new Table(180, 85, "A+", "No allergies");
+        this.listTable.push(table);
     }
 };
+MedicalRecordPageComponent.ctorParameters = () => [
+    { type: src_app_services_medical_record_service__WEBPACK_IMPORTED_MODULE_3__["MedicalRecordService"] },
+    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"], { static: true })
+], MedicalRecordPageComponent.prototype, "paginator", void 0);
 MedicalRecordPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-medical-record-page',
@@ -1766,17 +1812,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class ExaminationTable {
-    constructor(id, kind, status, examinationType, room, discount, nurse, patient, doctors, interval) {
+    constructor(id, kind, status, type, room, discount, nurse, patient, doctors, interval) {
         this.id = id;
         this.kind = kind;
         this.status = status;
-        this.examinationType = examinationType;
+        this.type = type;
         this.room = room;
         this.discount = discount;
         this.nurse = nurse;
         this.patient = patient;
         this.doctors = doctors;
         this.interval = interval;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/medicalRecord.ts":
+/*!*****************************************!*\
+  !*** ./src/app/models/medicalRecord.ts ***!
+  \*****************************************/
+/*! exports provided: MedicalRecord */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicalRecord", function() { return MedicalRecord; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class MedicalRecord {
+    // patient:Patient;
+    constructor(height, weight, bloodType, allergies) {
+        this.height = height;
+        this.weight = weight;
+        this.bloodType = bloodType;
+        this.allergies = allergies;
+        // this.patient=patient;
     }
 }
 
@@ -2105,11 +2177,9 @@ let ExaminationService = class ExaminationService {
         this.userService = userService;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].examination;
         this.listExaminations = new Array();
-        console.log(this.url);
         this.getAllExaminations();
     }
     getAllExaminations() {
-        console.log(this.url);
         this.http.get(this.url + '/all').subscribe((data) => {
             for (const c of data) {
                 this.examination = new _models_examination__WEBPACK_IMPORTED_MODULE_3__["Examination"](c.id, c.kind, c.status, c.discount);
@@ -2147,6 +2217,77 @@ ExaminationService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], ExaminationService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/medical-record.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/services/medical-record.service.ts ***!
+  \****************************************************/
+/*! exports provided: MedicalRecordService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicalRecordService", function() { return MedicalRecordService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _models_medicalRecord__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/medicalRecord */ "./src/app/models/medicalRecord.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+
+
+let MedicalRecordService = class MedicalRecordService {
+    constructor(http) {
+        this.http = http;
+        this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].medicalRecord;
+        this.listRecords = new Array();
+        this.getAllRecords();
+    }
+    getAllRecords() {
+        console.log(this.url);
+        this.http.get(this.url + '/all').subscribe((data) => {
+            for (const c of data) {
+                this.record = new _models_medicalRecord__WEBPACK_IMPORTED_MODULE_3__["MedicalRecord"](c.height, c.weight, c.bloodType, c.allergies);
+                this.addRecord(this.record);
+                console.log(this.record);
+                console.log(c.allergies);
+            }
+        }, error => {
+            console.log(error);
+        });
+        return this.listRecords;
+    }
+    addRecord(e) {
+        if (this.getRecord(e.height) === null) {
+            this.listRecords.push(e);
+        }
+    }
+    getRecord(height) {
+        if (this.listRecords.length === 0) {
+            return null;
+        }
+        for (const e of this.listRecords) {
+            if (e.height === height) {
+                return e;
+            }
+        }
+        return null;
+    }
+};
+MedicalRecordService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
+];
+MedicalRecordService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], MedicalRecordService);
 
 
 
@@ -2507,6 +2648,7 @@ const environment = {
     nurse: '/nurse',
     clinic: '/clinic',
     examination: '/examination',
+    medicalRecord: '/medicalRecord',
     clinicalCentreAdmin: '/clinical-centre-admin',
 };
 /*

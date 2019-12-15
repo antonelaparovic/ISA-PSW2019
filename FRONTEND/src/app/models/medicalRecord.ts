@@ -6,13 +6,13 @@ export class MedicalRecord{
     weight:number;
     bloodType:string;
     allergies:string;
-    patient:Patient;
+   // patient:Patient;
 
-    constructor(height:number,weight:number,bloodType:string,allergies:string,patient:Patient){
+    constructor(height:number,weight:number,bloodType:string,allergies:string){
         this.height=height;
         this.weight=weight;
         this.bloodType=bloodType;
         this.allergies=allergies;
-        this.patient=patient;
+       // this.patient=patient;
     }
 }
