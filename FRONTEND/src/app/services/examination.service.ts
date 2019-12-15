@@ -16,13 +16,11 @@ export class ExaminationService {
     private http: HttpClient,
     private userService: UserService
   ) {
-    console.log(this.url);
     this.getAllExaminations();
    }
 
 
    public getAllExaminations(): Array<Examination> {
-    console.log(this.url);
     this.http.get(this.url + '/all').subscribe((data: Examination[]) => {
       for (const c of data) {
         this.examination = new Examination(c.id,c.kind,c.status,c.discount);
