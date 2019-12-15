@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Clinic } from 'src/app/models/clinic';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { ClinicService } from 'src/app/services/clinic.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-clinics-page',
@@ -20,6 +19,8 @@ export class ClinicsPageComponent implements OnInit {
   constructor(
     private clinicService: ClinicService
   ) {
+    this.clinics=this.clinicService.getAllClinics();
+    this.all();
   }
 
   ngOnInit() {

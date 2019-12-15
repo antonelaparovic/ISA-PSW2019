@@ -1,5 +1,8 @@
 package com.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalTime;
 import java.util.HashSet;
@@ -21,7 +24,6 @@ public class Nurse {
     @Column(columnDefinition = "VARCHAR(11)", unique = true, nullable = false)
     private String number;
 
-
     @Column(unique = true, nullable = false)
     private String email;
 
@@ -37,24 +39,18 @@ public class Nurse {
     @Column(nullable = false)
     private String country;
 
-    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
-    private String firstName;
-
-    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
-    private String lastName;
-
-    @Column(columnDefinition = "VARCHAR(11)", unique = true, nullable = false)
-    private String phoneNumber;
-
+    @JsonFormat(pattern = "HH:mm")
     @Column(nullable = false)
     private LocalTime workHoursFrom;
 
+    @JsonFormat(pattern = "HH:mm")
     @Column(nullable = false)
     private LocalTime workHoursTo;
 
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Clinic clinic;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "nurse", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Examination> examinations = new HashSet<>();
 

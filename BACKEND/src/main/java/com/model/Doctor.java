@@ -1,6 +1,11 @@
 package com.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -28,6 +33,7 @@ public class Doctor  {
     @Column(columnDefinition = "VARCHAR(11)", unique = true, nullable = false)
     private String number;
 
+
     @Column(columnDefinition = "VARCHAR(50)", nullable = false)
     private String address;
 
@@ -40,33 +46,44 @@ public class Doctor  {
     @Column(columnDefinition = "VARCHAR(30)", nullable = false)
     private String specialization;
 
+
+    @JsonFormat(pattern = "HH:mm")
+    @NotNull
     @Column(nullable = false)
     private LocalTime workHoursFrom;
 
+    @JsonFormat(pattern = "HH:mm")
+    @NotNull
     @Column(nullable = false)
     private LocalTime workHoursTo;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Clinic clinic;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "doctors")
     private Set<Examination> examinations = new HashSet<Examination>();
 
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private ExaminationType specialized;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<DoctorOff> timeOffDoctors = new HashSet<>();
 
     @Enumerated(EnumType.STRING)
     private DoctorStatus status;
 
+    @Column
+    private Integer doctorRating;
+
     public Doctor(){
 
     }
 
-    public Doctor(Long id, String email, String password, String name, String surname, String number, String address, String country, String city, String specialization) {
-        this.id = id;
+    public Doctor(Long id,String email, String password, String name, String surname, String number,String address, String country, String city, String specialization, LocalTime workHoursFrom, LocalTime workHoursTo, Clinic clinic, ExaminationType specialized, DoctorStatus status) {
+        this.id=id;
         this.email = email;
         this.password = password;
         this.name = name;
@@ -76,6 +93,14 @@ public class Doctor  {
         this.country = country;
         this.city = city;
         this.specialization = specialization;
+        this.workHoursFrom = workHoursFrom;
+        this.workHoursTo = workHoursTo;
+        this.clinic = clinic;
+        this.specialized = specialized;
+        this.status = status;
+        this.timeOffDoctors=new HashSet<>();
+        this.examinations=new HashSet<Examination>();
+        this.doctorRating=0;
     }
 
     public Long getId() {
@@ -212,6 +237,15 @@ public class Doctor  {
 
     public void setStatus(DoctorStatus status) {
         this.status = status;
+    }
+
+
+    public Integer getDoctorRating() {
+        return doctorRating;
+    }
+
+    public void setDoctorRating(Integer doctorRating) {
+        this.doctorRating = doctorRating;
     }
 
 }
