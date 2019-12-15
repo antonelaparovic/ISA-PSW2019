@@ -104,7 +104,7 @@ var __values = (this && this.__values) || function (o) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<p>medical-record-page works!</p>\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"page-header\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                <div class=\"page-caption\">\n                    <h1 class=\"page-title\">Medical record</h1>\n                    <div class=\"text-center mt-4\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-header-->\n  \n  <!-- page-content -->\n  <div class=\"card-section\">\n    <div class=\"container\">\n        <div class=\"card-block bg-white mb30\">\n            <div class=\"row\">\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                    <!-- section-title -->\n                    <div class=\"section-title mb-0\">\n                        <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8 table\" matSort>\n  \n                            <ng-container matColumnDef=\"Height\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Height </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">{{element.height}}</td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Weight\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.weight}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"BloodType\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Blood type </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.bloodType}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Allergies\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Allergies </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.allergies}} </td>\n                            </ng-container>\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        </table>\n                    </div>\n                    <!-- /.section-title -->\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-content -->");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/nurse-page/nurse-page.component.html": 
@@ -1107,20 +1107,63 @@ var __values = (this && this.__values) || function (o) {
         /*!*********************************************************************************!*\
           !*** ./src/app/components/medical-record-page/medical-record-page.component.ts ***!
           \*********************************************************************************/
-        /*! exports provided: MedicalRecordPageComponent */
+        /*! exports provided: Table, MedicalRecordPageComponent */
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Table", function () { return Table; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicalRecordPageComponent", function () { return MedicalRecordPageComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+            /* harmony import */ var src_app_services_medical_record_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/medical-record.service */ "./src/app/services/medical-record.service.ts");
+            /* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+            var Table = /** @class */ (function () {
+                function Table(height, weight, bloodType, allergies) {
+                    this.height = height;
+                    this.weight = weight;
+                    this.bloodType = bloodType;
+                    this.allergies = allergies;
+                }
+                return Table;
+            }());
             var MedicalRecordPageComponent = /** @class */ (function () {
-                function MedicalRecordPageComponent() {
+                function MedicalRecordPageComponent(medicalRecordService, userService) {
+                    this.medicalRecordService = medicalRecordService;
+                    this.userService = userService;
+                    this.displayedColumns = ['Height', 'Weight', 'BloodType', 'Allergies'];
+                    this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
+                    this.records = new Array();
+                    this.listTable = new Array();
+                    this.records = this.medicalRecordService.getAllRecords();
+                    this.user = JSON.parse(userService.isLoggedIn());
                 }
                 MedicalRecordPageComponent.prototype.ngOnInit = function () {
+                    this.all();
+                };
+                MedicalRecordPageComponent.prototype.all = function () {
+                    this.fillData();
+                    this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.listTable);
+                };
+                MedicalRecordPageComponent.prototype.fillData = function () {
+                    /*for (let i = 0; i < this.records.length; i++) {
+                      const element = this.records[i];
+                            const table=new Table(element.height,element.weight,element.bloodType,element.allergies);
+                            this.listTable.push(table);
+                            
+                    }*/
+                    var table = new Table(180, 85, "A+", "No allergies");
+                    this.listTable.push(table);
                 };
                 return MedicalRecordPageComponent;
             }());
+            MedicalRecordPageComponent.ctorParameters = function () { return [
+                { type: src_app_services_medical_record_service__WEBPACK_IMPORTED_MODULE_3__["MedicalRecordService"] },
+                { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] }
+            ]; };
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"], { static: true })
+            ], MedicalRecordPageComponent.prototype, "paginator", void 0);
             MedicalRecordPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-medical-record-page',
@@ -1631,11 +1674,11 @@ var __values = (this && this.__values) || function (o) {
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExaminationTable", function () { return ExaminationTable; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             var ExaminationTable = /** @class */ (function () {
-                function ExaminationTable(id, kind, status, examinationType, room, discount, nurse, patient, doctors, interval) {
+                function ExaminationTable(id, kind, status, type, room, discount, nurse, patient, doctors, interval) {
                     this.id = id;
                     this.kind = kind;
                     this.status = status;
-                    this.examinationType = examinationType;
+                    this.type = type;
                     this.room = room;
                     this.discount = discount;
                     this.nurse = nurse;
@@ -1644,6 +1687,29 @@ var __values = (this && this.__values) || function (o) {
                     this.interval = interval;
                 }
                 return ExaminationTable;
+            }());
+            /***/ 
+        }),
+        /***/ "./src/app/models/medicalRecord.ts": 
+        /*!*****************************************!*\
+          !*** ./src/app/models/medicalRecord.ts ***!
+          \*****************************************/
+        /*! exports provided: MedicalRecord */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicalRecord", function () { return MedicalRecord; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            var MedicalRecord = /** @class */ (function () {
+                // patient:Patient;
+                function MedicalRecord(height, weight, bloodType, allergies) {
+                    this.height = height;
+                    this.weight = weight;
+                    this.bloodType = bloodType;
+                    this.allergies = allergies;
+                    // this.patient=patient;
+                }
+                return MedicalRecord;
             }());
             /***/ 
         }),
@@ -1985,12 +2051,10 @@ var __values = (this && this.__values) || function (o) {
                     this.userService = userService;
                     this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].examination;
                     this.listExaminations = new Array();
-                    console.log(this.url);
                     this.getAllExaminations();
                 }
                 ExaminationService.prototype.getAllExaminations = function () {
                     var _this = this;
-                    console.log(this.url);
                     this.http.get(this.url + '/all').subscribe(function (data) {
                         var e_6, _a;
                         try {
@@ -2053,6 +2117,92 @@ var __values = (this && this.__values) || function (o) {
             ], ExaminationService);
             /***/ 
         }),
+        /***/ "./src/app/services/medical-record.service.ts": 
+        /*!****************************************************!*\
+          !*** ./src/app/services/medical-record.service.ts ***!
+          \****************************************************/
+        /*! exports provided: MedicalRecordService */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicalRecordService", function () { return MedicalRecordService; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+            /* harmony import */ var _models_medicalRecord__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/medicalRecord */ "./src/app/models/medicalRecord.ts");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            var MedicalRecordService = /** @class */ (function () {
+                function MedicalRecordService(http) {
+                    this.http = http;
+                    this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].medicalRecord;
+                    this.listRecords = new Array();
+                    this.getAllRecords();
+                }
+                MedicalRecordService.prototype.getAllRecords = function () {
+                    var _this = this;
+                    console.log(this.url);
+                    this.http.get(this.url + '/all').subscribe(function (data) {
+                        var e_8, _a;
+                        try {
+                            for (var data_4 = __values(data), data_4_1 = data_4.next(); !data_4_1.done; data_4_1 = data_4.next()) {
+                                var c = data_4_1.value;
+                                _this.record = new _models_medicalRecord__WEBPACK_IMPORTED_MODULE_3__["MedicalRecord"](c.height, c.weight, c.bloodType, c.allergies);
+                                _this.addRecord(_this.record);
+                                console.log(_this.record);
+                                console.log(c.allergies);
+                            }
+                        }
+                        catch (e_8_1) { e_8 = { error: e_8_1 }; }
+                        finally {
+                            try {
+                                if (data_4_1 && !data_4_1.done && (_a = data_4.return)) _a.call(data_4);
+                            }
+                            finally { if (e_8) throw e_8.error; }
+                        }
+                    }, function (error) {
+                        console.log(error);
+                    });
+                    return this.listRecords;
+                };
+                MedicalRecordService.prototype.addRecord = function (e) {
+                    if (this.getRecord(e.height) === null) {
+                        this.listRecords.push(e);
+                    }
+                };
+                MedicalRecordService.prototype.getRecord = function (height) {
+                    var e_9, _a;
+                    if (this.listRecords.length === 0) {
+                        return null;
+                    }
+                    try {
+                        for (var _b = __values(this.listRecords), _c = _b.next(); !_c.done; _c = _b.next()) {
+                            var e = _c.value;
+                            if (e.height === height) {
+                                return e;
+                            }
+                        }
+                    }
+                    catch (e_9_1) { e_9 = { error: e_9_1 }; }
+                    finally {
+                        try {
+                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+                        }
+                        finally { if (e_9) throw e_9.error; }
+                    }
+                    return null;
+                };
+                return MedicalRecordService;
+            }());
+            MedicalRecordService.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
+            ]; };
+            MedicalRecordService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root'
+                })
+            ], MedicalRecordService);
+            /***/ 
+        }),
         /***/ "./src/app/services/nurse.service.ts": 
         /*!*******************************************!*\
           !*** ./src/app/services/nurse.service.ts ***!
@@ -2092,7 +2242,7 @@ var __values = (this && this.__values) || function (o) {
                     }
                 };
                 NurseService.prototype.getNurse = function (email) {
-                    var e_8, _a;
+                    var e_10, _a;
                     if (this.listNurses.length === 0) {
                         return null;
                     }
@@ -2104,17 +2254,17 @@ var __values = (this && this.__values) || function (o) {
                             }
                         }
                     }
-                    catch (e_8_1) { e_8 = { error: e_8_1 }; }
+                    catch (e_10_1) { e_10 = { error: e_10_1 }; }
                     finally {
                         try {
                             if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
                         }
-                        finally { if (e_8) throw e_8.error; }
+                        finally { if (e_10) throw e_10.error; }
                     }
                     return null;
                 };
                 NurseService.prototype.setNurse = function (p) {
-                    var e_9, _a;
+                    var e_11, _a;
                     try {
                         for (var _b = __values(this.listNurses), _c = _b.next(); !_c.done; _c = _b.next()) {
                             var p1 = _c.value;
@@ -2130,31 +2280,31 @@ var __values = (this && this.__values) || function (o) {
                             }
                         }
                     }
-                    catch (e_9_1) { e_9 = { error: e_9_1 }; }
+                    catch (e_11_1) { e_11 = { error: e_11_1 }; }
                     finally {
                         try {
                             if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
                         }
-                        finally { if (e_9) throw e_9.error; }
+                        finally { if (e_11) throw e_11.error; }
                     }
                 };
                 NurseService.prototype.getAllNurses = function () {
                     var _this = this;
                     this.http.get(this.urlNurse + '/all').subscribe(function (data) {
-                        var e_10, _a;
+                        var e_12, _a;
                         try {
-                            for (var data_4 = __values(data), data_4_1 = data_4.next(); !data_4_1.done; data_4_1 = data_4.next()) {
-                                var c = data_4_1.value;
+                            for (var data_5 = __values(data), data_5_1 = data_5.next(); !data_5_1.done; data_5_1 = data_5.next()) {
+                                var c = data_5_1.value;
                                 _this.nurse = new _models_nurse__WEBPACK_IMPORTED_MODULE_2__["Nurse"](c.email, c.password, c.name, c.surname, c.number, c.address, c.city, c.country);
                                 _this.addNurse(_this.nurse);
                             }
                         }
-                        catch (e_10_1) { e_10 = { error: e_10_1 }; }
+                        catch (e_12_1) { e_12 = { error: e_12_1 }; }
                         finally {
                             try {
-                                if (data_4_1 && !data_4_1.done && (_a = data_4.return)) _a.call(data_4);
+                                if (data_5_1 && !data_5_1.done && (_a = data_5.return)) _a.call(data_5);
                             }
-                            finally { if (e_10) throw e_10.error; }
+                            finally { if (e_12) throw e_12.error; }
                         }
                     }, function (error) {
                         console.log(error);
@@ -2213,7 +2363,7 @@ var __values = (this && this.__values) || function (o) {
                     }
                 };
                 PatientService.prototype.getPatient = function (email) {
-                    var e_11, _a;
+                    var e_13, _a;
                     if (this.listPatients.length === 0) {
                         return null;
                     }
@@ -2225,17 +2375,17 @@ var __values = (this && this.__values) || function (o) {
                             }
                         }
                     }
-                    catch (e_11_1) { e_11 = { error: e_11_1 }; }
+                    catch (e_13_1) { e_13 = { error: e_13_1 }; }
                     finally {
                         try {
                             if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
                         }
-                        finally { if (e_11) throw e_11.error; }
+                        finally { if (e_13) throw e_13.error; }
                     }
                     return null;
                 };
                 PatientService.prototype.setPatient = function (p) {
-                    var e_12, _a;
+                    var e_14, _a;
                     try {
                         for (var _b = __values(this.listPatients), _c = _b.next(); !_c.done; _c = _b.next()) {
                             var p1 = _c.value;
@@ -2251,31 +2401,31 @@ var __values = (this && this.__values) || function (o) {
                             }
                         }
                     }
-                    catch (e_12_1) { e_12 = { error: e_12_1 }; }
+                    catch (e_14_1) { e_14 = { error: e_14_1 }; }
                     finally {
                         try {
                             if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
                         }
-                        finally { if (e_12) throw e_12.error; }
+                        finally { if (e_14) throw e_14.error; }
                     }
                 };
                 PatientService.prototype.getAllPatients = function () {
                     var _this = this;
                     this.http.get(this.urlPatient + '/all').subscribe(function (data) {
-                        var e_13, _a;
+                        var e_15, _a;
                         try {
-                            for (var data_5 = __values(data), data_5_1 = data_5.next(); !data_5_1.done; data_5_1 = data_5.next()) {
-                                var c = data_5_1.value;
+                            for (var data_6 = __values(data), data_6_1 = data_6.next(); !data_6_1.done; data_6_1 = data_6.next()) {
+                                var c = data_6_1.value;
                                 _this.patient = new _models_patient__WEBPACK_IMPORTED_MODULE_2__["Patient"](c.email, c.password, c.name, c.surname, c.number, c.address, c.city, c.country, c.insuranceID, c.status);
                                 _this.addPatient(_this.patient);
                             }
                         }
-                        catch (e_13_1) { e_13 = { error: e_13_1 }; }
+                        catch (e_15_1) { e_15 = { error: e_15_1 }; }
                         finally {
                             try {
-                                if (data_5_1 && !data_5_1.done && (_a = data_5.return)) _a.call(data_5);
+                                if (data_6_1 && !data_6_1.done && (_a = data_6.return)) _a.call(data_6);
                             }
-                            finally { if (e_13) throw e_13.error; }
+                            finally { if (e_15) throw e_15.error; }
                         }
                     }, function (error) {
                         console.log(error);
@@ -2329,7 +2479,7 @@ var __values = (this && this.__values) || function (o) {
                     }
                 };
                 UserService.prototype.getUser = function (email) {
-                    var e_14, _a;
+                    var e_16, _a;
                     if (this.users.length === 0) {
                         return null;
                     }
@@ -2341,12 +2491,12 @@ var __values = (this && this.__values) || function (o) {
                             }
                         }
                     }
-                    catch (e_14_1) { e_14 = { error: e_14_1 }; }
+                    catch (e_16_1) { e_16 = { error: e_16_1 }; }
                     finally {
                         try {
                             if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
                         }
-                        finally { if (e_14) throw e_14.error; }
+                        finally { if (e_16) throw e_16.error; }
                     }
                     return null;
                 };
@@ -2363,7 +2513,7 @@ var __values = (this && this.__values) || function (o) {
                     }
                 };
                 UserService.prototype.setUser = function (u) {
-                    var e_15, _a;
+                    var e_17, _a;
                     try {
                         for (var _b = __values(this.users), _c = _b.next(); !_c.done; _c = _b.next()) {
                             var p1 = _c.value;
@@ -2373,12 +2523,12 @@ var __values = (this && this.__values) || function (o) {
                             }
                         }
                     }
-                    catch (e_15_1) { e_15 = { error: e_15_1 }; }
+                    catch (e_17_1) { e_17 = { error: e_17_1 }; }
                     finally {
                         try {
                             if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
                         }
-                        finally { if (e_15) throw e_15.error; }
+                        finally { if (e_17) throw e_17.error; }
                     }
                 };
                 UserService.prototype.logout = function () {
@@ -2410,20 +2560,20 @@ var __values = (this && this.__values) || function (o) {
                 UserService.prototype.getAllUsers = function () {
                     var _this = this;
                     this.http.get(this.urlUser + '/all').subscribe(function (data) {
-                        var e_16, _a;
+                        var e_18, _a;
                         try {
-                            for (var data_6 = __values(data), data_6_1 = data_6.next(); !data_6_1.done; data_6_1 = data_6.next()) {
-                                var c = data_6_1.value;
+                            for (var data_7 = __values(data), data_7_1 = data_7.next(); !data_7_1.done; data_7_1 = data_7.next()) {
+                                var c = data_7_1.value;
                                 _this.u = new _models_user__WEBPACK_IMPORTED_MODULE_1__["User"](c.email, c.password, _this.whichRole(c.role.toString()));
                                 _this.addUser(_this.u);
                             }
                         }
-                        catch (e_16_1) { e_16 = { error: e_16_1 }; }
+                        catch (e_18_1) { e_18 = { error: e_18_1 }; }
                         finally {
                             try {
-                                if (data_6_1 && !data_6_1.done && (_a = data_6.return)) _a.call(data_6);
+                                if (data_7_1 && !data_7_1.done && (_a = data_7.return)) _a.call(data_7);
                             }
-                            finally { if (e_16) throw e_16.error; }
+                            finally { if (e_18) throw e_18.error; }
                         }
                     }, function (error) {
                         console.log(error);
@@ -2480,6 +2630,7 @@ var __values = (this && this.__values) || function (o) {
                 nurse: '/nurse',
                 clinic: '/clinic',
                 examination: '/examination',
+                medicalRecord: '/medicalRecord',
                 clinicalCentreAdmin: '/clinical-centre-admin',
             };
             /*
