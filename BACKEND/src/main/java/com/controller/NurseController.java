@@ -45,7 +45,7 @@ public class NurseController {
             boolean added=nurseService.addNurse(newNurse);
             if(added == true){
                 System.out.println("New account with email: " + newNurse.getEmail());
-                User u = new User(nurse.getEmail(), nurse.getPassword(), Role.PATIENT);
+                User u = new User(nurse.getEmail(), nurse.getPassword(), Role.NURSE);    // doda ga i u listu user-a
                 userService.save(u);
             }
             else
