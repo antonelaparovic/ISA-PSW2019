@@ -9,21 +9,21 @@ export class Examination {
     kind: String;
   //  interval: DateTimeInterval;
     status: String;
- //   examinationType: ExaminationType;
+    examinationType: ExaminationType;
    // doctors: Doctor[];
   //  room: Room;
     discount: number;
- //   nurse: Nurse;
-  //  patient: Patient;
+    nurse: Nurse;
+    patient: Patient;
     constructor(id: number, kind: String,  status: String,
-         discount: number) {
+         discount: number,patient:Patient,examinationType:ExaminationType) {
         this.id = id;
         this.kind = kind;
         this.status = status;
-     //   this.examinationType = examinationType;
+        this.examinationType = examinationType;
     //    this.room = room;
         this.discount = discount;
   //      this.nurse = nurse;
-    //    this.patient = patient;
+        this.patient = patient;
     }
 }
