@@ -23,7 +23,7 @@ export class ExaminationService {
    public getAllExaminations(): Array<Examination> {
     this.http.get(this.url + '/all').subscribe((data: Examination[]) => {
       for (const c of data) {
-        this.examination = new Examination(c.id,c.kind,c.status,c.discount);
+        this.examination = new Examination(c.id,c.kind,c.status,c.discount,c.patient,c.examinationType);
         this.addExamination(this.examination);
         console.log(this.examination);
       }
