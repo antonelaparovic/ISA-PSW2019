@@ -6,12 +6,12 @@ export class ExaminationTable{
   type: String;
    doctors: String;
    room: String;
-    discount: String;
+    discount: number;
   nurse: String;
     patient: String;
 
     constructor(id:number,kind: String,  status: String, type: String,
-      room: String, discount: String, nurse: String, patient: String,doctors:String,interval:String) {
+      room: String, discount: number, nurse: String, patient: String,doctors:String,interval:String) {
       this.id=id;
       this.kind = kind;
       this.status = status;
