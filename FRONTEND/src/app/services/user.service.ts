@@ -97,6 +97,12 @@ export class UserService{
         }
       }
 
+      public isClinicAdministrator() {
+        if (this.isLoggedIn()) {
+          return this.user.role === Role.CLINICADMINISTRATOR;
+        }
+      }
+
       public getAllUsers(): Array<User> {
         this.http.get(this.urlUser + '/all').subscribe((data: User[]) => {
             for (const c of data) {
@@ -119,7 +125,9 @@ export class UserService{
           return  Role.DOCTOR;
         } else if (role === 'NURSE') {
           return  Role.NURSE;
-        }  else {
+        } else if (role === 'CLINICADMINISTRATOR') {
+          return  Role.CLINICADMINISTRATOR;
+        } else {
           return null;
         }
     
