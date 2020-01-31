@@ -13,6 +13,7 @@ export const environment = {
   examination: '/examination',
   medicalRecord: '/medicalRecord',
   clinicalCentreAdmin: '/clinical-centre-admin',
+  clinicAdministrator: '/clinicadministrator',
 };
 
 /*
