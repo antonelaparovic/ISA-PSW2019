@@ -23,6 +23,10 @@ import { MedicalHistoryPageComponent } from './components/medical-history-page/m
 import { ClinicsPageComponent } from './components/clinics-page/clinics-page.component';
 import {NursePageComponent} from './components/nurse-page/nurse-page.component';
 import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
+import { CCAdminProfileComponent } from './components/ccadmin-profile/ccadmin-profile.component';
+import { AllPatientsPageComponent } from './components/allpatients-page/allpatients-page.component';
+
+
 
 @NgModule({
   declarations: [
@@ -37,7 +41,10 @@ import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.co
     MedicalHistoryPageComponent,
     ClinicsPageComponent,
     NursePageComponent,
-    NurseProfileComponent
+    NurseProfileComponent,
+    CCAdminProfileComponent,
+    AllPatientsPageComponent
+
   ],
   imports: [
     BrowserModule,
@@ -54,6 +61,10 @@ import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.co
     HttpClientModule,
     MatNativeDateModule,
     DemoMaterialModule,
+  ],
+  entryComponents: [
+    CCAdminProfileComponent,
+    AllPatientsPageComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
