@@ -32,7 +32,33 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-sidenav-container class=\"sidenav-container\">\r\n    <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n      [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === true\">\r\n      <mat-toolbar>Menu</mat-toolbar>\r\n        <mat-nav-list *ngIf = \"isNone()\">\r\n          <a mat-list-item routerLink=\"/login\">Login</a>\r\n          <a mat-list-item routerLink=\"/patient/register\">Register</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isPatient()\">\r\n          <a mat-list-item routerLink=\"/patient/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalRecord\">Medical record</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalHistory\">Medical history</a>\r\n          <a mat-list-item routerLink=\"/patient/clinics\">Clinics</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isDoctor()\">\r\n          <a mat-list-item routerLink=\"/doctor/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isNurse()\">\r\n          <a mat-list-item routerLink=\"/nurse/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <mat-toolbar>\r\n        <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\">\r\n          <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n        </button>\r\n        <span>Clinical Centre</span>\r\n      </mat-toolbar>\r\n      <!-- Add Content Here -->\r\n      <router-outlet></router-outlet>\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-sidenav-container class=\"sidenav-container\">\r\n    <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n      [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === true\">\r\n      <mat-toolbar>Menu</mat-toolbar>\r\n        <mat-nav-list *ngIf = \"isNone()\">\r\n          <a mat-list-item routerLink=\"/login\">Login</a>\r\n          <a mat-list-item routerLink=\"/patient/register\">Register</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isPatient()\">\r\n          <a mat-list-item routerLink=\"/patient/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalRecord\">Medical record</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalHistory\">Medical history</a>\r\n          <a mat-list-item routerLink=\"/patient/clinics\">Clinics</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isDoctor()\">\r\n          <a mat-list-item routerLink=\"/doctor/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isNurse()\">\r\n          <a mat-list-item routerLink=\"/nurse/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/nurse/allpatients\">All patients</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isCCAdmin()\">\r\n          <a mat-list-item routerLink=\"/clinicalCenterAdministrator/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <mat-toolbar>\r\n        <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\">\r\n          <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n        </button>\r\n        <span>Clinical Centre</span>\r\n      </mat-toolbar>\r\n      <!-- Add Content Here -->\r\n      <router-outlet></router-outlet>\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/allpatients-page/allpatients-page.component.html":
+/*!*******************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/allpatients-page/allpatients-page.component.html ***!
+  \*******************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- page-header -->\r\n<div class=\"page-header\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                <div class=\"page-caption\">\r\n                    <h1 class=\"page-title\">All patients </h1>\r\n                    <div class=\"text-center mt-4\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <!-- /.page-header-->\r\n  \r\n  <!-- page-content -->\r\n  <div class=\"card-section\">\r\n    <div class=\"container\">\r\n        <div class=\"card-block bg-white mb30\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                    <!-- section-title -->\r\n                    <div class=\"section-title mb-0\">\r\n                        <table mat-table [dataSource]=\"allpatientsDataSource\" class=\"mat-elevation-z8 table\" matSort>\r\n  \r\n                            <ng-container matColumnDef=\"name\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">\r\n                                    {{element.name}}\r\n                                </td>\r\n                            </ng-container>\r\n  \r\n                            <ng-container matColumnDef=\"surname\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Surname </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.surname}} </td>\r\n                            </ng-container>\r\n\r\n                            <ng-container matColumnDef=\"address\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.address}} </td>\r\n                            </ng-container>\r\n\r\n\r\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\r\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n                        </table>\r\n                        <mat-paginator [pageSize]=itemsPerPage showFirstLastButtons></mat-paginator>\r\n                    </div>\r\n                    <!-- /.section-title -->\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <!-- /.page-content -->");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/ccadmin-profile/ccadmin-profile.component.html":
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/ccadmin-profile/ccadmin-profile.component.html ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-8 offset-md-2\">\r\n          <mat-card>\r\n            <h3>{{selectedCCAdmin.name}} profile</h3>\r\n            <hr>\r\n            <form [formGroup]=\"ccadminForm\" (ngSubmit)=\"onSubmit()\">\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"email\">Email</label>\r\n                <input type=\"email\" readonly=\"readonly\" id=\"email\" text=\"test\"  formControlName=\"email\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && ccadminForm.get('email').errors }\">\r\n  \r\n                <div *ngIf=\"submitted && ccadminForm.get('email').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"ccadminForm.get('email').errors['required']\">Email is required</div>\r\n                  <div *ngIf=\"ccadminForm.get('email').errors['email']\">Email must be a valid email address</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"password\">Password</label>\r\n                <input type=\"text\" id=\"password\" formControlName=\"password\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && ccadminForm.get('password').errors }\">\r\n                <div *ngIf=\"submitted && ccadminForm.get('password').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"ccadminForm.get('password').errors['required']\">Password is required</div>\r\n                  <div *ngIf=\"ccadminForm.get('password').errors['minlength']\">Password must be at least 8 characters\r\n                    long</div>\r\n                  <div *ngIf=\"ccadminForm.get('password').errors['pattern']\">Password must contain at least 1 lowercase,\r\n                    1 uppercase letter\r\n                    and 1 number</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"name\">First Name</label>\r\n                <input type=\"text\" id=\"name\" formControlName=\"name\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && ccadminForm.get('name').errors }\" />\r\n                <div *ngIf=\"submitted && ccadminForm.get('name').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\" ccadminForm.get('name').errors['required']\">First Name is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"surname\">Last Name</label>\r\n                <input type=\"text\" id=\"surname\" formControlName=\"surname\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && ccadminForm.get('surname').errors }\" />\r\n                <div *ngIf=\"submitted && ccadminForm.get('surname').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"ccadminForm.get('surname').errors['required']\">Last Name is required</div>\r\n                </div>\r\n              </div>\r\n            \r\n              <div class=\"form-group\">\r\n                <label for=\"number\">Phone Number</label>\r\n                <input type=\"number\" id=\"number\" formControlName=\"number\"  class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && ccadminForm.get('number').errors }\" />\r\n                <div *ngIf=\"submitted && ccadminForm.get('number').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"ccadminForm.get('number').errors['required']\">Phone Number is required</div>\r\n                  <div *ngIf=\"ccadminForm.get('number').errors['minlength']\">A phone number must have at least 9\r\n                    digits\r\n                  </div>\r\n                </div>\r\n              </div>\r\n  \r\n  \r\n              \r\n  \r\n              <button mat-raised-button color=\"primary\" class=\"pull-right\">Save</button>\r\n  \r\n            </form>\r\n          </mat-card>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>");
 
 /***/ }),
 
@@ -84,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\n        <div class=\"container\">\n          <div class=\"row\">\n            <div class=\"col-md-8 offset-md-2\">\n              <mat-card>\n                <h3>Login</h3>\n                <hr>\n                <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n      \n                  <div class=\"form-group\">\n                    <label for=\"email\">Email</label>\n                    <input type=\"email\" id=\"email\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\">\n                    <div *ngIf=\"submitted && f.email.errors\" class=\"invalid-feedback\">\n                      <div *ngIf=\"f.email.errors.required\">Email is required</div>\n                      <div *ngIf=\"f.email.errors.email\">Email must be a valid email address</div>\n                    </div>\n                  </div>\n      \n                  <div class=\"form-group\">\n                    <label for=\"password\">Password</label>\n                    <input type=\"password\" id=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\">\n                    <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\n                      <div *ngIf=\"f.password.errors.required\">Password is required</div>\n                      <div *ngIf=\"f.password.errors.minlength\">Password must be at least 8 characters long</div>\n                      <div *ngIf=\"f.password.errors.pattern\">Password must contain at least 1 lowercase, 1 uppercase letter and 1 number</div>\n                    </div>\n                  </div>\n      \n                  <div class=\"form-group\">\n                    <a routerLink=\"/patient/register\">Don't have an account? Register here.</a>\n                  </div>\n      \n                  <button mat-raised-button color=\"primary\" class=\"pull-right\">Login</button>\n      \n                </form>\n              </mat-card>\n            </div>\n          </div>\n        </div>\n      </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\r\n        <div class=\"container\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-8 offset-md-2\">\r\n              <mat-card>\r\n                <h3>Login</h3>\r\n                <hr>\r\n                <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n      \r\n                  <div class=\"form-group\">\r\n                    <label for=\"email\">Email</label>\r\n                    <input type=\"email\" id=\"email\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\">\r\n                    <div *ngIf=\"submitted && f.email.errors\" class=\"invalid-feedback\">\r\n                      <div *ngIf=\"f.email.errors.required\">Email is required</div>\r\n                      <div *ngIf=\"f.email.errors.email\">Email must be a valid email address</div>\r\n                    </div>\r\n                  </div>\r\n      \r\n                  <div class=\"form-group\">\r\n                    <label for=\"password\">Password</label>\r\n                    <input type=\"password\" id=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\">\r\n                    <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\r\n                      <div *ngIf=\"f.password.errors.required\">Password is required</div>\r\n                      <div *ngIf=\"f.password.errors.minlength\">Password must be at least 8 characters long</div>\r\n                      <div *ngIf=\"f.password.errors.pattern\">Password must contain at least 1 lowercase, 1 uppercase letter and 1 number</div>\r\n                    </div>\r\n                  </div>\r\n      \r\n                  <div class=\"form-group\">\r\n                    <a routerLink=\"/patient/register\">Don't have an account? Register here.</a>\r\n                  </div>\r\n      \r\n                  <button mat-raised-button color=\"primary\" class=\"pull-right\">Login</button>\r\n      \r\n                </form>\r\n              </mat-card>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>");
 
 /***/ }),
 
@@ -110,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"page-header\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                <div class=\"page-caption\">\n                    <h1 class=\"page-title\">Medical record</h1>\n                    <div class=\"text-center mt-4\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-header-->\n  \n  <!-- page-content -->\n  <div class=\"card-section\">\n    <div class=\"container\">\n        <div class=\"card-block bg-white mb30\">\n            <div class=\"row\">\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                    <!-- section-title -->\n                    <div class=\"section-title mb-0\">\n                        <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8 table\" matSort>\n  \n                            <ng-container matColumnDef=\"Height\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Height </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">{{element.height}}</td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Weight\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.weight}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"BloodType\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Blood type </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.bloodType}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Allergies\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Allergies </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.allergies}} </td>\n                            </ng-container>\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        </table>\n                    </div>\n                    <!-- /.section-title -->\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-content -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"page-header\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                <div class=\"page-caption\">\r\n                    <h1 class=\"page-title\">Medical record</h1>\r\n                    <div class=\"text-center mt-4\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <!-- /.page-header-->\r\n  \r\n  <!-- page-content -->\r\n  <div class=\"card-section\">\r\n    <div class=\"container\">\r\n        <div class=\"card-block bg-white mb30\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                    <!-- section-title -->\r\n                    <div class=\"section-title mb-0\">\r\n                        <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8 table\" matSort>\r\n  \r\n                            <ng-container matColumnDef=\"Height\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Height </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">{{element.height}}</td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"Weight\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.weight}} </td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"BloodType\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Blood type </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.bloodType}} </td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"Allergies\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Allergies </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.allergies}} </td>\r\n                            </ng-container>\r\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\r\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n                        </table>\r\n                    </div>\r\n                    <!-- /.section-title -->\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <!-- /.page-content -->");
 
 /***/ }),
 
@@ -175,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-8 offset-md-2\">\n          <mat-card>\n            <h3>Registration</h3>\n            <hr>\n            <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\n  \n              <div class=\"form-group\">\n                <label for=\"email\">Email</label>\n                <input type=\"email\" id=\"email\" formControlName=\"email\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('email').errors }\">\n  \n                <div *ngIf=\"submitted && registerForm.get('email').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('email').errors['required']\">Email is required</div>\n                  <div *ngIf=\"registerForm.get('email').errors['email']\">Email must be a valid email address</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"password\">Password</label>\n                <input type=\"password\" id=\"password\" formControlName=\"password\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('password').errors }\">\n                <div *ngIf=\"submitted && registerForm.get('password').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('password').errors['required']\">Password is required</div>\n                  <div *ngIf=\"registerForm.get('password').errors['minlength']\">Password must be at least 8 characters\n                    long</div>\n                  <div *ngIf=\"registerForm.get('password').errors['pattern']\">Password must contain at least 1 lowercase,\n                    1 uppercase letter\n                    and 1 number</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"name\">First Name</label>\n                <input type=\"text\" id=\"name\" formControlName=\"name\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('name').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('name').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\" registerForm.get('name').errors['required']\">First Name is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"surname\">Last Name</label>\n                <input type=\"text\" id=\"surname\" formControlName=\"surname\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('surname').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('surname').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('surname').errors['required']\">Last Name is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"address\">Address</label>\n                <input type=\"text\" id=\"address\" formControlName=\"address\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('address').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('address').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('address').errors['required']\">Address is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"city\">City</label>\n                <input type=\"text\" id=\"city\" formControlName=\"city\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('city').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('city').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('city').errors['required']\">City is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"country\">Country</label>\n                <input type=\"text\" id=\"country\" formControlName=\"country\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('country').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('country').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('country').errors['required']\">Country is required</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"number\">Phone Number</label>\n                <input type=\"number\" id=\"number\" formControlName=\"number\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('number').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('number').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('number').errors['required']\">Phone Number is required</div>\n                  <div *ngIf=\"registerForm.get('number').errors['minlength']\">A phone number must have at least 9\n                    digits\n                  </div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <label for=\"insuranceID\">Health Insurance ID</label>\n                <input type=\"text\" id=\"insuranceID\" formControlName=\"insuranceID\" class=\"form-control\"\n                       [ngClass]=\"{ 'is-invalid': submitted &&  registerForm.get('insuranceID').errors }\" />\n                <div *ngIf=\"submitted && registerForm.get('insuranceID').errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"registerForm.get('insuranceID').errors['required']\">Health Insurance ID is required\n                  </div>\n                  <div\n                    *ngIf=\"registerForm.get('insuranceID').errors['minlength'] ||registerForm.get('insuranceID').errors['maxlength']\">\n                    Health\n                    Insurance ID must contain exactly 13 characters</div>\n                </div>\n              </div>\n  \n              <div class=\"form-group\">\n                <a routerLink=\"/patient/login\">Already have an account? Login here.</a>\n              </div>\n  \n              <button mat-raised-button color=\"primary\" class=\"pull-right\">Register</button>\n  \n            </form>\n          </mat-card>\n        </div>\n      </div>\n    </div>\n  </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-8 offset-md-2\">\r\n          <mat-card>\r\n            <h3>Registration</h3>\r\n            <hr>\r\n            <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"email\">Email</label>\r\n                <input type=\"email\" id=\"email\" formControlName=\"email\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('email').errors }\">\r\n  \r\n                <div *ngIf=\"submitted && registerForm.get('email').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('email').errors['required']\">Email is required</div>\r\n                  <div *ngIf=\"registerForm.get('email').errors['email']\">Email must be a valid email address</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"password\">Password</label>\r\n                <input type=\"password\" id=\"password\" formControlName=\"password\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('password').errors }\">\r\n                <div *ngIf=\"submitted && registerForm.get('password').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('password').errors['required']\">Password is required</div>\r\n                  <div *ngIf=\"registerForm.get('password').errors['minlength']\">Password must be at least 8 characters\r\n                    long</div>\r\n                  <div *ngIf=\"registerForm.get('password').errors['pattern']\">Password must contain at least 1 lowercase,\r\n                    1 uppercase letter\r\n                    and 1 number</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"name\">First Name</label>\r\n                <input type=\"text\" id=\"name\" formControlName=\"name\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('name').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('name').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\" registerForm.get('name').errors['required']\">First Name is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"surname\">Last Name</label>\r\n                <input type=\"text\" id=\"surname\" formControlName=\"surname\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('surname').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('surname').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('surname').errors['required']\">Last Name is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"address\">Address</label>\r\n                <input type=\"text\" id=\"address\" formControlName=\"address\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('address').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('address').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('address').errors['required']\">Address is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"city\">City</label>\r\n                <input type=\"text\" id=\"city\" formControlName=\"city\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('city').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('city').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('city').errors['required']\">City is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"country\">Country</label>\r\n                <input type=\"text\" id=\"country\" formControlName=\"country\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('country').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('country').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('country').errors['required']\">Country is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"number\">Phone Number</label>\r\n                <input type=\"number\" id=\"number\" formControlName=\"number\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && registerForm.get('number').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('number').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('number').errors['required']\">Phone Number is required</div>\r\n                  <div *ngIf=\"registerForm.get('number').errors['minlength']\">A phone number must have at least 9\r\n                    digits\r\n                  </div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"insuranceID\">Health Insurance ID</label>\r\n                <input type=\"text\" id=\"insuranceID\" formControlName=\"insuranceID\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted &&  registerForm.get('insuranceID').errors }\" />\r\n                <div *ngIf=\"submitted && registerForm.get('insuranceID').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"registerForm.get('insuranceID').errors['required']\">Health Insurance ID is required\r\n                  </div>\r\n                  <div\r\n                    *ngIf=\"registerForm.get('insuranceID').errors['minlength'] ||registerForm.get('insuranceID').errors['maxlength']\">\r\n                    Health\r\n                    Insurance ID must contain exactly 13 characters</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <a routerLink=\"/patient/login\">Already have an account? Login here.</a>\r\n              </div>\r\n  \r\n              <button mat-raised-button color=\"primary\" class=\"pull-right\">Register</button>\r\n  \r\n            </form>\r\n          </mat-card>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>");
 
 /***/ }),
 
@@ -432,6 +458,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/doctor-profile/doctor-profile.component */ "./src/app/components/doctor-profile/doctor-profile.component.ts");
 /* harmony import */ var _components_nurse_page_nurse_page_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/nurse-page/nurse-page.component */ "./src/app/components/nurse-page/nurse-page.component.ts");
 /* harmony import */ var _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/nurse-profile/nurse-profile.component */ "./src/app/components/nurse-profile/nurse-profile.component.ts");
+/* harmony import */ var _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/ccadmin-profile/ccadmin-profile.component */ "./src/app/components/ccadmin-profile/ccadmin-profile.component.ts");
+/* harmony import */ var _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/allpatients-page/allpatients-page.component */ "./src/app/components/allpatients-page/allpatients-page.component.ts");
+
+
 
 
 
@@ -468,6 +498,10 @@ const routes = [
         component: _components_doctor_page_doctor_page_component__WEBPACK_IMPORTED_MODULE_6__["DoctorPageComponent"]
     },
     {
+        path: 'clinicalCenterAdministrator/profile',
+        component: _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_14__["CCAdminProfileComponent"]
+    },
+    {
         path: 'doctor/profile',
         component: _components_doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_11__["DoctorProfileComponent"]
     },
@@ -478,6 +512,9 @@ const routes = [
     {
         path: 'nurse/profile',
         component: _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_13__["NurseProfileComponent"]
+    }, {
+        path: 'nurse/allpatients',
+        component: _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_15__["AllPatientsPageComponent"]
     },
     {
         path: 'patient/profile',
@@ -561,6 +598,9 @@ let AppComponent = class AppComponent {
     isNurse() {
         return this.userService.isNurse();
     }
+    isCCAdmin() {
+        return this.userService.isCCAdmin();
+    }
     onLogout() {
         this.userService.logout();
     }
@@ -614,6 +654,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_clinics_page_clinics_page_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/clinics-page/clinics-page.component */ "./src/app/components/clinics-page/clinics-page.component.ts");
 /* harmony import */ var _components_nurse_page_nurse_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/nurse-page/nurse-page.component */ "./src/app/components/nurse-page/nurse-page.component.ts");
 /* harmony import */ var _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/nurse-profile/nurse-profile.component */ "./src/app/components/nurse-profile/nurse-profile.component.ts");
+/* harmony import */ var _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/ccadmin-profile/ccadmin-profile.component */ "./src/app/components/ccadmin-profile/ccadmin-profile.component.ts");
+/* harmony import */ var _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/allpatients-page/allpatients-page.component */ "./src/app/components/allpatients-page/allpatients-page.component.ts");
+
+
 
 
 
@@ -653,7 +697,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_medical_history_page_medical_history_page_component__WEBPACK_IMPORTED_MODULE_19__["MedicalHistoryPageComponent"],
             _components_clinics_page_clinics_page_component__WEBPACK_IMPORTED_MODULE_20__["ClinicsPageComponent"],
             _components_nurse_page_nurse_page_component__WEBPACK_IMPORTED_MODULE_21__["NursePageComponent"],
-            _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__["NurseProfileComponent"]
+            _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__["NurseProfileComponent"],
+            _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_23__["CCAdminProfileComponent"],
+            _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_24__["AllPatientsPageComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -671,10 +717,184 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_material_core__WEBPACK_IMPORTED_MODULE_10__["MatNativeDateModule"],
             _material_module__WEBPACK_IMPORTED_MODULE_11__["DemoMaterialModule"],
         ],
+        entryComponents: [
+            _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_23__["CCAdminProfileComponent"],
+            _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_24__["AllPatientsPageComponent"]
+        ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/allpatients-page/allpatients-page.component.css":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/allpatients-page/allpatients-page.component.css ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWxscGF0aWVudHMtcGFnZS9hbGxwYXRpZW50cy1wYWdlLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/components/allpatients-page/allpatients-page.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/allpatients-page/allpatients-page.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: AllPatientsPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllPatientsPageComponent", function() { return AllPatientsPageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+/* harmony import */ var src_app_services_patient_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/patient.service */ "./src/app/services/patient.service.ts");
+
+
+
+ // nemam za sve pacijente?
+let AllPatientsPageComponent = class AllPatientsPageComponent {
+    constructor(patientService) {
+        this.patientService = patientService;
+        this.displayedColumns = ['name', 'surname', 'address'];
+        this.allpatientsDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
+        this.allpatients = new Array();
+        this.allpatients = this.patientService.getAllPatients();
+        this.all();
+    }
+    ngOnInit() {
+        this.all();
+    }
+    all() {
+        this.allpatientsDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.patientService.getAllPatients());
+        this.allpatientsDataSource.paginator = this.paginator;
+    }
+};
+AllPatientsPageComponent.ctorParameters = () => [
+    { type: src_app_services_patient_service__WEBPACK_IMPORTED_MODULE_3__["PatientService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"], { static: true })
+], AllPatientsPageComponent.prototype, "paginator", void 0);
+AllPatientsPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-allpatients-page',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./allpatients-page.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/allpatients-page/allpatients-page.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./allpatients-page.component.css */ "./src/app/components/allpatients-page/allpatients-page.component.css")).default]
+    })
+], AllPatientsPageComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/ccadmin-profile/ccadmin-profile.component.css":
+/*!**************************************************************************!*\
+  !*** ./src/app/components/ccadmin-profile/ccadmin-profile.component.css ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY2NhZG1pbi1wcm9maWxlL2NjYWRtaW4tcHJvZmlsZS5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/ccadmin-profile/ccadmin-profile.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/ccadmin-profile/ccadmin-profile.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: CCAdminProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CCAdminProfileComponent", function() { return CCAdminProfileComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _models_clinicalCenterAdministrator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/clinicalCenterAdministrator */ "./src/app/models/clinicalCenterAdministrator.ts");
+/* harmony import */ var _models_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../models/user */ "./src/app/models/user.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _services_clinicalCenterAdministrator_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/clinicalCenterAdministrator.service */ "./src/app/services/clinicalCenterAdministrator.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _models_role__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../models/role */ "./src/app/models/role.ts");
+
+
+
+
+
+
+
+
+
+let CCAdminProfileComponent = class CCAdminProfileComponent {
+    constructor(ccadminService, formBuilder, router, userService) {
+        this.ccadminService = ccadminService;
+        this.formBuilder = formBuilder;
+        this.router = router;
+        this.userService = userService;
+        this.submitted = false;
+        this.user = JSON.parse(userService.isLoggedIn());
+        console.log(this.user);
+        this.selectedCCAdmin = ccadminService.getCCAdmin(this.user.email);
+        console.log(this.selectedCCAdmin);
+    }
+    ngOnInit() {
+        this.ccadminForm = this.formBuilder.group({
+            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedCCAdmin.email, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email]),
+            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedCCAdmin.password, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(8),
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')]),
+            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedCCAdmin.name, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]),
+            surname: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedCCAdmin.surname, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]),
+            number: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedCCAdmin.number, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(9)]),
+        });
+    }
+    get f() {
+        return this.ccadminForm.controls;
+    }
+    onSubmit() {
+        this.submitted = true;
+        // Stop here if form is invalid
+        if (this.ccadminForm.invalid) {
+            return;
+        }
+        this.clinicalCenterAdministrator = new _models_clinicalCenterAdministrator__WEBPACK_IMPORTED_MODULE_2__["ClinicalCenterAdministrator"](this.f.email.value, this.f.password.value, this.f.name.value, this.f.surname.value, this.f.number.value);
+        this.user = new _models_user__WEBPACK_IMPORTED_MODULE_3__["User"](this.f.email.value, this.f.password.value, _models_role__WEBPACK_IMPORTED_MODULE_8__["Role"].CCADMIN);
+        this.editClinicalCenterAdministrator();
+    }
+    editClinicalCenterAdministrator() {
+        this.ccadminService.editCCAdmin(this.clinicalCenterAdministrator).subscribe(data => {
+            this.userService.setUser(this.user);
+            this.ccadminService.setCCAdmin(this.clinicalCenterAdministrator);
+            this.router.navigate(['/clinicalCenterAdministrator/profile']);
+        }, error => {
+            alert('Error edit clinical center administrator');
+        });
+    }
+};
+CCAdminProfileComponent.ctorParameters = () => [
+    { type: _services_clinicalCenterAdministrator_service__WEBPACK_IMPORTED_MODULE_5__["ClinicalCenterAdministratorService"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"] }
+];
+CCAdminProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-ccadmin-profile',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./ccadmin-profile.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/ccadmin-profile/ccadmin-profile.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./ccadmin-profile.component.css */ "./src/app/components/ccadmin-profile/ccadmin-profile.component.css")).default]
+    })
+], CCAdminProfileComponent);
 
 
 
@@ -931,6 +1151,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
 /* harmony import */ var _services_doctor_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/doctor.service */ "./src/app/services/doctor.service.ts");
 /* harmony import */ var src_app_services_nurse_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/nurse.service */ "./src/app/services/nurse.service.ts");
+/* harmony import */ var src_app_services_clinicalCenterAdministrator_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/services/clinicalCenterAdministrator.service */ "./src/app/services/clinicalCenterAdministrator.service.ts");
+
 
 
 
@@ -947,13 +1169,14 @@ class LoginUser {
     }
 }
 let LoginComponent = class LoginComponent {
-    constructor(patientService, formBuilder, router, userService, doctorService, nurseService) {
+    constructor(patientService, formBuilder, router, userService, doctorService, nurseService, ccadminService) {
         this.patientService = patientService;
         this.formBuilder = formBuilder;
         this.router = router;
         this.userService = userService;
         this.doctorService = doctorService;
         this.nurseService = nurseService;
+        this.ccadminService = ccadminService;
         this.submitted = false;
     }
     ngOnInit() {
@@ -1020,6 +1243,21 @@ let LoginComponent = class LoginComponent {
                 console.log(error);
             });
         }
+        else if (this.user.role === _models_role__WEBPACK_IMPORTED_MODULE_5__["Role"].CCADMIN && this.loginUser.password === this.user.password) {
+            console.log(this.user);
+            this.ccadminService.loginCCAdmin(this.user).subscribe(data => {
+                console.log(data);
+                if (data !== null) {
+                    console.log('Successful logged in as ccadmin');
+                    this.router.navigate(['/clinicalCenterAdministrator/profile']);
+                }
+                else {
+                    console.log('Login error as ccadmin');
+                }
+            }, error => {
+                console.log(error);
+            });
+        }
     }
 };
 LoginComponent.ctorParameters = () => [
@@ -1028,7 +1266,8 @@ LoginComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: _services_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"] },
     { type: _services_doctor_service__WEBPACK_IMPORTED_MODULE_7__["DoctorService"] },
-    { type: src_app_services_nurse_service__WEBPACK_IMPORTED_MODULE_8__["NurseService"] }
+    { type: src_app_services_nurse_service__WEBPACK_IMPORTED_MODULE_8__["NurseService"] },
+    { type: src_app_services_clinicalCenterAdministrator_service__WEBPACK_IMPORTED_MODULE_9__["ClinicalCenterAdministratorService"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1740,6 +1979,31 @@ class Clinic {
 
 /***/ }),
 
+/***/ "./src/app/models/clinicalCenterAdministrator.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/models/clinicalCenterAdministrator.ts ***!
+  \*******************************************************/
+/*! exports provided: ClinicalCenterAdministrator */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClinicalCenterAdministrator", function() { return ClinicalCenterAdministrator; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class ClinicalCenterAdministrator {
+    constructor(email, password, name, surname, number) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.number = number;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/models/doctor.ts":
 /*!**********************************!*\
   !*** ./src/app/models/doctor.ts ***!
@@ -1951,7 +2215,8 @@ var Role;
     Role[Role["PATIENT"] = 0] = "PATIENT";
     Role[Role["DOCTOR"] = 1] = "DOCTOR";
     Role[Role["NURSE"] = 2] = "NURSE";
-    Role[Role["NONE"] = 3] = "NONE";
+    Role[Role["CCADMIN"] = 3] = "CCADMIN";
+    Role[Role["NONE"] = 4] = "NONE";
 })(Role || (Role = {}));
 
 
@@ -2047,6 +2312,99 @@ ClinicService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], ClinicService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/clinicalCenterAdministrator.service.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/services/clinicalCenterAdministrator.service.ts ***!
+  \*****************************************************************/
+/*! exports provided: ClinicalCenterAdministratorService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClinicalCenterAdministratorService", function() { return ClinicalCenterAdministratorService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _models_clinicalCenterAdministrator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/clinicalCenterAdministrator */ "./src/app/models/clinicalCenterAdministrator.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
+
+
+
+
+
+
+let ClinicalCenterAdministratorService = class ClinicalCenterAdministratorService {
+    constructor(http, userService) {
+        this.http = http;
+        this.userService = userService;
+        this.urlCCAdmin = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseUrl + _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].clinicalCenterAdmininistrator;
+        this.listCCAdmin = new Array();
+        this.getAllClinicalCenterAdministrators();
+    }
+    newCCAdmin(clinicalCenterAdministrator) {
+        return this.http.post(this.urlCCAdmin + '/register', clinicalCenterAdministrator);
+    }
+    loginCCAdmin(clinicalCenterAdministrator) {
+        this.userService.setToken(clinicalCenterAdministrator);
+        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].baseUrl + '/login', clinicalCenterAdministrator, { responseType: 'text' });
+    }
+    editCCAdmin(clinicalCenterAdministrator) {
+        return this.http.post(this.urlCCAdmin + '/edit', clinicalCenterAdministrator, { responseType: 'text' });
+    }
+    addCCAdmin(p) {
+        if (this.getCCAdmin(p.email) === null) {
+            this.listCCAdmin.push(p);
+        }
+    }
+    getCCAdmin(email) {
+        if (this.listCCAdmin.length === 0) {
+            return null;
+        }
+        for (const u of this.listCCAdmin) {
+            if (u.email === email) {
+                return u;
+            }
+        }
+        return null;
+    }
+    setCCAdmin(p) {
+        for (const p1 of this.listCCAdmin) {
+            if (p1.email === p.email) {
+                p1.name = p.name;
+                p1.number = p.number;
+                p1.surname = p.surname;
+                p1.password = p.password;
+                return;
+            }
+        }
+    }
+    getAllClinicalCenterAdministrators() {
+        this.http.get(this.urlCCAdmin + '/all').subscribe((data) => {
+            for (const c of data) {
+                this.clinicalCenterAdministrator = new _models_clinicalCenterAdministrator__WEBPACK_IMPORTED_MODULE_2__["ClinicalCenterAdministrator"](c.email, c.password, c.name, c.surname, c.number);
+                this.addCCAdmin(this.clinicalCenterAdministrator);
+            }
+        }, error => {
+            console.log(error);
+        });
+        return this.listCCAdmin;
+    }
+};
+ClinicalCenterAdministratorService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"] }
+];
+ClinicalCenterAdministratorService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Injectable"])({
+        providedIn: 'root'
+    })
+], ClinicalCenterAdministratorService);
 
 
 
@@ -2583,6 +2941,11 @@ let UserService = class UserService {
             return this.user.role === _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].NURSE;
         }
     }
+    isCCAdmin() {
+        if (this.isLoggedIn()) {
+            return this.user.role === _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].CCADMIN;
+        }
+    }
     getAllUsers() {
         this.http.get(this.urlUser + '/all').subscribe((data) => {
             for (const c of data) {
@@ -2605,7 +2968,11 @@ let UserService = class UserService {
         else if (role === 'NURSE') {
             return _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].NURSE;
         }
+        else if (role === 'CCADMIN') {
+            return _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].CCADMIN;
+        }
         else {
+            console.log("ovde je null");
             return null;
         }
     }
@@ -2649,7 +3016,7 @@ const environment = {
     clinic: '/clinic',
     examination: '/examination',
     medicalRecord: '/medicalRecord',
-    clinicalCentreAdmin: '/clinical-centre-admin',
+    clinicalCenterAdmininistrator: '/clinicalCenterAdministrator',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -2701,7 +3068,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\ISA-PSW2019\ISA-PSW2019\FRONTEND\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Antonela\Documents\GitHub\ISA-PSW2019\FRONTEND\src\main.ts */"./src/main.ts");
 
 
 /***/ })

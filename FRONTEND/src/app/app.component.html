@@ -22,6 +22,12 @@
 
         <mat-nav-list *ngIf="isNurse()">
           <a mat-list-item routerLink="/nurse/profile">Profile</a>
+          <a mat-list-item routerLink="/nurse/allpatients">All patients</a>
+          <a mat-list-item (click)="onLogout()">Logout</a>
+        </mat-nav-list>
+
+        <mat-nav-list *ngIf="isCCAdmin()">
+          <a mat-list-item routerLink="/clinicalCenterAdministrator/profile">Profile</a>
           <a mat-list-item (click)="onLogout()">Logout</a>
         </mat-nav-list>
     </mat-sidenav>

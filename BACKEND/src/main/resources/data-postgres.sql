@@ -16,4 +16,9 @@ insert into room(id,kind,label,clinic_id) values (100,'OPERATION','label',101);
 insert into examination(id,clinic_rating,discount,doctor_rating,kind,status,clinic_id,clinic_administrator_id,examination_type_id,nurse_id,patient_id,room_id) values (100,0,0,0,'OPERATION','AWAITING',101,1,100,100,87,100);
 insert into examining(examination_id,doctor_id) values (100,1);
 insert into medical_record(id,allergies,blood_type,height,weight,patient_id) values (100,'No allergies','A+',185,90,87);
+<<<<<<< Updated upstream
 
+=======
+insert into clinical_center_administrator(id,email,name,number,password,surname) values (111,'ccadmin@email.com','Pera',  '2020202', 'CCadmin123', 'Peric');
+insert into users(id, email, password, role) values (111,'ccadmin@email.com', 'CCadmin123',3);
+>>>>>>> Stashed changes

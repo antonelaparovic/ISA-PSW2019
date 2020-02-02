@@ -12,7 +12,7 @@ export const environment = {
   clinic: '/clinic',
   examination: '/examination',
   medicalRecord: '/medicalRecord',
-  clinicalCentreAdmin: '/clinical-centre-admin',
+  clinicalCenterAdmininistrator: '/clinicalCenterAdministrator',
 };
 
 /*
