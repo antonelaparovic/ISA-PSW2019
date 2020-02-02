@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import {Router} from '@angular/router';
 import {Role} from '../models/role';
 import {HttpClient} from '@angular/common/http';
-import { Nurse } from '../models/nurse';
 import { environment } from 'src/environments/environment';
 
 
@@ -97,7 +96,7 @@ export class UserService{
         }
       }
 
-      public isClinicAdministrator() {
+      public isClinicadministrator() {
         if (this.isLoggedIn()) {
           return this.user.role === Role.CLINICADMINISTRATOR;
         }

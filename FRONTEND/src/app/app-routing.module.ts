@@ -11,6 +11,8 @@ import { ClinicsPageComponent } from './components/clinics-page/clinics-page.com
 import { DoctorProfileComponent } from './components/doctor-profile/doctor-profile.component';
 import {NursePageComponent} from './components/nurse-page/nurse-page.component';
 import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
+import {ClinicadministratorPageComponent} from './components/clinicadministrator-page/clinicadministrator-page.component';
+import {ClinicadministratorProfileComponent} from './components/clinicadministrator-profile/clinicadministrator-profile.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path:'doctor/profile',
     component: DoctorProfileComponent
+  },
+  {
+    path:'clinicadministrator/home',
+    component: ClinicadministratorPageComponent
+  },
+  {
+    path:'clinicadministrator/profile',
+    component: ClinicadministratorProfileComponent
   },
   {
     path:'nurse/home',

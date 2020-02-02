@@ -7,6 +7,7 @@ import {Role} from '../../models/role';
 import {UserService} from '../../services/user.service';
 import {DoctorService} from '../../services/doctor.service';
 import { NurseService } from 'src/app/services/nurse.service';
+import { ClinicadministratorService } from 'src/app/services/clinicadministrator.service';
 
 
 export class LoginUser {
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private doctorService:DoctorService,
     private nurseService:NurseService,
+    private clinicadministatorService:ClinicadministratorService,
   ) { }
 
   ngOnInit() {
@@ -90,6 +92,22 @@ export class LoginComponent implements OnInit {
           if (data !== null) {
             console.log('Successful logged in');
             this.router.navigate(['/doctor/home']);
+          } else {
+            console.log('Login error');
+          }
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    } else if (this.user.role === Role.CLINICADMINISTRATOR && this.loginUser.password === this.user.password) {
+      console.log(this.user);
+      this.clinicadministatorService.loginClinicadministrator(this.user).subscribe(
+        data => {
+          console.log(data);
+          if (data !== null) {
+            console.log('Successful logged in');
+            this.router.navigate(['/clinicadministrator/home']);
           } else {
             console.log('Login error');
           }
