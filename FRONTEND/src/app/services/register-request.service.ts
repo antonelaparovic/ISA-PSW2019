@@ -5,7 +5,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { Router } from '@angular/router';
 
 export class RegisterRequestService{
-    url=environment.baseUrl+environment.clinicalCentreAdmin;
+    url=environment.baseUrl+environment.clinicalCenterAdmininistrator;
     registerRequests: BehaviorSubject<RegisterRequest[]>=new BehaviorSubject<RegisterRequest[]>([]);
 
 
