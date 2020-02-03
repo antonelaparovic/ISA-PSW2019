@@ -19,3 +19,4 @@ insert into medical_record(id,allergies,blood_type,height,weight,patient_id) val
 
 insert into clinical_center_administrator(id,email,name,number,password,surname) values (111,'ccadmin@email.com','Pera',  '2020202', 'CCadmin123', 'Peric');
 insert into users(id, email, password, role) values (111,'ccadmin@email.com', 'CCadmin123',3);
+insert into medicine(id, chemical_composition, label, usage) values (1231, 'nnnneeesto', 'Brufen', 'uvek');

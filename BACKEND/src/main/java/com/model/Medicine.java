@@ -24,4 +24,8 @@ public class Medicine {
     @JsonIgnore
     @OneToMany(mappedBy = "medicine", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Prescription> prescriptions = new HashSet<>();
+
+    public Long getId() {
+        return id;
+    }
 }

@@ -25,7 +25,7 @@ import {NursePageComponent} from './components/nurse-page/nurse-page.component';
 import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
 import { CCAdminProfileComponent } from './components/ccadmin-profile/ccadmin-profile.component';
 import { AllPatientsPageComponent } from './components/allpatients-page/allpatients-page.component';
-
+import { CodebookComponent } from './components/codebook/codebook.components';
 
 
 @NgModule({
@@ -43,7 +43,8 @@ import { AllPatientsPageComponent } from './components/allpatients-page/allpatie
     NursePageComponent,
     NurseProfileComponent,
     CCAdminProfileComponent,
-    AllPatientsPageComponent
+    AllPatientsPageComponent,
+    CodebookComponent,
 
   ],
   imports: [
@@ -64,7 +65,8 @@ import { AllPatientsPageComponent } from './components/allpatients-page/allpatie
   ],
   entryComponents: [
     CCAdminProfileComponent,
-    AllPatientsPageComponent
+    AllPatientsPageComponent,
+    CodebookComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

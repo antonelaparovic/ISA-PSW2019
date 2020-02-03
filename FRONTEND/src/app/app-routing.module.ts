@@ -39,6 +39,14 @@ const routes: Routes = [
     path:'clinicalCenterAdministrator/profile',
     component: CCAdminProfileComponent
   },
+<<<<<<< Updated upstream
+=======
+  {
+    path:'clinicalCenterAdministrator/codebook',
+    component: CodebookComponent
+  },
+  
+>>>>>>> Stashed changes
   {
     path:'doctor/profile',
     component: DoctorProfileComponent
