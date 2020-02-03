@@ -3,27 +3,38 @@ import { Nurse } from './nurse';
 import { Patient } from './patient';
 import { ExaminationType } from './examinationType';
 import { Room } from './room';
+import { ExaminationKind } from './examinationKind';
+import { Clinic } from './clinic';
+import { ExaminationStatus } from './examinationStatus';
+import { Interval } from './interval';
 
 export class Examination {
-    id: number;
-    kind: String;
-  //  interval: DateTimeInterval;
-    status: String;
-    examinationType: ExaminationType;
-   // doctors: Doctor[];
-  //  room: Room;
-    discount: number;
-    nurse: Nurse;
-    patient: Patient;
-    constructor(id: number, kind: String,  status: String,
-         discount: number,patient:Patient,examinationType:ExaminationType) {
-        this.id = id;
-        this.kind = kind;
-        this.status = status;
-        this.examinationType = examinationType;
-    //    this.room = room;
-        this.discount = discount;
-  //      this.nurse = nurse;
-        this.patient = patient;
-    }
+  kind: ExaminationKind;
+  status: ExaminationStatus;
+  type: ExaminationType;
+  discount: number;
+  doctorRating: number;
+  clinicRating: number;
+  doctors: Array<Doctor> = new Array<Doctor>();
+  nurse: Nurse;
+  clinic: Clinic;
+  patient: Patient;
+  id: number;
+  interval: Interval;
+  constructor(kind: ExaminationKind, status: ExaminationStatus, type: ExaminationType, discount: number,
+              doctorRating: number, clinicRating: number, nurse: Nurse,
+              clinic: Clinic, patient: Patient, doctors: Array<Doctor>, id: number, interval?: Interval) {
+    this.kind = kind;
+    this.status = status;
+    this.type = type;
+    this.discount = discount;
+    this.doctorRating = doctorRating;
+    this.clinicRating = clinicRating;
+    this.nurse = nurse;
+    this.clinic = clinic;
+    this.patient = patient;
+    this.doctors = doctors;
+    this.id = id;
+    this.interval = interval;
+  }
 }
