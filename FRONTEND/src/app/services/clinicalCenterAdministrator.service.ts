@@ -3,6 +3,8 @@ import {ClinicalCenterAdministrator} from '../models/clinicalCenterAdministrator
 import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment';
 import {UserService} from '../services/user.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -81,6 +83,23 @@ export class ClinicalCenterAdministratorService{
       );
       return this.listCCAdmin;
     }
+
+
+    
+    dodajAkc(adminAkc: any): Observable<any> {
+      return this.http.post(this.urlCCAdmin+"/dodajAdminaKc", adminAkc);
+  }
+  addCodebook(codebook: any): Observable<any> {
+      return this.http.post(this.urlCCAdmin+"/addCodebook", codebook).pipe(map(data => {return data;}));
+  }
+  deleteCodebook(codebook): Observable<any> {
+     // alert(JSON.stringify(sifarnik));
+      return this.http.post(this.urlCCAdmin+"/deleteCodebook", codebook).pipe(map(data => {return data;}));
+  }
+  returnCodebook(): Observable<any> {
+      return this.http.get(this.urlCCAdmin+"/returnCodebook").pipe(map(data => {return data;}));
+  }
+
   
 
 }
