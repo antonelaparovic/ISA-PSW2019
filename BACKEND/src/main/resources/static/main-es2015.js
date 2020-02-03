@@ -2333,6 +2333,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
 
 
 
@@ -2394,6 +2396,19 @@ let ClinicalCenterAdministratorService = class ClinicalCenterAdministratorServic
             console.log(error);
         });
         return this.listCCAdmin;
+    }
+    dodajAkc(adminAkc) {
+        return this.http.post(this.urlCCAdmin + "/dodajAdminaKc", adminAkc);
+    }
+    addCodebook(codebook) {
+        return this.http.post(this.urlCCAdmin + "/addCodebook", codebook).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(data => { return data; }));
+    }
+    deleteCodebook(codebook) {
+        // alert(JSON.stringify(sifarnik));
+        return this.http.post(this.urlCCAdmin + "/deleteCodebook", codebook).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(data => { return data; }));
+    }
+    returnCodebook() {
+        return this.http.get(this.urlCCAdmin + "/returnCodebook").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(data => { return data; }));
     }
 };
 ClinicalCenterAdministratorService.ctorParameters = () => [
