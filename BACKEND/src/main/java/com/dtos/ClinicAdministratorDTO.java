@@ -7,7 +7,7 @@ public class ClinicAdministratorDTO {
     private String password;
     private String name;
     private String surname;
-    private String phone;
+    private String number;
     private Clinic clinic;
 
     public ClinicAdministratorDTO() {
@@ -45,12 +45,12 @@ public class ClinicAdministratorDTO {
         this.surname = surname;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getNumber() {
+        return number;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public Clinic getClinic() {

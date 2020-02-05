@@ -24,7 +24,7 @@ public class ClinicAdministrator{
     private String surname;
 
     @Column(columnDefinition = "VARCHAR(10)", unique = true, nullable = false)
-    private String phone;
+    private String number;
 
 
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
@@ -33,20 +33,20 @@ public class ClinicAdministrator{
    // @Enumerated(EnumType.STRING)
   //  private UserStatus status;
 
-    @OneToMany(mappedBy = "clinicAdministrator", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "clinicadministrator", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Examination> examinations = new HashSet<>();
 
     public ClinicAdministrator() {
 
     }
 
-    public ClinicAdministrator(Long id, String email, String password, String name, String surname, String phone, Clinic clinic, Set<Examination> examinations) {
+    public ClinicAdministrator(Long id, String email, String password, String name, String surname, String number, Clinic clinic, Set<Examination> examinations) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
         this.surname = surname;
-        this.phone = phone;
+        this.number = number;
         this.clinic = clinic;
         this.examinations = examinations;
     }
@@ -91,12 +91,12 @@ public class ClinicAdministrator{
         this.surname = surname;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getNumber() {
+        return number;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public Clinic getClinic() {

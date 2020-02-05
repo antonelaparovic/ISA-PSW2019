@@ -26,7 +26,7 @@ public class ClinicAdministratorService {
         return repo.findAll(page);
     }
 
-    public boolean addDoctor(ClinicAdministrator p){
+    public boolean addClinicAdministrator(ClinicAdministrator p){
         List<ClinicAdministrator> tmp = findall();
         if(tmp.size() == 0)
         {
@@ -47,7 +47,7 @@ public class ClinicAdministratorService {
         return false;
     }
 
-    public ClinicAdministrator getClinicalAdministrator(String email){
+    public ClinicAdministrator getClinicAdministrator(String email){
         List<ClinicAdministrator> tmp = findall();
         if(tmp.size() == 0)
             return null;
@@ -61,7 +61,7 @@ public class ClinicAdministratorService {
         return null;
     }
 
-    public boolean editClinicalAdministrator(ClinicAdministrator p){
+    public boolean editClinicAdministrator(ClinicAdministrator p){
         List<ClinicAdministrator> tmp = findall();
         if(tmp.size() == 0)
             return false;

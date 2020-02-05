@@ -25,7 +25,7 @@ public class ClinicAdministratorController {
     public String Edit(@RequestBody ClinicAdministratorDTO clinicadministrator) {
 
 
-        ClinicAdministrator cadmin = clinicAdministratorService.getClinicalAdministrator(clinicadministrator.getEmail());
+        ClinicAdministrator cadmin = clinicAdministratorService.getClinicAdministrator(clinicadministrator.getEmail());
         User u = userService.getUser(cadmin.getEmail());
 
         if(cadmin != null){
@@ -33,12 +33,12 @@ public class ClinicAdministratorController {
             cadmin.setPassword(clinicadministrator.getPassword());
             cadmin.setName(clinicadministrator.getName());
             cadmin.setSurname(clinicadministrator.getSurname());
-            cadmin.setPhone(clinicadministrator.getPhone());
+            cadmin.setNumber(clinicadministrator.getNumber());
             cadmin.setClinic(clinicadministrator.getClinic());
 
-            boolean r=clinicAdministratorService.editClinicalAdministrator(cadmin);
+            boolean r=clinicAdministratorService.editClinicAdministrator(cadmin);
             boolean editedUser=userService.editUser(u);
-            boolean editedClinicAdministrator=clinicAdministratorService.editClinicalAdministrator(cadmin);
+            boolean editedClinicAdministrator=clinicAdministratorService.editClinicAdministrator(cadmin);
             if(editedClinicAdministrator==true || editedUser==true){
                 System.out.println("Edit account with email:" + cadmin.getEmail());
                 return "uspesno";}
