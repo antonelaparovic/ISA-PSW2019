@@ -71,6 +71,27 @@ public class ClinicalCenterAdministratorService {
                 repo.save(p1);
                 return true;
             }
+<<<<<<< Updated upstream
+=======
+        } return false;
+
+    }
+
+
+
+
+        public Codebook returnCodebook() {
+            return codebookRepo.findAll().get(0);
+        }
+
+        public Codebook addCodebook(CodebookDTO codebookDTO) {
+
+            if(codebookDTO.getDiagnose() == null)
+                if(codebookDTO.getMedicine() == null)
+                    return null;
+                else return addMedicine(codebookDTO);
+            else return addDiagnose(codebookDTO);
+>>>>>>> Stashed changes
         }
 
         return false;
