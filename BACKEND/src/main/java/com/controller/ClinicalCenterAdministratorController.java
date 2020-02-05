@@ -2,6 +2,7 @@ package com.controller;
 
 
 import com.dtos.ClinicalCenterAdministratorDTO;
+import com.dtos.CodebookDTO;
 import com.model.ClinicalCenterAdministrator;
 import com.model.Role;
 import com.model.User;
@@ -57,6 +58,23 @@ public class ClinicalCenterAdministratorController {
     @GetMapping(value = "clinicalCenterAdministrator/all")
     public ResponseEntity<List<ClinicalCenterAdministrator>> all() {
         return new ResponseEntity<>(ccAdminService.findall(), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "clinicalCenterAdministrator/returnCodebook")
+    public ResponseEntity<?> returnCodebook() {
+
+        return new ResponseEntity<>(ccAdminService.returnCodebook(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "clinicalCenterAdministrator/addCodebook")
+    public ResponseEntity<?> addCodebook(@RequestBody CodebookDTO sifarnikDTO) {
+
+        return new ResponseEntity<>(ccAdminService.addCodebook(sifarnikDTO), HttpStatus.OK);
+    }
+    @PostMapping(value = "clinicalCenterAdministrator/deleteCodebook")
+    public ResponseEntity<?> deleteCodebook(@RequestBody CodebookDTO sifarnikDTO) {
+
+        return new ResponseEntity<>(ccAdminService.deleteCodebook(sifarnikDTO), HttpStatus.OK);
     }
 
 }

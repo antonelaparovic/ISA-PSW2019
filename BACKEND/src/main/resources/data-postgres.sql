@@ -19,9 +19,12 @@ insert into medical_record(id,allergies,blood_type,height,weight,patient_id) val
 
 insert into clinical_center_administrator(id,email,name,number,password,surname) values (111,'ccadmin@email.com','Pera',  '2020202', 'CCadmin123', 'Peric');
 insert into users(id, email, password, role) values (111,'ccadmin@email.com', 'CCadmin123',3);
-<<<<<<< Updated upstream
-=======
+insert into codebook(id) values ('333555');
+
+
 insert into medicine(id, chemical_composition, label, usage) values (1231, 'nnnneeesto', 'Brufen', 'uvek');
 insert into medicine(id, chemical_composition, label, usage) values (2222, 'opiis', 'Bromazepan', 'smirenje');
-insert into codebook(id) values ('333555');
->>>>>>> Stashed changes
+insert into codebook_medicines(codebook_id, medicines_id) values ('333555', '1231');
+insert into codebook_medicines(codebook_id, medicines_id) values ('333555', '2222');
+insert into codebook_diagnoses(codebook_id, diagnoses_id) values ('333555', '100');
+insert into codebook_diagnoses(codebook_id, diagnoses_id) values ('333555', '101');

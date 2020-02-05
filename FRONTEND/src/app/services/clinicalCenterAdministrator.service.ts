@@ -83,12 +83,13 @@ export class ClinicalCenterAdministratorService{
       );
       return this.listCCAdmin;
     }
-    addCodebook(sifarnik: any): Observable<any> {
-      return this.http.post(this.urlCCAdmin+"/addCodebook", sifarnik).pipe(map(data => {return data;}));
+
+    addCodebook(codebook: any): Observable<any> {
+      return this.http.post(this.urlCCAdmin+"/addCodebook", codebook).pipe(map(data => {return data;}));
   }
-  deleteCodebook(sifarnik): Observable<any> {
-     // alert(JSON.stringify(sifarnik));
-      return this.http.post(this.urlCCAdmin+"/deleteCodebook", sifarnik).pipe(map(data => {return data;}));
+  deleteCodebook(codebook): Observable<any> {
+     // alert(JSON.stringify(codebook));
+      return this.http.post(this.urlCCAdmin+"/deleteCodebook", codebook).pipe(map(data => {return data;}));
   }
   returnCodebook(): Observable<any> {
       return this.http.get(this.urlCCAdmin+"/returnCodebook").pipe(map(data => {return data;}));

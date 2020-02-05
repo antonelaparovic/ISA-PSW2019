@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-sidenav-container class=\"sidenav-container\">\r\n    <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n      [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === true\">\r\n      <mat-toolbar>Menu</mat-toolbar>\r\n        <mat-nav-list *ngIf = \"isNone()\">\r\n          <a mat-list-item routerLink=\"/login\">Login</a>\r\n          <a mat-list-item routerLink=\"/patient/register\">Register</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isPatient()\">\r\n          <a mat-list-item routerLink=\"/patient/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalRecord\">Medical record</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalHistory\">Medical history</a>\r\n          <a mat-list-item routerLink=\"/patient/clinics\">Clinics</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isDoctor()\">\r\n          <a mat-list-item routerLink=\"/doctor/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isNurse()\">\r\n          <a mat-list-item routerLink=\"/nurse/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/nurse/allpatients\">All patients</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isCCAdmin()\">\r\n          <a mat-list-item routerLink=\"/clinicalCenterAdministrator/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <mat-toolbar>\r\n        <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\">\r\n          <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n        </button>\r\n        <span>Clinical Centre</span>\r\n      </mat-toolbar>\r\n      <!-- Add Content Here -->\r\n      <router-outlet></router-outlet>\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-sidenav-container class=\"sidenav-container\">\r\n    <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n      [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === true\">\r\n      <mat-toolbar>Menu</mat-toolbar>\r\n        <mat-nav-list *ngIf = \"isNone()\">\r\n          <a mat-list-item routerLink=\"/login\">Login</a>\r\n          <a mat-list-item routerLink=\"/patient/register\">Register</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isPatient()\">\r\n          <a mat-list-item routerLink=\"/patient/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalRecord\">Medical record</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalHistory\">Medical history</a>\r\n          <a mat-list-item routerLink=\"/patient/clinics\">Clinics</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isDoctor()\">\r\n          <a mat-list-item routerLink=\"/doctor/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isNurse()\">\r\n          <a mat-list-item routerLink=\"/nurse/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/nurse/allpatients\">All patients</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isCCAdmin()\">\r\n          <a mat-list-item routerLink=\"/clinicalCenterAdministrator/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/clinicalCenterAdministrator/codebook\">Codebook</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <mat-toolbar>\r\n        <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\">\r\n          <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n        </button>\r\n        <span>Clinical Centre</span>\r\n      </mat-toolbar>\r\n      <!-- Add Content Here -->\r\n      <router-outlet></router-outlet>\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>");
 
 /***/ }),
 
@@ -75,8 +75,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< Updated upstream
-=======
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/codebook/codebook.component.html":
 /*!***************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/codebook/codebook.component.html ***!
@@ -90,7 +88,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
->>>>>>> Stashed changes
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/doctor-page/doctor-page.component.html":
 /*!*********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/doctor-page/doctor-page.component.html ***!
@@ -476,11 +473,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/nurse-profile/nurse-profile.component */ "./src/app/components/nurse-profile/nurse-profile.component.ts");
 /* harmony import */ var _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/ccadmin-profile/ccadmin-profile.component */ "./src/app/components/ccadmin-profile/ccadmin-profile.component.ts");
 /* harmony import */ var _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/allpatients-page/allpatients-page.component */ "./src/app/components/allpatients-page/allpatients-page.component.ts");
-<<<<<<< Updated upstream
-=======
 /* harmony import */ var _components_codebook_codebook_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/codebook/codebook.component */ "./src/app/components/codebook/codebook.component.ts");
 
->>>>>>> Stashed changes
 
 
 
@@ -523,13 +517,10 @@ const routes = [
         component: _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_14__["CCAdminProfileComponent"]
     },
     {
-<<<<<<< Updated upstream
-=======
         path: 'clinicalCenterAdministrator/codebook',
         component: _components_codebook_codebook_component__WEBPACK_IMPORTED_MODULE_16__["CodebookComponent"]
     },
     {
->>>>>>> Stashed changes
         path: 'doctor/profile',
         component: _components_doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_11__["DoctorProfileComponent"]
     },
@@ -684,11 +675,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/nurse-profile/nurse-profile.component */ "./src/app/components/nurse-profile/nurse-profile.component.ts");
 /* harmony import */ var _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/ccadmin-profile/ccadmin-profile.component */ "./src/app/components/ccadmin-profile/ccadmin-profile.component.ts");
 /* harmony import */ var _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/allpatients-page/allpatients-page.component */ "./src/app/components/allpatients-page/allpatients-page.component.ts");
-<<<<<<< Updated upstream
-=======
 /* harmony import */ var _components_codebook_codebook_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/codebook/codebook.component */ "./src/app/components/codebook/codebook.component.ts");
 
->>>>>>> Stashed changes
 
 
 
@@ -732,12 +720,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_nurse_page_nurse_page_component__WEBPACK_IMPORTED_MODULE_21__["NursePageComponent"],
             _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__["NurseProfileComponent"],
             _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_23__["CCAdminProfileComponent"],
-<<<<<<< Updated upstream
-            _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_24__["AllPatientsPageComponent"]
-=======
             _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_24__["AllPatientsPageComponent"],
             _components_codebook_codebook_component__WEBPACK_IMPORTED_MODULE_25__["CodebookComponent"],
->>>>>>> Stashed changes
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -757,12 +741,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ],
         entryComponents: [
             _components_ccadmin_profile_ccadmin_profile_component__WEBPACK_IMPORTED_MODULE_23__["CCAdminProfileComponent"],
-<<<<<<< Updated upstream
-            _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_24__["AllPatientsPageComponent"]
-=======
             _components_allpatients_page_allpatients_page_component__WEBPACK_IMPORTED_MODULE_24__["AllPatientsPageComponent"],
             _components_codebook_codebook_component__WEBPACK_IMPORTED_MODULE_25__["CodebookComponent"]
->>>>>>> Stashed changes
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1009,8 +989,6 @@ ClinicsPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-<<<<<<< Updated upstream
-=======
 /***/ "./src/app/components/codebook-dto.ts":
 /*!********************************************!*\
   !*** ./src/app/components/codebook-dto.ts ***!
@@ -1076,10 +1054,12 @@ let CodebookComponent = class CodebookComponent {
         });
         this.codebookService.returnCodebook().subscribe(data => {
             this.codebook = data;
+            console.log(this.codebook);
         }, error => { });
     }
     addCodebookMedicine() {
         var si = new _codebook_dto__WEBPACK_IMPORTED_MODULE_3__["CodebookDTO"]();
+        console.log(si);
         si.medicine = new Object();
         si.medicine.label = this.addMedicine.value.label;
         this.codebookService.addCodebook(si).subscribe(data => { this.codebook = data; });
@@ -1118,7 +1098,6 @@ CodebookComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
->>>>>>> Stashed changes
 /***/ "./src/app/components/doctor-page/doctor-page.component.css":
 /*!******************************************************************!*\
   !*** ./src/app/components/doctor-page/doctor-page.component.css ***!
@@ -2550,12 +2529,12 @@ let ClinicalCenterAdministratorService = class ClinicalCenterAdministratorServic
         });
         return this.listCCAdmin;
     }
-    addCodebook(sifarnik) {
-        return this.http.post(this.urlCCAdmin + "/addCodebook", sifarnik).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(data => { return data; }));
+    addCodebook(codebook) {
+        return this.http.post(this.urlCCAdmin + "/addCodebook", codebook).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(data => { return data; }));
     }
-    deleteCodebook(sifarnik) {
-        // alert(JSON.stringify(sifarnik));
-        return this.http.post(this.urlCCAdmin + "/deleteCodebook", sifarnik).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(data => { return data; }));
+    deleteCodebook(codebook) {
+        // alert(JSON.stringify(codebook));
+        return this.http.post(this.urlCCAdmin + "/deleteCodebook", codebook).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(data => { return data; }));
     }
     returnCodebook() {
         return this.http.get(this.urlCCAdmin + "/returnCodebook").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(data => { return data; }));

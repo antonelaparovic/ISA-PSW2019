@@ -12,7 +12,7 @@ public class Codebook {
 
     @OneToMany
     @Column(name = "diagnoses")
-    private Set<Diagnose> dijagnoze;
+    private Set<Diagnose> diagnoses;
 
     @OneToMany
     @Column(name = "medicines")
@@ -20,16 +20,16 @@ public class Codebook {
 
     public Codebook() {
         super();
-        this.dijagnoze = new HashSet<Diagnose>();
+        this.diagnoses = new HashSet<Diagnose>();
         this.medicines = new HashSet<Medicine>();
     }
 
     public Set<Diagnose> getDiagnoses() {
-        return dijagnoze;
+        return diagnoses;
     }
 
     public void setDiagnoses(Set<Diagnose> dijagnoze) {
-        this.dijagnoze = dijagnoze;
+        this.diagnoses = dijagnoze;
     }
 
     public Set<Medicine> getMedicines() {

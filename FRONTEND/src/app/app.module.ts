@@ -25,11 +25,8 @@ import {NursePageComponent} from './components/nurse-page/nurse-page.component';
 import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
 import { CCAdminProfileComponent } from './components/ccadmin-profile/ccadmin-profile.component';
 import { AllPatientsPageComponent } from './components/allpatients-page/allpatients-page.component';
-<<<<<<< Updated upstream
-
-=======
 import { CodebookComponent } from './components/codebook/codebook.component';
->>>>>>> Stashed changes
+
 
 
 @NgModule({
@@ -47,7 +44,8 @@ import { CodebookComponent } from './components/codebook/codebook.component';
     NursePageComponent,
     NurseProfileComponent,
     CCAdminProfileComponent,
-    AllPatientsPageComponent
+    AllPatientsPageComponent, 
+    CodebookComponent,
 
   ],
   imports: [
@@ -68,7 +66,8 @@ import { CodebookComponent } from './components/codebook/codebook.component';
   ],
   entryComponents: [
     CCAdminProfileComponent,
-    AllPatientsPageComponent
+    AllPatientsPageComponent, 
+    CodebookComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,6 +19,7 @@ export class CodebookComponent implements OnInit {
 
   ngOnInit() {
 
+    
     this.addMedicine  = this.formBuilder.group({
       'label' : new FormControl('', Validators.required)
     });
@@ -29,6 +30,7 @@ export class CodebookComponent implements OnInit {
 
     this.codebookService.returnCodebook().subscribe(data =>{
       this.codebook = data;
+      console.log(this.codebook);
     },
     error=>{}
     )
@@ -37,6 +39,7 @@ export class CodebookComponent implements OnInit {
   }
   addCodebookMedicine(){
     var si = new CodebookDTO();
+    console.log(si);
     si.medicine = new Object();
     si.medicine.label = this.addMedicine.value.label;
     this.codebookService.addCodebook(si).subscribe(data=>{this.codebook = data});
