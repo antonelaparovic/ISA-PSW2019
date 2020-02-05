@@ -9,7 +9,7 @@ insert into patient(id, insuranceid, address, city, country, email, name, number
 insert into users(id, email, password, role) values (102,'doctor@email.com', 'Doctor123',1);
 insert into doctor(id, address, city, country, email, name, number, password, specialization, status, surname, work_hours_from, work_hours_to, clinic_id, specialized_id) values (1, 'Adresa1', 'Grad1', 'Drzava1', 'doctor@email.com', 'Doctor', 22222222222, 'Doctor123', 'Zubar', 'ACTIVE', 'Doctoric',  '00:40', '05:50', 100, 100);
 
-insert into users(id, email, password, role) values (1, 'nemanja@email.com', '123456789', 3);
+insert into users(id, email, password, role) values (1, 'nemanja@email.com', 'Nemanja97', 3);
 insert into clinic_administrator(id, email, name, password ,phone,surname, clinic_id) values (1, 'nemanja@email.com', 'Nemanja', 'Nemanja97' ,'123456789', 'Vasic', 100);
 insert into nurse(id, email, name, password, number, surname, work_hours_from, work_hours_to, clinic_id,address,city,country) values (100,'nurse@email.com', 'Nurse', 'Nurse123','153426010', 'Nursic', '8:00', '16:00', 100,'bolnicka','Novi sad','Srbija');
 insert into users(id, email, password, role) values (101, 'nurse@email.com', 'Nurse123', 2);
