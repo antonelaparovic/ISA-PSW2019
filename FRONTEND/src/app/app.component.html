@@ -24,10 +24,12 @@
           <a mat-list-item routerLink="/nurse/profile">Profile</a>
           <a mat-list-item (click)="onLogout()">Logout</a>
         </mat-nav-list>
-        <mat-nav-list *ngIf="isClincadministrator()">
+
+        <mat-nav-list *ngIf="isClinicadministrator()">
           <a mat-list-item routerLink="/clinicadministrator/profile">Profile</a>
           <a mat-list-item (click)="onLogout()">Logout</a>
         </mat-nav-list>
+
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar>
