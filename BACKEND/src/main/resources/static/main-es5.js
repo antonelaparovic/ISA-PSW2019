@@ -4189,6 +4189,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return null;
           }
 
+          console.log(this.listClinicadministrators);
           var _iteratorNormalCompletion3 = true;
           var _didIteratorError3 = false;
           var _iteratorError3 = undefined;

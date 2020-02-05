@@ -33,7 +33,7 @@ public class ClinicAdministrator{
    // @Enumerated(EnumType.STRING)
   //  private UserStatus status;
 
-    @OneToMany(mappedBy = "clinicadministrator", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "clinicAdministrator", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Examination> examinations = new HashSet<>();
 
     public ClinicAdministrator() {

@@ -5,7 +5,7 @@ export class Clinic {
     address: string;
     description: string;
   
-    constructor(name: string, address: string, description: string, id?: number) {
+    constructor(name: string, address: string, description: string, id: number) {
       this.name = name;
       this.address = address;
       this.description = description;

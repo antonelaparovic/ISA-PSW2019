@@ -43,6 +43,7 @@ export class ClinicadministratorService {
     if ( this.listClinicadministrators.length === 0) {
       return null;
     }
+    console.log(this.listClinicadministrators);
     for (const u of this.listClinicadministrators) {
       if ( u.email === email) {
         return u;

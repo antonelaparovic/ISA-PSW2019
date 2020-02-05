@@ -5,9 +5,9 @@ export class Clinicadministrator {
     name: string;
     surname: string;
     number: string;
-    clinic: string;
+    clinic: number;
   
-    constructor(email: string, password: string, name: string, surname: string, number: string, clinic: string) {
+    constructor(email: string, password: string, name: string, surname: string, number: string, clinic: number) {
       this.email = email;
       this.name = name;
       this.password = password;
