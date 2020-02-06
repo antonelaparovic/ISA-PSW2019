@@ -24,33 +24,17 @@
                     <div class="section-title mb-0">
                         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table" matSort>
   
-                            <ng-container matColumnDef="Kind">
+                            <ng-container matColumnDef="kind">
                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Kind </th>
                                 <td mat-cell *matCellDef="let element" class="text-in-table">{{element.kind}}</td>
                             </ng-container>
-                            <ng-container matColumnDef="Status">
-                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
-                                <td mat-cell *matCellDef="let element" class="text-in-table"> {{element.status}} </td>
+                            <ng-container matColumnDef="clinic">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Clinic </th>
+                                <td mat-cell *matCellDef="let element" class="text-in-table"> {{element.clinic}} </td>
                             </ng-container>
-                            <ng-container matColumnDef="Type">
-                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
-                                <td mat-cell *matCellDef="let element" class="text-in-table"> {{element.type}} </td>
-                            </ng-container>
-                            <ng-container matColumnDef="Room">
-                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Room </th>
-                                <td mat-cell *matCellDef="let element" class="text-in-table"> {{element.room}} </td>
-                            </ng-container>
-                            <ng-container matColumnDef="Discount">
-                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Discount </th>
-                                <td mat-cell *matCellDef="let element" class="text-in-table"> {{element.discount}} </td>
-                            </ng-container>
-                            <ng-container matColumnDef="Nurse">
-                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nurse </th>
-                                <td mat-cell *matCellDef="let element" class="text-in-table"> {{element.nurse}} </td>
-                            </ng-container>
-                            <ng-container matColumnDef="Doctors">
+                            <ng-container matColumnDef="doctor">
                                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Doctors </th>
-                                <td mat-cell *matCellDef="let element" class="text-in-table"> {{element.doctors}} </td>
+                                <td mat-cell *matCellDef="let element" class="text-in-table"> {{element.doctor}} </td>
                             </ng-container>
                             <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
                             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

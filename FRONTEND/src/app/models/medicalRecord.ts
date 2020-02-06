@@ -1,18 +1,22 @@
 import { Patient } from './patient';
-import { NumberValueAccessor } from '@angular/forms';
+import { ExaminationReport } from './examinationReport';
 
 export class MedicalRecord{
-    height:number;
-    weight:number;
-    bloodType:string;
-    allergies:string;
-   // patient:Patient;
+    id: number;
+    height: number;
+    weight: number;
+    bloodType: string;
+    allergies: string;
+    patient: Patient;
+    reports: Array<ExaminationReport> = new Array<ExaminationReport>();
 
-    constructor(height:number,weight:number,bloodType:string,allergies:string){
-        this.height=height;
-        this.weight=weight;
-        this.bloodType=bloodType;
-        this.allergies=allergies;
-       // this.patient=patient;
-    }
+    constructor(id: number, height: number, weight: number, bloodType: string, allergies: string, patient: Patient, reports?: Array<ExaminationReport>) {
+    this.id = id;
+    this.height = height;
+    this.weight = weight;
+    this.bloodType = bloodType;
+    this.allergies = allergies;
+    this.patient = patient;
+    this.reports = reports;
+  }
 }

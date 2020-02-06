@@ -38,9 +38,10 @@ public class Examination {
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Room room;
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Nurse nurse;
+
 
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Clinic clinic;
@@ -48,13 +49,16 @@ public class Examination {
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Patient patient;
 
-    @JsonIgnore
+
     @OneToOne(mappedBy = "examination",cascade = CascadeType.ALL)
     private ExaminationReport examinationReport;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     private ClinicAdministrator clinicAdministrator;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Interval interval;
 
     public Examination() {
         this.doctorRating = 0;
