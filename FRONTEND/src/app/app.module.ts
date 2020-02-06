@@ -23,8 +23,8 @@ import { MedicalHistoryPageComponent } from './components/medical-history-page/m
 import { ClinicsPageComponent } from './components/clinics-page/clinics-page.component';
 import {NursePageComponent} from './components/nurse-page/nurse-page.component';
 import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
-import { ClinicAdministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
-import { ClinicAdministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
+import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
+import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +40,8 @@ import { ClinicAdministratorProfileComponent } from './components/clinicadminist
     ClinicsPageComponent,
     NursePageComponent,
     NurseProfileComponent,
-    ClinicAdministratorPageComponent,
-    ClinicAdministratorProfileComponent
+    ClinicadministratorPageComponent,
+    ClinicadministratorProfileComponent
   ],
   imports: [
     BrowserModule,

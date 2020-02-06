@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ClinicAdministrator } from '../models/clinicadministrator';
+import { Clinicadministrator } from '../models/clinicadministrator';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from './user.service';
@@ -7,44 +7,44 @@ import { UserService } from './user.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ClinicAdministratorService {
+export class ClinicadministratorService {
 
-  urlClinicAdministrator = environment.baseUrl + environment.clinicAdministrator;
-  listClinicAdministrators: Array<ClinicAdministrator> = new Array<ClinicAdministrator>();
-  clinicAdministrator:ClinicAdministrator;
+  urlClinicadministrator = environment.baseUrl + environment.doctor;
+  listClinicadministrators: Array<Clinicadministrator> = new Array<Clinicadministrator>();
+  clinicadministrator:Clinicadministrator;
 
   constructor(
     private http: HttpClient,
     private userService: UserService
   ) { 
-    this.getAllClinicAdministrators();
+    this.getAllClinicadministrators();
   }
 
-  public newClinicAdministrator(clinicAdministrator) {
-    return this.http.post(this.urlClinicAdministrator + '/register', clinicAdministrator);
+  public newClinicadministrator(clinicadministrator) {
+    return this.http.post(this.urlClinicadministrator + '/register', clinicadministrator);
   }
 
-  public loginClinicAdministrator(clinicAdministrator) {
-    this.userService.setToken(clinicAdministrator);
-    return this.http.post(environment.baseUrl + '/login', clinicAdministrator, {responseType: 'text'});
+  public loginClinicadministrator(clinicadministrator) {
+    this.userService.setToken(clinicadministrator);
+    return this.http.post(environment.baseUrl + '/login', clinicadministrator, {responseType: 'text'});
   }
 
-  public editClinicAdministrator(clinicAdministrator){
-    return this.http.post(this.urlClinicAdministrator + '/edit', clinicAdministrator,{responseType: 'text'});
+  public editClinicadministrator(clinicadministrator){
+    return this.http.post(this.urlClinicadministrator + '/edit', clinicadministrator,{responseType: 'text'});
   }
 
-  public addClinicAdministrator(d: ClinicAdministrator) {
-    if(this.getClinicAdministrator(d.email)===null){
-      this.listClinicAdministrators.push(d);
+  public addClinicadministrator(d: Clinicadministrator) {
+    if(this.getClinicadministrator(d.email)===null){
+      this.listClinicadministrators.push(d);
     }
   }
 
-  public getClinicAdministrator(email: string) {
-    if ( this.listClinicAdministrators.length === 0) {
+  public getClinicadministrator(email: string) {
+    if ( this.listClinicadministrators.length === 0) {
       return null;
     }
-    console.log(this.listClinicAdministrators);
-    for (const u of this.listClinicAdministrators) {
+    console.log(this.listClinicadministrators);
+    for (const u of this.listClinicadministrators) {
       if ( u.email === email) {
         return u;
       }
@@ -52,9 +52,9 @@ export class ClinicAdministratorService {
     return null;
   }
 
-  public setClinicAdministrator(p: ClinicAdministrator) {
+  public setClinicadministrator(p: Clinicadministrator) {
 
-    for (const p1 of this.listClinicAdministrators) {
+    for (const p1 of this.listClinicadministrators) {
       if (p1.email === p.email) {
         p1.name = p.name;
         p1.number = p.number;
@@ -66,17 +66,17 @@ export class ClinicAdministratorService {
     }
   }
 
-  public getAllClinicAdministrators(): Array<ClinicAdministrator> {
-    this.http.get(this.urlClinicAdministrator + '/all').subscribe((data: ClinicAdministrator[]) => {
+  public getAllClinicadministrators(): Array<Clinicadministrator> {
+    this.http.get(this.urlClinicadministrator + '/all').subscribe((data: Clinicadministrator[]) => {
         for (const c of data) {
-          this.clinicAdministrator = new ClinicAdministrator(c.email,c.password,c.name,c.surname,c.number,c.clinic);
-          this.addClinicAdministrator(this.clinicAdministrator);
+          this.clinicadministrator = new Clinicadministrator(c.email,c.password,c.name,c.surname,c.number,c.clinic);
+          this.addClinicadministrator(this.clinicadministrator);
         }
       },
       error => {
         console.log(error);
       }
     );
-    return this.listClinicAdministrators;
+    return this.listClinicadministrators;
   }
 }

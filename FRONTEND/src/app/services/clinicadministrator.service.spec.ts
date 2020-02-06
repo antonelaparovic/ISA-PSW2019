@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ClinicAdministratorService } from './clinicadministrator.service';
+import { ClinicadministratorService } from './clinicadministrator.service';
 
-describe('ClinicAdministratorService', () => {
+describe('ClinicadministratorService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ClinicAdministratorService = TestBed.get(ClinicAdministratorService);
+    const service: ClinicadministratorService = TestBed.get(ClinicadministratorService);
     expect(service).toBeTruthy();
   });
 });
