@@ -53,8 +53,8 @@ import { CodebookComponent } from './components/codebook/codebook.component';
 
     ClinicSearchComponent,
     PatientDoctorsListComponent,
-    PatientDoctorSearchComponent
-
+    PatientDoctorSearchComponent,
+    CodebookComponent,
     CCAdminProfileComponent,
     AllPatientsPageComponent
 

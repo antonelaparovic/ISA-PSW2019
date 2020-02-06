@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     private doctorService:DoctorService,
     private nurseService:NurseService,
 
-    private recordService:MedicalRecordService
+    private recordService:MedicalRecordService,
 
     private ccadminService:ClinicalCenterAdministratorService,
 
