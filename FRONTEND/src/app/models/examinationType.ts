@@ -1,8 +1,8 @@
 export class ExaminationType {
     id: number;
-    label: String;
+    label: string;
     price: number;
-    constructor(label: String, price: number, id?: number) {
+    constructor(label: string, price: number, id?: number) {
         this.label = label;
         this.price = price;
         this.id = id;
