@@ -1,49 +1,48 @@
-<!-- page-header -->
-<div class="page-header">
-  <div class="container">
-      <div class="row">
-          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-              <div class="page-caption">
-                  <h1 class="page-title">Clinics in the clinical center</h1>
-                  <div class="text-center mt-4">
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<!-- /.page-header-->
 
-<!-- page-content -->
-<div class="card-section">
-  <div class="container">
-      <div class="card-block bg-white mb30">
-          <div class="row">
-              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                  <!-- section-title -->
-                  <div class="section-title mb-0">
-                      <table mat-table [dataSource]="clinicDataSource" class="mat-elevation-z8 table" matSort>
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<table mat-table
+       [dataSource]="clinicDataSource" class="mat-elevation-z8" matSort>
 
-                          <ng-container matColumnDef="name">
-                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-                              <td mat-cell *matCellDef="let element" class="text-in-table">
-                                  {{element.name}}
-                              </td>
-                          </ng-container>
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef> Clinic name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
 
-                          <ng-container matColumnDef="address">
-                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
-                              <td mat-cell *matCellDef="let element" class="text-in-table"> {{element.address}} </td>
-                          </ng-container>
-                          <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
-                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                      </table>
-                      <mat-paginator [pageSize]=itemsPerPage showFirstLastButtons></mat-paginator>
-                  </div>
-                  <!-- /.section-title -->
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<!-- /.page-content -->
+  <ng-container matColumnDef="Address">
+    <th mat-header-cell *matHeaderCellDef> Clinic address </th>
+    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ClinicRating">
+    <th mat-header-cell *matHeaderCellDef> Clinic rating </th>
+    <td mat-cell *matCellDef="let element"> {{element.clinicRating}} </td>
+  </ng-container>
+  <div *ngIf="condition; then thenBlock else elseBlock"></div>
+  <ng-template #elseBlock>
+    <ng-container matColumnDef="Price">
+      <th  mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> 0 </td>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #thenBlock>
+    <ng-container matColumnDef="Price">
+      <th  mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> 0 </td>
+    </ng-container>
+  </ng-template>
+
+  <ng-container matColumnDef="Doctors">
+    <th mat-header-cell *matHeaderCellDef> Doctors </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-flat-button color="warn" (click)="doctorList(element)"> Doctors </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+<button mat-raised-button color="primary" (click)="openDialog()">Search</button>

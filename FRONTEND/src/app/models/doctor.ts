@@ -1,24 +1,30 @@
-export class Doctor {
+import { Clinic } from './clinic';
+import { ExaminationType } from './examinationType';
+
+
+  export class Doctor {
 
     email: string;
     password: string;
     name: string;
     surname: string;
-    number: string;
-    address: string;
-    city: string;
-    country: string;
-    specialization: string;
+    phone: string;
+    workHoursFrom: string;
+    workHoursTo: string;
+    clinic: Clinic;
+    doctorRating: number;
+    specialized: ExaminationType;
   
-    constructor(email: string, password: string, name: string, surname: string, number1: string, address: string, city: string, country: string, specialization: string) {
+    constructor(email: string, password: string, name: string, surname: string, number1: string, workHoursFrom: string, workHoursTo: string, specialized?: ExaminationType, doctorRating?: number, clinic?: Clinic) {
       this.email = email;
-      this.name = name;
       this.password = password;
+      this.name = name;
       this.surname = surname;
-      this.number = number1;
-      this.address = address;
-      this.city = city;
-      this.country = country;
-      this.specialization = specialization;
+      this.phone = number1;
+      this.workHoursFrom = workHoursFrom;
+      this.workHoursTo = workHoursTo;
+      this.doctorRating = doctorRating;
+      this.specialized = specialized;
+      this.clinic = clinic;
     }
-  }
+}

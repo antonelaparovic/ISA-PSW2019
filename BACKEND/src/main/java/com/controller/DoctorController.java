@@ -15,41 +15,46 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class DoctorController {
+
     @Autowired
     private DoctorService doctorService;
 
     @Autowired
     private UserService userService;
 
-    @PostMapping(value = "/doctor/edit")
-    public String Edit(@RequestBody DoctorDTO doctor) {
+    @PostMapping(value = "doctor/edit")
+    public String editDoctor(@RequestBody DoctorDTO d){
+        Doctor doct = doctorService.getDoctor(d.getEmail());
+        User u = userService.getUser(d.getEmail());
 
+        if(doct != null){
+            doct.setEmail(d.getEmail());
+            doct.setPassword(d.getPassword());
+            doct.setName(d.getName());
+            doct.setSurname(d.getSurname());
+            doct.setPhone(d.getPhone());
+            doct.setWorkHoursFrom(d.getWorkHoursFrom());
+            doct.setWorkHoursTo(d.getWorkHoursTo());
+            u.setPassword(d.getPassword());
 
-        Doctor doc = doctorService.getDoctor(doctor.getEmail());
-        User u = userService.getUser(doc.getEmail());
+            boolean uspesno = doctorService.editDoctor(doct);
+            boolean uspesno2 = userService.editUser(u);
 
-        if(doc != null){
-            doc.setEmail(doctor.getEmail());
-            doc.setPassword(doctor.getPassword());
-            doc.setName(doctor.getName());
-            doc.setSurname(doctor.getSurname());
-            doc.setNumber(doctor.getNumber());
-            doc.setAddress(doctor.getAddress());
-            doc.setCity(doctor.getCity());
-            doc.setCountry(doctor.getCountry());
-            doc.setSpecialization(doctor.getSpecialization());
+            if(uspesno == true || uspesno2 == true) {
+                System.out.println("User with email: " + doct.getEmail() + " is edited");
+                return "Uspesno";
+            }
 
-            boolean r=doctorService.editDoctor(doc);
-            boolean editedUser=userService.editUser(u);
-            boolean editedDoctor=doctorService.editDoctor(doc);
-            if(editedDoctor==true || editedUser==true){
-                System.out.println("Edit account with email:" + doc.getEmail());
-                return "uspesno";}
-            else{return "neuspesno";}
+            else {
+                System.out.println("Error with edit");
+                return "Neuspesno";
+            }
         }
-        else
-            return "Error edit account";
+        else {
+            System.out.println("Error with edit else");
+        }
 
+        return "Greska";
     }
 
     @GetMapping(value = "doctor/all")
