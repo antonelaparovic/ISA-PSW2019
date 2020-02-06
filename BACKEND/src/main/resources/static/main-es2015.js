@@ -36,19 +36,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/clinic-search/clinic-search.component.html":
-/*!*************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/clinic-search/clinic-search.component.html ***!
-  \*************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2 mat-dialog-title>Dialog</h2>\n\n<mat-dialog-content [formGroup]=\"SearchClinicsGroup\">\n\n  <div>\n    <mat-form-field class=\"example-full-width\">\n      <input matInput id=\"date\" [matDatepickerFilter]=\"myFilter\" [matDatepicker]=\"picker\" placeholder=\"Choose a date\">\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n      <mat-datepicker #picker></mat-datepicker>\n    </mat-form-field>\n  </div>\n  <div>\n    <mat-form-field>\n      <mat-select id=\"type\" placeholder=\"Select examination type\">\n        <mat-option *ngFor=\"let examination_type of types\" value=\"option\">{{examination_type.label}}</mat-option>\n      </mat-select>\n    </mat-form-field>\n  </div>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button class=\"mat-raised-button\"(click)=\"close()\">Close</button>\n  <button class=\"mat-raised-button mat-primary\"(click)=\"save()\">Search</button>\n</mat-dialog-actions>");
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/clinics-page/clinics-page.component.html":
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/clinics-page/clinics-page.component.html ***!
@@ -58,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-form-field>\r\n  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n</mat-form-field>\r\n<table mat-table\r\n       [dataSource]=\"clinicDataSource\" class=\"mat-elevation-z8\" matSort>\r\n\r\n  <ng-container matColumnDef=\"Name\">\r\n    <th mat-header-cell *matHeaderCellDef> Clinic name </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\r\n  </ng-container>\r\n\r\n  <ng-container matColumnDef=\"Address\">\r\n    <th mat-header-cell *matHeaderCellDef> Clinic address </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.address}} </td>\r\n  </ng-container>\r\n\r\n  <ng-container matColumnDef=\"ClinicRating\">\r\n    <th mat-header-cell *matHeaderCellDef> Clinic rating </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.clinicRating}} </td>\r\n  </ng-container>\r\n  <div *ngIf=\"condition; then thenBlock else elseBlock\"></div>\r\n  <ng-template #elseBlock>\r\n    <ng-container matColumnDef=\"Price\">\r\n      <th  mat-header-cell *matHeaderCellDef> Price </th>\r\n      <td mat-cell *matCellDef=\"let element\"> 0 </td>\r\n    </ng-container>\r\n  </ng-template>\r\n\r\n  <ng-template #thenBlock>\r\n    <ng-container matColumnDef=\"Price\">\r\n      <th  mat-header-cell *matHeaderCellDef> Price </th>\r\n      <td mat-cell *matCellDef=\"let element\"> 0 </td>\r\n    </ng-container>\r\n  </ng-template>\r\n\r\n  <ng-container matColumnDef=\"Doctors\">\r\n    <th mat-header-cell *matHeaderCellDef> Doctors </th>\r\n    <td mat-cell *matCellDef=\"let element\">\r\n      <button mat-flat-button color=\"warn\" (click)=\"doctorList(element)\"> Doctors </button>\r\n    </td>\r\n  </ng-container>\r\n\r\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n</table>\r\n<mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons></mat-paginator>\r\n<button mat-raised-button color=\"primary\" (click)=\"openDialog()\">Search</button>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- page-header -->\r\n<div class=\"page-header\">\r\n  <div class=\"container\">\r\n      <div class=\"row\">\r\n          <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n              <div class=\"page-caption\">\r\n                  <h1 class=\"page-title\">Clinics in the clinical centre</h1>\r\n                  <div class=\"text-center mt-4\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n<!-- /.page-header-->\r\n\r\n<!-- page-content -->\r\n<div class=\"card-section\">\r\n  <div class=\"container\">\r\n      <div class=\"card-block bg-white mb30\">\r\n          <div class=\"row\">\r\n              <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                  <!-- section-title -->\r\n                  <div class=\"section-title mb-0\">\r\n                      <table mat-table [dataSource]=\"clinicDataSource\" class=\"mat-elevation-z8 table\" matSort>\r\n\r\n                          <ng-container matColumnDef=\"name\">\r\n                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>\r\n                              <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">\r\n                                  {{element.name}}\r\n                              </td>\r\n                          </ng-container>\r\n\r\n                          <ng-container matColumnDef=\"address\">\r\n                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>\r\n                              <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.address}} </td>\r\n                          </ng-container>\r\n                          <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\r\n                          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n                      </table>\r\n                      <mat-paginator [pageSize]=itemsPerPage showFirstLastButtons></mat-paginator>\r\n                  </div>\r\n                  <!-- /.section-title -->\r\n              </div>\r\n          </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n<!-- /.page-content -->");
 
 /***/ }),
 
@@ -84,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8 offset-md-2\">\r\n        <mat-card>\r\n          <h3>Profile</h3>\r\n          <hr>\r\n          <form [formGroup]=\"doctorProfileForm\" (ngSubmit)=\"onSubmit()\">\r\n\r\n            <div class=\"form-group\">\r\n              <mat-label for=\"email\">Email</mat-label>\r\n              <input type=\"email\" readonly=\"readonly\" id=\"email\" formControlName=\"email\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && doctorProfileForm.get('email').errors }\">\r\n\r\n              <div *ngIf=\"submitted && doctorProfileForm.get('email').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"doctorProfileForm.get('email').errors['required']\">Email is required</div>\r\n                <div *ngIf=\"doctorProfileForm.get('email').errors['email']\">Email must be a valid email address</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"password\">Password</label>\r\n              <input type=\"text\" id=\"password\" formControlName=\"password\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && doctorProfileForm.get('password').errors }\">\r\n              <div *ngIf=\"submitted && doctorProfileForm.get('password').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"doctorProfileForm.get('password').errors['required']\">Password is required</div>\r\n                <div *ngIf=\"doctorProfileForm.get('password').errors['minlength']\">Password must be at least 8 characters\r\n                  long</div>\r\n                <div *ngIf=\"doctorProfileForm.get('password').errors['pattern']\">Password must contain at least 1 lowercase,\r\n                  1 uppercase letter\r\n                  and 1 number</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"name\">First Name</label>\r\n              <input type=\"text\" id=\"name\" formControlName=\"name\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && doctorProfileForm.get('name').errors }\" />\r\n              <div *ngIf=\"submitted && doctorProfileForm.get('name').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\" doctorProfileForm.get('name').errors['required']\">First Name is required</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"surname\">Last Name</label>\r\n              <input type=\"text\" id=\"surname\" formControlName=\"surname\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && doctorProfileForm.get('surname').errors }\" />\r\n              <div *ngIf=\"submitted && doctorProfileForm.get('surname').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"doctorProfileForm.get('surname').errors['required']\">Last Name is required</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"number\">Phone Number</label>\r\n              <input type=\"number\" id=\"number\" formControlName=\"number\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && doctorProfileForm.get('number').errors }\" />\r\n              <div *ngIf=\"submitted && doctorProfileForm.get('number').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"doctorProfileForm.get('number').errors['required']\">Phone Number is required</div>\r\n                <div *ngIf=\"doctorProfileForm.get('number').errors['minlength']\">A phone number must have at least 9\r\n                  digits\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"workHoursFrom\">Work hours from</label>\r\n              <input type=\"number\" id=\"workHoursFrom\" formControlName=\"workHoursFrom\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && doctorProfileForm.get('number').errors }\" />\r\n              <div *ngIf=\"submitted && doctorProfileForm.get('number').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"doctorProfileForm.get('number').errors['required']\">Work hours from is required</div>\r\n                <div *ngIf=\"doctorProfileForm.get('number').errors['minlength']\">A work hours must have at least 2\r\n                  digits\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"workHoursTo\">Work hours to</label>\r\n              <input type=\"number\" id=\"workHoursTo\" formControlName=\"workHoursTo\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && doctorProfileForm.get('number').errors }\" />\r\n              <div *ngIf=\"submitted && doctorProfileForm.get('number').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"doctorProfileForm.get('number').errors['required']\">Work hours to is required</div>\r\n                <div *ngIf=\"doctorProfileForm.get('number').errors['minlength']\">A work hours to must have at least 2\r\n                  digits\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <button mat-raised-button color=\"primary\" class=\"pull-right\">Save</button>\r\n\r\n          </form>\r\n        </mat-card>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-8 offset-md-2\">\r\n          <mat-card>\r\n            <h3>{{selectedDoctor.name}} profile</h3>\r\n            <hr>\r\n            <form [formGroup]=\"doctorForm\" (ngSubmit)=\"onSubmit()\">\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"email\">Email</label>\r\n                <input type=\"email\" readonly=\"readonly\" id=\"email\" text=\"test\"  formControlName=\"email\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && doctorForm.get('email').errors }\">\r\n  \r\n                <div *ngIf=\"submitted && doctorForm.get('email').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"doctorForm.get('email').errors['required']\">Email is required</div>\r\n                  <div *ngIf=\"doctorForm.get('email').errors['email']\">Email must be a valid email address</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"password\">Password</label>\r\n                <input type=\"text\" id=\"password\" formControlName=\"password\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && doctorForm.get('password').errors }\">\r\n                <div *ngIf=\"submitted && doctorForm.get('password').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"doctorForm.get('password').errors['required']\">Password is required</div>\r\n                  <div *ngIf=\"doctorForm.get('password').errors['minlength']\">Password must be at least 8 characters\r\n                    long</div>\r\n                  <div *ngIf=\"doctorForm.get('password').errors['pattern']\">Password must contain at least 1 lowercase,\r\n                    1 uppercase letter\r\n                    and 1 number</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"name\">First Name</label>\r\n                <input type=\"text\" id=\"name\" formControlName=\"name\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && doctorForm.get('name').errors }\" />\r\n                <div *ngIf=\"submitted && doctorForm.get('name').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\" doctorForm.get('name').errors['required']\">First Name is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"surname\">Last Name</label>\r\n                <input type=\"text\" id=\"surname\" formControlName=\"surname\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && doctorForm.get('surname').errors }\" />\r\n                <div *ngIf=\"submitted && doctorForm.get('surname').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"doctorForm.get('surname').errors['required']\">Last Name is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"number\">Phone Number</label>\r\n                <input type=\"number\" id=\"number\" formControlName=\"number\"  class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && doctorForm.get('number').errors }\" />\r\n                <div *ngIf=\"submitted && doctorForm.get('number').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"doctorForm.get('number').errors['required']\">Phone Number is required</div>\r\n                  <div *ngIf=\"doctorForm.get('number').errors['minlength']\">A phone number must have at least 9\r\n                    digits\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              \r\n              <div class=\"form-group\">\r\n                <label for=\"address\">Address</label>\r\n                <input type=\"text\" id=\"address\" formControlName=\"address\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && doctorForm.get('address').errors }\" />\r\n                <div *ngIf=\"submitted && doctorForm.get('address').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"doctorForm.get('address').errors['required']\">Address is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"city\">City</label>\r\n                <input type=\"text\" id=\"city\" formControlName=\"city\"  class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && doctorForm.get('city').errors }\" />\r\n                <div *ngIf=\"submitted && doctorForm.get('city').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"doctorForm.get('city').errors['required']\">City is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"country\">Country</label>\r\n                <input type=\"text\" id=\"country\" formControlName=\"country\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && doctorForm.get('country').errors }\" />\r\n                <div *ngIf=\"submitted && doctorForm.get('country').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"doctorForm.get('country').errors['required']\">Country is required</div>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group\">\r\n                <label for=\"specialization\">Specialization</label>\r\n                <input type=\"text\" id=\"specialization\" formControlName=\"specialization\" class=\"form-control\"\r\n                       [ngClass]=\"{ 'is-invalid': submitted && doctorForm.get('specialization').errors }\" />\r\n                <div *ngIf=\"submitted && doctorForm.get('specialization').errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"doctorForm.get('specialization').errors['required']\">Specialization is required</div>\r\n                </div>\r\n              </div>\r\n              \r\n              <button mat-raised-button color=\"primary\" class=\"pull-right\">Save</button>\r\n  \r\n            </form>\r\n          </mat-card>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n");
 
 /***/ }),
 
@@ -110,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- page-header -->\r\n<div class=\"page-header\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                <div class=\"page-caption\">\r\n                    <h1 class=\"page-title\">History of examinations and operations</h1>\r\n                    <div class=\"text-center mt-4\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <!-- /.page-header-->\r\n  \r\n  <!-- page-content -->\r\n  <div class=\"card-section\">\r\n    <div class=\"container\">\r\n        <div class=\"card-block bg-white mb30\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                    <!-- section-title -->\r\n                    <div class=\"section-title mb-0\">\r\n                        <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8 table\" matSort>\r\n  \r\n                            <ng-container matColumnDef=\"kind\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Kind </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">{{element.kind}}</td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"clinic\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Clinic </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.clinic}} </td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"doctor\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Doctors </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.doctors}} </td>\r\n                            </ng-container>\r\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\r\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n                        </table>\r\n                        <mat-paginator [pageSize]=itemsPerPage showFirstLastButtons></mat-paginator>\r\n                    </div>\r\n                    <!-- /.section-title -->\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <!-- /.page-content -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- page-header -->\r\n<div class=\"page-header\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                <div class=\"page-caption\">\r\n                    <h1 class=\"page-title\">History of examinations and operations</h1>\r\n                    <div class=\"text-center mt-4\">\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <!-- /.page-header-->\r\n  \r\n  <!-- page-content -->\r\n  <div class=\"card-section\">\r\n    <div class=\"container\">\r\n        <div class=\"card-block bg-white mb30\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n                    <!-- section-title -->\r\n                    <div class=\"section-title mb-0\">\r\n                        <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8 table\" matSort>\r\n  \r\n                            <ng-container matColumnDef=\"Kind\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Kind </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">{{element.kind}}</td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"Status\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.status}} </td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"Type\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.type}} </td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"Room\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Room </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.room}} </td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"Discount\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Discount </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.discount}} </td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"Nurse\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nurse </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.nurse}} </td>\r\n                            </ng-container>\r\n                            <ng-container matColumnDef=\"Doctors\">\r\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Doctors </th>\r\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.doctors}} </td>\r\n                            </ng-container>\r\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\r\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n                        </table>\r\n                        <mat-paginator [pageSize]=itemsPerPage showFirstLastButtons></mat-paginator>\r\n                    </div>\r\n                    <!-- /.section-title -->\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n  <!-- /.page-content -->");
 
 /***/ }),
 
@@ -123,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"page-header\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                <div class=\"page-caption\">\n                    <h1 class=\"page-title\">Medical record</h1>\n                    <div class=\"text-center mt-4\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-header-->\n  \n  <!-- page-content -->\n  <div class=\"card-section\">\n    <div class=\"container\">\n        <div class=\"card-block bg-white mb30\">\n            <div class=\"row\">\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                    <!-- section-title -->\n                    <div class=\"section-title mb-0\">\n                        <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8 table\" matSort>\n  \n                            <ng-container matColumnDef=\"Height\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Height </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">{{element.height}}</td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Weight\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.weight}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"BloodType\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Blood Type </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.bloodType}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Allergies\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Allergies </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.allergies}} </td>\n                            </ng-container>\n                             <ng-container matColumnDef=\"ExaminationReports\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Examination Reports </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.reports} </td>\n                            </ng-container>\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        </table>\n                    </div>\n                    <!-- /.section-title -->\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-content -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"page-header\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                <div class=\"page-caption\">\n                    <h1 class=\"page-title\">Medical record</h1>\n                    <div class=\"text-center mt-4\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-header-->\n  \n  <!-- page-content -->\n  <div class=\"card-section\">\n    <div class=\"container\">\n        <div class=\"card-block bg-white mb30\">\n            <div class=\"row\">\n                <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n                    <!-- section-title -->\n                    <div class=\"section-title mb-0\">\n                        <table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8 table\" matSort>\n  \n                            <ng-container matColumnDef=\"Height\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Height </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\">{{element.height}}</td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Weight\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.weight}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"BloodType\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Blood type </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.bloodType}} </td>\n                            </ng-container>\n                            <ng-container matColumnDef=\"Allergies\">\n                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Allergies </th>\n                                <td mat-cell *matCellDef=\"let element\" class=\"text-in-table\"> {{element.allergies}} </td>\n                            </ng-container>\n                            <tr mat-header-row *matHeaderRowDef=\"displayedColumns sticky: true\"></tr>\n                            <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n                        </table>\n                    </div>\n                    <!-- /.section-title -->\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n  <!-- /.page-content -->");
 
 /***/ }),
 
@@ -150,32 +137,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-8 offset-md-2\">\r\n        <mat-card>\r\n          <h3>{{selectedNurse.name}} profile</h3>\r\n          <hr>\r\n          <form [formGroup]=\"nurseForm\" (ngSubmit)=\"onSubmit()\">\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"email\">Email</label>\r\n              <input type=\"email\" readonly=\"readonly\" id=\"email\" text=\"test\"  formControlName=\"email\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && nurseForm.get('email').errors }\">\r\n\r\n              <div *ngIf=\"submitted && nurseForm.get('email').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"nurseForm.get('email').errors['required']\">Email is required</div>\r\n                <div *ngIf=\"nurseForm.get('email').errors['email']\">Email must be a valid email address</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"password\">Password</label>\r\n              <input type=\"text\" id=\"password\" formControlName=\"password\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && nurseForm.get('password').errors }\">\r\n              <div *ngIf=\"submitted && nurseForm.get('password').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"nurseForm.get('password').errors['required']\">Password is required</div>\r\n                <div *ngIf=\"nurseForm.get('password').errors['minlength']\">Password must be at least 8 characters\r\n                  long</div>\r\n                <div *ngIf=\"nurseForm.get('password').errors['pattern']\">Password must contain at least 1 lowercase,\r\n                  1 uppercase letter\r\n                  and 1 number</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"name\">First Name</label>\r\n              <input type=\"text\" id=\"name\" formControlName=\"name\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && nurseForm.get('name').errors }\" />\r\n              <div *ngIf=\"submitted && nurseForm.get('name').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\" nurseForm.get('name').errors['required']\">First Name is required</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"surname\">Last Name</label>\r\n              <input type=\"text\" id=\"surname\" formControlName=\"surname\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && nurseForm.get('surname').errors }\" />\r\n              <div *ngIf=\"submitted && nurseForm.get('surname').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"nurseForm.get('surname').errors['required']\">Last Name is required</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"address\">Address</label>\r\n              <input type=\"text\" id=\"address\" formControlName=\"address\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && nurseForm.get('address').errors }\" />\r\n              <div *ngIf=\"submitted && nurseForm.get('address').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"nurseForm.get('address').errors['required']\">Address is required</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"city\">City</label>\r\n              <input type=\"text\" id=\"city\" formControlName=\"city\"  class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && nurseForm.get('city').errors }\" />\r\n              <div *ngIf=\"submitted && nurseForm.get('city').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"nurseForm.get('city').errors['required']\">City is required</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"country\">Country</label>\r\n              <input type=\"text\" id=\"country\" formControlName=\"country\" class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && nurseForm.get('country').errors }\" />\r\n              <div *ngIf=\"submitted && nurseForm.get('country').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"nurseForm.get('country').errors['required']\">Country is required</div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <label for=\"number\">Phone Number</label>\r\n              <input type=\"number\" id=\"number\" formControlName=\"number\"  class=\"form-control\"\r\n                     [ngClass]=\"{ 'is-invalid': submitted && nurseForm.get('number').errors }\" />\r\n              <div *ngIf=\"submitted && nurseForm.get('number').errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"nurseForm.get('number').errors['required']\">Phone Number is required</div>\r\n                <div *ngIf=\"nurseForm.get('number').errors['minlength']\">A phone number must have at least 9\r\n                  digits\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <!-- <div class=\"form-group\">\r\n               <label for=\"insuranceID\">Health Insurance ID</label>\r\n               <input type=\"text\" readonly=\"readonly\" id=\"insuranceID\" formControlName=\"insuranceID\"  class=\"form-control\"\r\n                      [ngClass]=\"{ 'is-invalid': submitted &&  patientForm.get('insuranceID').errors }\" />\r\n               <div *ngIf=\"submitted && patientForm.get('insuranceID').errors\" class=\"invalid-feedback\">\r\n                 <div *ngIf=\"patientForm.get('insuranceID').errors['required']\">Health Insurance ID is required\r\n                 </div>\r\n                 <div\r\n                   *ngIf=\"patientForm.get('insuranceID').errors['minlength'] ||patientForm.get('insuranceID').errors['maxlength']\">\r\n                   Health\r\n                   Insurance ID must contain exactly 13 characters</div>\r\n               </div>\r\n             </div> -->\r\n\r\n\r\n\r\n             <button mat-raised-button color=\"primary\" class=\"pull-right\">Save</button>\r\n\r\n           </form>\r\n         </mat-card>\r\n       </div>\r\n     </div>\r\n   </div>\r\n </div>\r\n");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/patient-doctor-search/patient-doctor-search.component.html":
-/*!*****************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/patient-doctor-search/patient-doctor-search.component.html ***!
-  \*****************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2 mat-dialog-title>Search for doctors</h2>\n<mat-dialog-content [formGroup]=\"SearchDoctorGroup\">\n  <div>\n    <mat-form-field class=\"example-full-width\">\n      <input required=\"required\" id=\"name\" formControlName=\"name\" matInput placeholder=\"Doctor name\">\n    </mat-form-field>\n  </div>\n  <div>\n    <mat-form-field class=\"example-full-width\">\n      <input required=\"required\" id=\"surname\" formControlName=\"surname\" matInput placeholder=\"Doctor surname\">\n    </mat-form-field>\n  </div>\n  <div>\n    <mat-form-field class=\"example-full-width\">\n      <input required=\"required\" id=\"rating\" formControlName=\"rating\" matInput placeholder=\"Doctor rating\">\n    </mat-form-field>\n  </div>\n\n</mat-dialog-content>\n<mat-dialog-actions>\n  <button class=\"mat-raised-button\"(click)=\"close()\">Close</button>\n  <button class=\"mat-raised-button mat-primary\"(click)=\"save()\">Save</button>\n</mat-dialog-actions>");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/patient-doctors-list/patient-doctors-list.component.html":
-/*!***************************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/patient-doctors-list/patient-doctors-list.component.html ***!
-  \***************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n    <mat-form-field>\n        <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n      </mat-form-field>\n      <table mat-table\n             [dataSource]=\"doctorDataSource\" class=\"mat-elevation-z8\" matSort>\n  \n        <ng-container matColumnDef=\"Name\">\n          <th mat-header-cell *matHeaderCellDef> Doctor name </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n        </ng-container>\n  \n        <ng-container matColumnDef=\"Surname\">\n          <th mat-header-cell *matHeaderCellDef> Doctor surname </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.surname}} </td>\n        </ng-container>\n  \n        <ng-container matColumnDef=\"DoctorRating\">\n          <th mat-header-cell *matHeaderCellDef> Doctor rating </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.doctorRating}} </td>\n        </ng-container>\n  \n        <ng-container matColumnDef=\"Price\">\n          <th mat-header-cell *matHeaderCellDef> Price </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.specialized.price}} </td>\n        </ng-container>\n  \n  \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n      </table>\n      <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons></mat-paginator>\n      <button mat-raised-button color=\"primary\" (click)=\"searchDoctors()\">Search</button>\n      <mat-dialog-actions>\n        <button class=\"mat-raised-button\"(click)=\"close()\">Close</button>\n      </mat-dialog-actions>");
 
 /***/ }),
 
@@ -653,12 +614,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_clinics_page_clinics_page_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/clinics-page/clinics-page.component */ "./src/app/components/clinics-page/clinics-page.component.ts");
 /* harmony import */ var _components_nurse_page_nurse_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/nurse-page/nurse-page.component */ "./src/app/components/nurse-page/nurse-page.component.ts");
 /* harmony import */ var _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/nurse-profile/nurse-profile.component */ "./src/app/components/nurse-profile/nurse-profile.component.ts");
-/* harmony import */ var _components_clinic_search_clinic_search_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/clinic-search/clinic-search.component */ "./src/app/components/clinic-search/clinic-search.component.ts");
-/* harmony import */ var _components_patient_doctors_list_patient_doctors_list_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/patient-doctors-list/patient-doctors-list.component */ "./src/app/components/patient-doctors-list/patient-doctors-list.component.ts");
-/* harmony import */ var _components_patient_doctor_search_patient_doctor_search_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/patient-doctor-search/patient-doctor-search.component */ "./src/app/components/patient-doctor-search/patient-doctor-search.component.ts");
-
-
-
 
 
 
@@ -698,10 +653,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _components_medical_history_page_medical_history_page_component__WEBPACK_IMPORTED_MODULE_19__["MedicalHistoryPageComponent"],
             _components_clinics_page_clinics_page_component__WEBPACK_IMPORTED_MODULE_20__["ClinicsPageComponent"],
             _components_nurse_page_nurse_page_component__WEBPACK_IMPORTED_MODULE_21__["NursePageComponent"],
-            _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__["NurseProfileComponent"],
-            _components_clinic_search_clinic_search_component__WEBPACK_IMPORTED_MODULE_23__["ClinicSearchComponent"],
-            _components_patient_doctors_list_patient_doctors_list_component__WEBPACK_IMPORTED_MODULE_24__["PatientDoctorsListComponent"],
-            _components_patient_doctor_search_patient_doctor_search_component__WEBPACK_IMPORTED_MODULE_25__["PatientDoctorSearchComponent"]
+            _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__["NurseProfileComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -719,96 +671,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_material_core__WEBPACK_IMPORTED_MODULE_10__["MatNativeDateModule"],
             _material_module__WEBPACK_IMPORTED_MODULE_11__["DemoMaterialModule"],
         ],
-        entryComponents: [
-            _components_clinic_search_clinic_search_component__WEBPACK_IMPORTED_MODULE_23__["ClinicSearchComponent"],
-            _components_patient_doctors_list_patient_doctors_list_component__WEBPACK_IMPORTED_MODULE_24__["PatientDoctorsListComponent"],
-            _components_patient_doctor_search_patient_doctor_search_component__WEBPACK_IMPORTED_MODULE_25__["PatientDoctorSearchComponent"],
-        ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
     })
 ], AppModule);
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/clinic-search/clinic-search.component.css":
-/*!**********************************************************************!*\
-  !*** ./src/app/components/clinic-search/clinic-search.component.css ***!
-  \**********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY2xpbmljLXNlYXJjaC9jbGluaWMtc2VhcmNoLmNvbXBvbmVudC5jc3MifQ== */");
-
-/***/ }),
-
-/***/ "./src/app/components/clinic-search/clinic-search.component.ts":
-/*!*********************************************************************!*\
-  !*** ./src/app/components/clinic-search/clinic-search.component.ts ***!
-  \*********************************************************************/
-/*! exports provided: ClinicSearchComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClinicSearchComponent", function() { return ClinicSearchComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
-/* harmony import */ var src_app_services_examination_type_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/examination-type.service */ "./src/app/services/examination-type.service.ts");
-
-
-
-
-
-let ClinicSearchComponent = class ClinicSearchComponent {
-    constructor(formBuilder, examinationTypeService, dialogRef, data) {
-        this.formBuilder = formBuilder;
-        this.examinationTypeService = examinationTypeService;
-        this.dialogRef = dialogRef;
-        this.types = new Array();
-        this.myFilter = (d) => {
-            const day = d.getDay();
-            // Subota i nedelja se ne radi.
-            return day !== 0 && day !== 6;
-        };
-        this.types = examinationTypeService.getAllTypes();
-    }
-    ngOnInit() {
-        this.SearchClinicsGroup = this.formBuilder.group({
-            date: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
-            type: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]),
-        });
-    }
-    get f() {
-        return this.SearchClinicsGroup.controls;
-    }
-    save() {
-        this.dialogRef.close(this.SearchClinicsGroup.value);
-    }
-    close() {
-        this.dialogRef.close();
-    }
-};
-ClinicSearchComponent.ctorParameters = () => [
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: src_app_services_examination_type_service__WEBPACK_IMPORTED_MODULE_4__["ExaminationTypeService"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"] },
-    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"],] }] }
-];
-ClinicSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-clinic-search',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./clinic-search.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/clinic-search/clinic-search.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./clinic-search.component.css */ "./src/app/components/clinic-search/clinic-search.component.css")).default]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"]))
-], ClinicSearchComponent);
 
 
 
@@ -823,7 +689,7 @@ ClinicSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("div {\r\n    width: 100%;\r\n  \r\n  }\r\n  \r\n  table {\r\n    width: 75%;\r\n    margin-top:50px;\r\n    margin-left:300px;\r\n  \r\n  }\r\n  \r\n  .mat-form-field {\r\n    font-size: 14px;\r\n    margin-top:50px;\r\n    margin-left:300px;\r\n    width: 75%;\r\n  }\r\n  \r\n  mat-paginator {\r\n    width: 75%;\r\n    margin-left:300px;\r\n  }\r\n  \r\n  tr.example-detail-row {\r\n    height: 0;\r\n  }\r\n  \r\n  tr.example-element-row:not(.example-expanded-row):hover {\r\n    background: #777;\r\n  }\r\n  \r\n  tr.example-element-row:not(.example-expanded-row):active {\r\n    background: #efefef;\r\n  }\r\n  \r\n  .example-element-row td {\r\n    border-bottom-width: 0;\r\n  }\r\n  \r\n  .example-element-detail {\r\n    overflow: hidden;\r\n    display: -webkit-box;\r\n    display: flex;\r\n  }\r\n  \r\n  .example-element-diagram {\r\n    min-width: 80px;\r\n    border: 2px solid black;\r\n    padding: 8px;\r\n    font-weight: lighter;\r\n    margin: 8px 0;\r\n    height: 104px;\r\n  }\r\n  \r\n  .example-element-name {\r\n    font-weight: bold;\r\n    font-size: 40px;\r\n    line-height: normal;\r\n  }\r\n  \r\n  .example-element-description {\r\n    padding: 16px;\r\n  }\r\n  \r\n  .example-element-description-attribution {\r\n    opacity: 0.5;\r\n  }\r\n  \r\n  .mat-raised-button {\r\n    margin-left:300px;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9jbGluaWNzLXBhZ2UvY2xpbmljcy1wYWdlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXOztFQUViOztFQUVBO0lBQ0UsVUFBVTtJQUNWLGVBQWU7SUFDZixpQkFBaUI7O0VBRW5COztFQUNBO0lBQ0UsZUFBZTtJQUNmLGVBQWU7SUFDZixpQkFBaUI7SUFDakIsVUFBVTtFQUNaOztFQUNBO0lBQ0UsVUFBVTtJQUNWLGlCQUFpQjtFQUNuQjs7RUFFQTtJQUNFLFNBQVM7RUFDWDs7RUFFQTtJQUNFLGdCQUFnQjtFQUNsQjs7RUFFQTtJQUNFLG1CQUFtQjtFQUNyQjs7RUFFQTtJQUNFLHNCQUFzQjtFQUN4Qjs7RUFFQTtJQUNFLGdCQUFnQjtJQUNoQixvQkFBYTtJQUFiLGFBQWE7RUFDZjs7RUFFQTtJQUNFLGVBQWU7SUFDZix1QkFBdUI7SUFDdkIsWUFBWTtJQUNaLG9CQUFvQjtJQUNwQixhQUFhO0lBQ2IsYUFBYTtFQUNmOztFQUVBO0lBQ0UsaUJBQWlCO0lBQ2pCLGVBQWU7SUFDZixtQkFBbUI7RUFDckI7O0VBRUE7SUFDRSxhQUFhO0VBQ2Y7O0VBRUE7SUFDRSxZQUFZO0VBQ2Q7O0VBQ0E7SUFDRSxpQkFBaUI7RUFDbkIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2NsaW5pY3MtcGFnZS9jbGluaWNzLXBhZ2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImRpdiB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICBcclxuICB9XHJcbiAgXHJcbiAgdGFibGUge1xyXG4gICAgd2lkdGg6IDc1JTtcclxuICAgIG1hcmdpbi10b3A6NTBweDtcclxuICAgIG1hcmdpbi1sZWZ0OjMwMHB4O1xyXG4gIFxyXG4gIH1cclxuICAubWF0LWZvcm0tZmllbGQge1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgbWFyZ2luLXRvcDo1MHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6MzAwcHg7XHJcbiAgICB3aWR0aDogNzUlO1xyXG4gIH1cclxuICBtYXQtcGFnaW5hdG9yIHtcclxuICAgIHdpZHRoOiA3NSU7XHJcbiAgICBtYXJnaW4tbGVmdDozMDBweDtcclxuICB9XHJcbiAgXHJcbiAgdHIuZXhhbXBsZS1kZXRhaWwtcm93IHtcclxuICAgIGhlaWdodDogMDtcclxuICB9XHJcbiAgXHJcbiAgdHIuZXhhbXBsZS1lbGVtZW50LXJvdzpub3QoLmV4YW1wbGUtZXhwYW5kZWQtcm93KTpob3ZlciB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjNzc3O1xyXG4gIH1cclxuICBcclxuICB0ci5leGFtcGxlLWVsZW1lbnQtcm93Om5vdCguZXhhbXBsZS1leHBhbmRlZC1yb3cpOmFjdGl2ZSB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZWZlZmVmO1xyXG4gIH1cclxuICBcclxuICAuZXhhbXBsZS1lbGVtZW50LXJvdyB0ZCB7XHJcbiAgICBib3JkZXItYm90dG9tLXdpZHRoOiAwO1xyXG4gIH1cclxuICBcclxuICAuZXhhbXBsZS1lbGVtZW50LWRldGFpbCB7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZWxlbWVudC1kaWFncmFtIHtcclxuICAgIG1pbi13aWR0aDogODBweDtcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkIGJsYWNrO1xyXG4gICAgcGFkZGluZzogOHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IGxpZ2h0ZXI7XHJcbiAgICBtYXJnaW46IDhweCAwO1xyXG4gICAgaGVpZ2h0OiAxMDRweDtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZWxlbWVudC1uYW1lIHtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgZm9udC1zaXplOiA0MHB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IG5vcm1hbDtcclxuICB9XHJcbiAgXHJcbiAgLmV4YW1wbGUtZWxlbWVudC1kZXNjcmlwdGlvbiB7XHJcbiAgICBwYWRkaW5nOiAxNnB4O1xyXG4gIH1cclxuICBcclxuICAuZXhhbXBsZS1lbGVtZW50LWRlc2NyaXB0aW9uLWF0dHJpYnV0aW9uIHtcclxuICAgIG9wYWNpdHk6IDAuNTtcclxuICB9XHJcbiAgLm1hdC1yYWlzZWQtYnV0dG9uIHtcclxuICAgIG1hcmdpbi1sZWZ0OjMwMHB4O1xyXG4gIH0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY2xpbmljcy1wYWdlL2NsaW5pY3MtcGFnZS5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -841,76 +707,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var src_app_services_clinic_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/clinic.service */ "./src/app/services/clinic.service.ts");
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm2015/animations.js");
-/* harmony import */ var src_app_services_doctor_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/doctor.service */ "./src/app/services/doctor.service.ts");
-/* harmony import */ var _clinic_search_clinic_search_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../clinic-search/clinic-search.component */ "./src/app/components/clinic-search/clinic-search.component.ts");
-/* harmony import */ var _patient_doctors_list_patient_doctors_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../patient-doctors-list/patient-doctors-list.component */ "./src/app/components/patient-doctors-list/patient-doctors-list.component.ts");
-
-
-
-
 
 
 
 
 let ClinicsPageComponent = class ClinicsPageComponent {
-    constructor(clinicService, doctorService, dialog) {
+    constructor(clinicService) {
         this.clinicService = clinicService;
-        this.doctorService = doctorService;
-        this.dialog = dialog;
-        this.displayedColumns = ['Name', 'Address', 'ClinicRating', 'Price', 'Doctors'];
+        this.displayedColumns = ['name', 'address'];
         this.clinicDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
-        this.doctorDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
         this.clinics = new Array();
-        this.doctors = new Array();
         this.clinics = this.clinicService.getAllClinics();
-        console.log(this.clinics);
-        this.doctors = this.doctorService.getAllDoctors();
-        this.condition = true;
         this.all();
     }
     ngOnInit() {
         this.all();
-        this.clinicDataSource.paginator = this.paginator;
-    }
-    applyFilter(filterValue) {
-        this.clinicDataSource.filter = filterValue.trim().toLowerCase();
-        if (this.clinicDataSource.paginator) {
-            this.clinicDataSource.paginator.firstPage();
-        }
     }
     all() {
         this.clinicDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.clinicService.getAllClinics());
-    }
-    openDialog() {
-        const dialog = this.dialog.open(_clinic_search_clinic_search_component__WEBPACK_IMPORTED_MODULE_6__["ClinicSearchComponent"]);
-        dialog.afterClosed().subscribe(data => {
-            if (data !== undefined) {
-                this.clinics = data.clinics;
-                this.clinicDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.clinics);
-                this.condition = false;
-                this.tmp = data.date;
-            }
-        });
-    }
-    doctorList(element) {
-        this.doctorService.setDoctorss(element.doctors);
-        console.log(element);
-        for (const d of element.doctors) {
-            //  this.tmp1 = this.doctorService.getDoctorsTermins(this.tmp, d.email);
-            //  console.log(this.tmp1);
-        }
-        const dialog = this.dialog.open(_patient_doctors_list_patient_doctors_list_component__WEBPACK_IMPORTED_MODULE_7__["PatientDoctorsListComponent"]);
+        this.clinicDataSource.paginator = this.paginator;
     }
 };
 ClinicsPageComponent.ctorParameters = () => [
-    { type: src_app_services_clinic_service__WEBPACK_IMPORTED_MODULE_3__["ClinicService"] },
-    { type: src_app_services_doctor_service__WEBPACK_IMPORTED_MODULE_5__["DoctorService"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
+    { type: src_app_services_clinic_service__WEBPACK_IMPORTED_MODULE_3__["ClinicService"] }
 ];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], ClinicsPageComponent.prototype, "doctorListComponent", void 0);
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"], { static: true })
 ], ClinicsPageComponent.prototype, "paginator", void 0);
@@ -918,13 +738,6 @@ ClinicsPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-clinics-page',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./clinics-page.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/clinics-page/clinics-page.component.html")).default,
-        animations: [
-            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["trigger"])('detailExpand', [
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["state"])('collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["style"])({ height: '0px', minHeight: '0' })),
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["state"])('expanded', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["style"])({ height: '*' })),
-                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["transition"])('expanded <=> collapsed', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_4__["animate"])('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-            ]),
-        ],
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./clinics-page.component.css */ "./src/app/components/clinics-page/clinics-page.component.css")).default]
     })
 ], ClinicsPageComponent);
@@ -1019,40 +832,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let DoctorProfileComponent = class DoctorProfileComponent {
-    constructor(formBuilder, router, doctorService, userService) {
+    constructor(doctorService, formBuilder, router, userService) {
+        this.doctorService = doctorService;
         this.formBuilder = formBuilder;
         this.router = router;
-        this.doctorService = doctorService;
         this.userService = userService;
         this.submitted = false;
         this.user = JSON.parse(userService.isLoggedIn());
         console.log(this.user);
         this.selectedDoctor = doctorService.getDoctor(this.user.email);
+        console.log(this.selectedDoctor);
     }
     ngOnInit() {
-        this.doctorProfileForm = this.formBuilder.group({
+        this.doctorForm = this.formBuilder.group({
             email: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.email, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].email]),
             password: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.password, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(8),
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')]),
             name: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.name, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]),
             surname: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.surname, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]),
-            number: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.phone, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(9)]),
-            workHoursFrom: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.workHoursFrom, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(2),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].maxLength(2)]),
-            workHoursTo: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.workHoursTo, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(2),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].maxLength(2)]),
+            number: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.number, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].minLength(9)]),
+            address: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.address, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]),
+            city: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.city, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]),
+            country: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.country, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]),
+            specialization: new _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormControl"](this.selectedDoctor.specialization, [_angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]),
         });
     }
     get f() {
-        return this.doctorProfileForm.controls;
+        return this.doctorForm.controls;
     }
     onSubmit() {
         this.submitted = true;
         // Stop here if form is invalid
-        if (this.doctorProfileForm.invalid) {
+        if (this.doctorForm.invalid) {
             return;
         }
-        this.doctor = new _models_doctor__WEBPACK_IMPORTED_MODULE_2__["Doctor"](this.f.email.value, this.f.password.value, this.f.name.value, this.f.surname.value, this.f.number.value, this.f.workHoursFrom.value, this.f.workHoursTo.value);
+        this.doctor = new _models_doctor__WEBPACK_IMPORTED_MODULE_2__["Doctor"](this.f.email.value, this.f.password.value, this.f.name.value, this.f.surname.value, this.f.number.value, this.f.address.value, this.f.city.value, this.f.country.value, this.f.specialization.value);
         this.user = new _models_user__WEBPACK_IMPORTED_MODULE_3__["User"](this.f.email.value, this.f.password.value, _models_role__WEBPACK_IMPORTED_MODULE_8__["Role"].DOCTOR);
         this.editDoctor();
     }
@@ -1061,17 +875,15 @@ let DoctorProfileComponent = class DoctorProfileComponent {
             this.userService.setUser(this.user);
             this.doctorService.setDoctor(this.doctor);
             this.router.navigate(['/doctor/home']);
-            console.log('uspesno');
         }, error => {
             alert('Error edit doctor');
-            console.log(error);
         });
     }
 };
 DoctorProfileComponent.ctorParameters = () => [
+    { type: _services_doctor_service__WEBPACK_IMPORTED_MODULE_5__["DoctorService"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
-    { type: _services_doctor_service__WEBPACK_IMPORTED_MODULE_5__["DoctorService"] },
     { type: _services_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"] }
 ];
 DoctorProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1119,8 +931,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
 /* harmony import */ var _services_doctor_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/doctor.service */ "./src/app/services/doctor.service.ts");
 /* harmony import */ var src_app_services_nurse_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/nurse.service */ "./src/app/services/nurse.service.ts");
-/* harmony import */ var src_app_services_medical_record_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/services/medical-record.service */ "./src/app/services/medical-record.service.ts");
-
 
 
 
@@ -1137,14 +947,13 @@ class LoginUser {
     }
 }
 let LoginComponent = class LoginComponent {
-    constructor(patientService, formBuilder, router, userService, doctorService, nurseService, recordService) {
+    constructor(patientService, formBuilder, router, userService, doctorService, nurseService) {
         this.patientService = patientService;
         this.formBuilder = formBuilder;
         this.router = router;
         this.userService = userService;
         this.doctorService = doctorService;
         this.nurseService = nurseService;
-        this.recordService = recordService;
         this.submitted = false;
     }
     ngOnInit() {
@@ -1219,8 +1028,7 @@ LoginComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
     { type: _services_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"] },
     { type: _services_doctor_service__WEBPACK_IMPORTED_MODULE_7__["DoctorService"] },
-    { type: src_app_services_nurse_service__WEBPACK_IMPORTED_MODULE_8__["NurseService"] },
-    { type: src_app_services_medical_record_service__WEBPACK_IMPORTED_MODULE_9__["MedicalRecordService"] }
+    { type: src_app_services_nurse_service__WEBPACK_IMPORTED_MODULE_8__["NurseService"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1262,64 +1070,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
 /* harmony import */ var src_app_services_examination_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/examination.service */ "./src/app/services/examination.service.ts");
 /* harmony import */ var src_app_models_examinationTable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/models/examinationTable */ "./src/app/models/examinationTable.ts");
-/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
-/* harmony import */ var src_app_services_patient_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/patient.service */ "./src/app/services/patient.service.ts");
-
-
 
 
 
 
 
 let MedicalHistoryPageComponent = class MedicalHistoryPageComponent {
-    constructor(patientService, examinationService, userService) {
-        this.patientService = patientService;
+    constructor(examinationService) {
         this.examinationService = examinationService;
-        this.userService = userService;
-        this.displayedColumns = ['kind', 'clinic', 'doctor'];
+        this.displayedColumns = ['Kind', 'Status', 'Type', 'Room', 'Discount', 'Nurse', 'Doctors'];
         this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
+        this.examinations = new Array();
+        this.listEx = new Array();
         this.examinations = this.examinationService.getAllExaminations();
-        this.exTables = new Array();
-        this.tmp = new Array();
-        this.loggedUser = this.userService.isLoggedIn();
-        this.tmpStr = this.loggedUser.split(',');
-        this.tmpStr1 = this.tmpStr[0].split(':');
-        this.str = "";
-        this.user = JSON.parse(this.loggedUser);
+        console.log("medicalHPage  " + this.examinations);
+        this.all();
     }
     ngOnInit() {
         this.all();
     }
     all() {
-        for (const c of this.examinations) {
-            if (c.patient.email === this.user.email) {
-                this.tmp.push(c);
-                for (const s of c.doctors) {
-                    this.str = s.name + " ";
-                }
-                this.exTable = new src_app_models_examinationTable__WEBPACK_IMPORTED_MODULE_4__["ExaminationTable"](this.kindExamination(c.kind.toString()), this.str, c.clinic.name);
-                this.exTables.push(this.exTable);
-                console.log(this.exTable);
-            }
-        }
-        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.exTables);
-        console.log(this.exTables);
-        this.str = "";
+        this.fillData();
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.listEx);
+        this.dataSource.paginator = this.paginator;
     }
-    kindExamination(kind) {
-        if (kind === 'EXAMINATION') {
-            return "EXAMINATION";
-        }
-        else {
-            return "OPERATION";
+    fillData() {
+        for (let i = 0; i < this.examinations.length; i++) {
+            const element = this.examinations[i];
+            const exaTable = new src_app_models_examinationTable__WEBPACK_IMPORTED_MODULE_4__["ExaminationTable"](this.examinations[i].id, this.examinations[i].kind, this.examinations[i].status, "type", "room1", "0", "nurse1", "patient1", "doctor1,doctor2", "0");
+            let truee = 0;
+            for (let j = 0; j < this.listEx.length; j++) {
+                const elemente = this.listEx[j];
+                if (elemente.id === exaTable.id) {
+                    truee = 1;
+                }
+            }
+            if (truee === 0) {
+                this.listEx.push(exaTable);
+            }
         }
     }
 };
 MedicalHistoryPageComponent.ctorParameters = () => [
-    { type: src_app_services_patient_service__WEBPACK_IMPORTED_MODULE_6__["PatientService"] },
-    { type: src_app_services_examination_service__WEBPACK_IMPORTED_MODULE_3__["ExaminationService"] },
-    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"] }
+    { type: src_app_services_examination_service__WEBPACK_IMPORTED_MODULE_3__["ExaminationService"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"], { static: true })
+], MedicalHistoryPageComponent.prototype, "paginator", void 0);
 MedicalHistoryPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-medical-history-page',
@@ -1349,11 +1146,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************************************!*\
   !*** ./src/app/components/medical-record-page/medical-record-page.component.ts ***!
   \*********************************************************************************/
-/*! exports provided: MedicalRecordPageComponent */
+/*! exports provided: Table, MedicalRecordPageComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Table", function() { return Table; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicalRecordPageComponent", function() { return MedicalRecordPageComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
@@ -1365,41 +1163,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+class Table {
+    constructor(height, weight, bloodType, allergies) {
+        this.height = height;
+        this.weight = weight;
+        this.bloodType = bloodType;
+        this.allergies = allergies;
+    }
+}
 let MedicalRecordPageComponent = class MedicalRecordPageComponent {
     constructor(medicalRecordService, userService) {
         this.medicalRecordService = medicalRecordService;
         this.userService = userService;
-        this.records = new Array();
-        this.loggedUser = this.userService.isLoggedIn();
-        this.displayedColumns = ['Height', 'Weight', 'BloodType', 'Allergies', 'ExaminationReports'];
+        this.displayedColumns = ['Height', 'Weight', 'BloodType', 'Allergies'];
         this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
-        this.rec = new Array();
-        this.records = medicalRecordService.getAllMedicalRecords();
-        this.user = JSON.parse(this.loggedUser);
-        this.all();
+        this.records = new Array();
+        this.listTable = new Array();
+        this.records = this.medicalRecordService.getAllRecords();
+        this.user = JSON.parse(userService.isLoggedIn());
     }
     ngOnInit() {
         this.all();
     }
     all() {
-        this.setAll();
-        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.rec);
-        this.dataSource.paginator = this.paginator;
+        this.fillData();
+        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.listTable);
     }
-    setAll() {
-        for (let i = 0; i < this.records.length; i++) {
-            const element = this.records[i];
-            let truee = 0;
-            if (element.patient.email == this.user.email) {
-                for (const c of this.rec) {
-                    if (c.id == element.id)
-                        truee = 1;
-                }
-                if (truee == 0) {
-                    this.rec.push(this.records[i]);
-                }
-            }
-        }
+    fillData() {
+        /*for (let i = 0; i < this.records.length; i++) {
+          const element = this.records[i];
+                const table=new Table(element.height,element.weight,element.bloodType,element.allergies);
+                this.listTable.push(table);
+                
+        }*/
+        const table = new Table(180, 85, "A+", "No allergies");
+        this.listTable.push(table);
     }
 };
 MedicalRecordPageComponent.ctorParameters = () => [
@@ -1504,171 +1302,6 @@ NurseProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./nurse-profile.component.css */ "./src/app/components/nurse-profile/nurse-profile.component.css")).default]
     })
 ], NurseProfileComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/patient-doctor-search/patient-doctor-search.component.css":
-/*!**************************************************************************************!*\
-  !*** ./src/app/components/patient-doctor-search/patient-doctor-search.component.css ***!
-  \**************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGF0aWVudC1kb2N0b3Itc2VhcmNoL3BhdGllbnQtZG9jdG9yLXNlYXJjaC5jb21wb25lbnQuY3NzIn0= */");
-
-/***/ }),
-
-/***/ "./src/app/components/patient-doctor-search/patient-doctor-search.component.ts":
-/*!*************************************************************************************!*\
-  !*** ./src/app/components/patient-doctor-search/patient-doctor-search.component.ts ***!
-  \*************************************************************************************/
-/*! exports provided: PatientDoctorSearchComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientDoctorSearchComponent", function() { return PatientDoctorSearchComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var src_app_services_doctor_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/doctor.service */ "./src/app/services/doctor.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
-
-
-
-
-
-let PatientDoctorSearchComponent = class PatientDoctorSearchComponent {
-    constructor(formBuilder, doctorService, dialogRef, data) {
-        this.formBuilder = formBuilder;
-        this.doctorService = doctorService;
-        this.dialogRef = dialogRef;
-        this.doctors = new Array();
-    }
-    ngOnInit() {
-        this.SearchDoctorGroup = this.formBuilder.group({
-            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
-            surname: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
-            rating: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(1), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(1),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('[0-5]*')]),
-        });
-    }
-    get f() {
-        return this.SearchDoctorGroup.controls;
-    }
-    close() {
-        this.dialogRef.close();
-    }
-    save() {
-        if (this.SearchDoctorGroup.invalid) {
-            return;
-        }
-        this.doctors = this.doctorService.getDoctrosWithSearch(this.f.name.value, this.f.surname.value, this.f.rating.value);
-        console.log(this.doctors);
-        this.dialogRef.close(this.doctors);
-    }
-};
-PatientDoctorSearchComponent.ctorParameters = () => [
-    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: src_app_services_doctor_service__WEBPACK_IMPORTED_MODULE_3__["DoctorService"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"] },
-    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"],] }] }
-];
-PatientDoctorSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-patient-doctor-search',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./patient-doctor-search.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/patient-doctor-search/patient-doctor-search.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./patient-doctor-search.component.css */ "./src/app/components/patient-doctor-search/patient-doctor-search.component.css")).default]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](3, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"]))
-], PatientDoctorSearchComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/patient-doctors-list/patient-doctors-list.component.css":
-/*!************************************************************************************!*\
-  !*** ./src/app/components/patient-doctors-list/patient-doctors-list.component.css ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("table {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wYXRpZW50LWRvY3RvcnMtbGlzdC9wYXRpZW50LWRvY3RvcnMtbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9wYXRpZW50LWRvY3RvcnMtbGlzdC9wYXRpZW50LWRvY3RvcnMtbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */");
-
-/***/ }),
-
-/***/ "./src/app/components/patient-doctors-list/patient-doctors-list.component.ts":
-/*!***********************************************************************************!*\
-  !*** ./src/app/components/patient-doctors-list/patient-doctors-list.component.ts ***!
-  \***********************************************************************************/
-/*! exports provided: PatientDoctorsListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientDoctorsListComponent", function() { return PatientDoctorsListComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
-/* harmony import */ var src_app_services_doctor_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/doctor.service */ "./src/app/services/doctor.service.ts");
-/* harmony import */ var _patient_doctor_search_patient_doctor_search_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../patient-doctor-search/patient-doctor-search.component */ "./src/app/components/patient-doctor-search/patient-doctor-search.component.ts");
-
-
-
-
-
-let PatientDoctorsListComponent = class PatientDoctorsListComponent {
-    constructor(doctorService, searchDialog, dialogRef) {
-        this.doctorService = doctorService;
-        this.searchDialog = searchDialog;
-        this.dialogRef = dialogRef;
-        this.displayedColumns = ['Name', 'Surname', 'DoctorRating', 'Price'];
-        this.doctors = doctorService.getDoctorss();
-        this.doctorDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](this.doctors);
-    }
-    ngOnInit() {
-    }
-    applyFilter(filterValue) {
-        this.doctorDataSource.filter = filterValue.trim().toLowerCase();
-        if (this.doctorDataSource.paginator) {
-            this.doctorDataSource.paginator.firstPage();
-        }
-    }
-    searchDoctors() {
-        const dialog = this.searchDialog.open(_patient_doctor_search_patient_doctor_search_component__WEBPACK_IMPORTED_MODULE_4__["PatientDoctorSearchComponent"]);
-        dialog.afterClosed().subscribe(data => {
-            if (data !== undefined) {
-                this.doctors = data;
-                this.doctorDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"](data);
-            }
-        });
-    }
-    close() {
-        this.dialogRef.close();
-    }
-};
-PatientDoctorsListComponent.ctorParameters = () => [
-    { type: src_app_services_doctor_service__WEBPACK_IMPORTED_MODULE_3__["DoctorService"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] },
-    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] }
-];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], PatientDoctorsListComponent.prototype, "doctorSearchDialog", void 0);
-PatientDoctorsListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-patient-doctors-list',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./patient-doctors-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/patient-doctors-list/patient-doctors-list.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./patient-doctors-list.component.css */ "./src/app/components/patient-doctors-list/patient-doctors-list.component.css")).default]
-    })
-], PatientDoctorsListComponent);
 
 
 
@@ -2096,15 +1729,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class Clinic {
-    constructor(name, address, description, doctors, examinationTypes, clinicRating, id) {
-        this.doctors = new Array();
-        this.examinationTypes = new Array();
+    constructor(name, address, description, id) {
         this.name = name;
         this.address = address;
         this.description = description;
-        this.doctors = doctors;
-        this.clinicRating = clinicRating;
-        this.examinationTypes = examinationTypes;
         this.id = id;
     }
 }
@@ -2125,17 +1753,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class Doctor {
-    constructor(email, password, name, surname, number1, workHoursFrom, workHoursTo, specialized, doctorRating, clinic) {
+    constructor(email, password, name, surname, number1, address, city, country, specialization) {
         this.email = email;
-        this.password = password;
         this.name = name;
+        this.password = password;
         this.surname = surname;
-        this.phone = number1;
-        this.workHoursFrom = workHoursFrom;
-        this.workHoursTo = workHoursTo;
-        this.doctorRating = doctorRating;
-        this.specialized = specialized;
-        this.clinic = clinic;
+        this.number = number1;
+        this.address = address;
+        this.city = city;
+        this.country = country;
+        this.specialization = specialization;
     }
 }
 
@@ -2155,66 +1782,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class Examination {
-    constructor(kind, status, examinationType, discount, doctorRating, clinicRating, nurse, clinic, patient, doctors, id, interval) {
-        this.doctors = new Array();
+    //   nurse: Nurse;
+    //  patient: Patient;
+    constructor(id, kind, status, discount) {
+        this.id = id;
         this.kind = kind;
         this.status = status;
-        this.examinationType = examinationType;
+        //   this.examinationType = examinationType;
+        //    this.room = room;
         this.discount = discount;
-        this.doctorRating = doctorRating;
-        this.clinicRating = clinicRating;
-        this.nurse = nurse;
-        this.clinic = clinic;
-        this.patient = patient;
-        this.doctors = doctors;
-        this.id = id;
-        this.interval = interval;
+        //      this.nurse = nurse;
+        //    this.patient = patient;
     }
 }
-
-
-/***/ }),
-
-/***/ "./src/app/models/examinationKind.ts":
-/*!*******************************************!*\
-  !*** ./src/app/models/examinationKind.ts ***!
-  \*******************************************/
-/*! exports provided: ExaminationKind */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExaminationKind", function() { return ExaminationKind; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-var ExaminationKind;
-(function (ExaminationKind) {
-    ExaminationKind[ExaminationKind["EXAMINATION"] = 0] = "EXAMINATION";
-    ExaminationKind[ExaminationKind["OPERATION"] = 1] = "OPERATION";
-})(ExaminationKind || (ExaminationKind = {}));
-
-
-/***/ }),
-
-/***/ "./src/app/models/examinationStatus.ts":
-/*!*********************************************!*\
-  !*** ./src/app/models/examinationStatus.ts ***!
-  \*********************************************/
-/*! exports provided: ExaminationStatus */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExaminationStatus", function() { return ExaminationStatus; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-var ExaminationStatus;
-(function (ExaminationStatus) {
-    ExaminationStatus[ExaminationStatus["APPROVED"] = 0] = "APPROVED";
-    ExaminationStatus[ExaminationStatus["AWAITING"] = 1] = "AWAITING";
-    ExaminationStatus[ExaminationStatus["PREDEF_BOOKED"] = 2] = "PREDEF_BOOKED";
-    ExaminationStatus[ExaminationStatus["PREDEF_AVAILABLE"] = 3] = "PREDEF_AVAILABLE";
-})(ExaminationStatus || (ExaminationStatus = {}));
 
 
 /***/ }),
@@ -2232,33 +1812,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class ExaminationTable {
-    constructor(kind, doctors, clinic) {
-        this.kind = kind;
-        this.doctors = doctors;
-        this.clinic = clinic;
-    }
-}
-
-
-/***/ }),
-
-/***/ "./src/app/models/examinationType.ts":
-/*!*******************************************!*\
-  !*** ./src/app/models/examinationType.ts ***!
-  \*******************************************/
-/*! exports provided: ExaminationType */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExaminationType", function() { return ExaminationType; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class ExaminationType {
-    constructor(label, price, id) {
-        this.label = label;
-        this.price = price;
+    constructor(id, kind, status, type, room, discount, nurse, patient, doctors, interval) {
         this.id = id;
+        this.kind = kind;
+        this.status = status;
+        this.type = type;
+        this.room = room;
+        this.discount = discount;
+        this.nurse = nurse;
+        this.patient = patient;
+        this.doctors = doctors;
+        this.interval = interval;
     }
 }
 
@@ -2278,15 +1842,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class MedicalRecord {
-    constructor(id, height, weight, bloodType, allergies, patient, reports) {
-        this.reports = new Array();
-        this.id = id;
+    // patient:Patient;
+    constructor(height, weight, bloodType, allergies) {
         this.height = height;
         this.weight = weight;
         this.bloodType = bloodType;
         this.allergies = allergies;
-        this.patient = patient;
-        this.reports = reports;
+        // this.patient=patient;
     }
 }
 
@@ -2433,22 +1995,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _models_clinic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/clinic */ "./src/app/models/clinic.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _examination_type_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./examination-type.service */ "./src/app/services/examination-type.service.ts");
-
 
 
 
 
 
 let ClinicService = class ClinicService {
-    constructor(http, examinationTypeService) {
+    constructor(http) {
         this.http = http;
-        this.examinationTypeService = examinationTypeService;
         this.urlClinic = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].clinic;
         this.listClinics = new Array();
-        this.clinicsTypes = new Array();
-        this.examinationTypes = new Array();
-        this.examinationTypes = examinationTypeService.getAllTypes();
         this.getAllClinics();
     }
     addClinic(c) {
@@ -2472,40 +2028,19 @@ let ClinicService = class ClinicService {
     }
     getAllClinics() {
         this.http.get(this.urlClinic + '/all').subscribe((data) => {
-            console.log(data);
             for (const c of data) {
-                this.clinic = new _models_clinic__WEBPACK_IMPORTED_MODULE_3__["Clinic"](c.name, c.address, c.description, c.doctors, c.examinationTypes, c.clinicRating, c.id);
+                this.clinic = new _models_clinic__WEBPACK_IMPORTED_MODULE_3__["Clinic"](c.name, c.address, c.description, c.id);
                 this.addClinic(this.clinic);
+                console.log(this.clinic);
             }
         }, error => {
             console.log(error);
         });
         return this.listClinics;
     }
-    newClinic(clinic) {
-        return this.http.post(this.urlClinic + '/clinical-centre-admin/addClinic', clinic);
-    }
-    getClinicsWithType(type) {
-        let params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]();
-        params = params.append('type', type);
-        this.clinicsTypes = new Array();
-        this.http.get(this.urlClinic + '/allWithTypes', { params }).subscribe((data) => {
-            for (const c of data) {
-                this.clinic = new _models_clinic__WEBPACK_IMPORTED_MODULE_3__["Clinic"](c.name, c.address, c.description, c.doctors, c.examinationTypes, c.clinicRating, c.id);
-                this.clinicsTypes.push(this.clinic);
-            }
-        }, error => {
-            console.log(error);
-        });
-        return this.clinicsTypes;
-    }
-    getClinicsWithTypes() {
-        return this.clinicsTypes;
-    }
 };
 ClinicService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
-    { type: _examination_type_service__WEBPACK_IMPORTED_MODULE_5__["ExaminationTypeService"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
 ];
 ClinicService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -2545,10 +2080,10 @@ let DoctorService = class DoctorService {
         this.userService = userService;
         this.urlDoctor = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].doctor;
         this.listDoctors = new Array();
-        this.doctorss = new Array();
-        this.termins = new Array();
-        this.doctorsWithSearch = new Array();
         this.getAllDoctors();
+    }
+    newDoctor(doctor) {
+        return this.http.post(this.urlDoctor + '/register', doctor);
     }
     loginDoctor(doctor) {
         this.userService.setToken(doctor);
@@ -2556,6 +2091,11 @@ let DoctorService = class DoctorService {
     }
     editDoctor(doctor) {
         return this.http.post(this.urlDoctor + '/edit', doctor, { responseType: 'text' });
+    }
+    addDoctor(d) {
+        if (this.getDoctor(d.email) === null) {
+            this.listDoctors.push(d);
+        }
     }
     getDoctor(email) {
         if (this.listDoctors.length === 0) {
@@ -2568,73 +2108,31 @@ let DoctorService = class DoctorService {
         }
         return null;
     }
-    addDoctor(d) {
-        if (this.getDoctor(d.email) === null) {
-            this.listDoctors.push(d);
-        }
-    }
-    setDoctor(d) {
-        for (const d1 of this.listDoctors) {
-            if (d1.email === d.email) {
-                d1.password = d.password;
-                d1.name = d.name;
-                d1.surname = d.surname;
-                d1.phone = d.phone;
-                d1.workHoursFrom = d.workHoursFrom;
-                d1.workHoursTo = d.workHoursTo;
+    setDoctor(p) {
+        for (const p1 of this.listDoctors) {
+            if (p1.email === p.email) {
+                p1.name = p.name;
+                p1.number = p.number;
+                p1.surname = p.surname;
+                p1.password = p.password;
+                p1.address = p.address;
+                p1.city = p.city;
+                p1.country = p.country;
+                p1.specialization = p.specialization;
+                return;
             }
         }
     }
     getAllDoctors() {
         this.http.get(this.urlDoctor + '/all').subscribe((data) => {
             for (const c of data) {
-                this.doctor = new _models_doctor__WEBPACK_IMPORTED_MODULE_3__["Doctor"](c.email, c.password, c.name, c.surname, c.phone, c.workHoursFrom, c.workHoursTo, c.specialized, c.doctorRating, c.clinic);
+                this.doctor = new _models_doctor__WEBPACK_IMPORTED_MODULE_3__["Doctor"](c.email, c.password, c.name, c.surname, c.number, c.address, c.city, c.country, c.specialization);
                 this.addDoctor(this.doctor);
             }
         }, error => {
             console.log(error);
         });
         return this.listDoctors;
-    }
-    getDoctorsTermins(date, email) {
-        let params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]();
-        params = params.append('date', date);
-        params = params.append('email', email);
-        console.log(params);
-        this.http.get(this.urlDoctor + '/terminString', { params, responseType: 'text' }).subscribe((data) => {
-            this.termins = new Array();
-            console.log('Ispod ovde');
-            console.log(data);
-            this.termin = data;
-            this.termins.push(data);
-        }, error => {
-            console.log(error);
-        });
-        return this.termin;
-    }
-    getDoctorss() {
-        return this.doctorss;
-    }
-    setDoctorss(doctorss) {
-        this.doctorss = doctorss;
-    }
-    getDoctrosWithSearch(name, surname, rating) {
-        let params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]();
-        params = params.append('name', name);
-        params = params.append('surname', surname);
-        params = params.append('rating', rating);
-        this.doctorsWithSearch = new Array();
-        this.http.get(this.urlDoctor + '/allWithSearch', { params }).subscribe((data) => {
-            console.log(data);
-            for (const c of data) {
-                this.doctor = new _models_doctor__WEBPACK_IMPORTED_MODULE_3__["Doctor"](c.email, c.password, c.name, c.surname, c.phone, c.workHoursFrom, c.workHoursTo, c.specialized, c.doctorRating, c.clinic);
-                this.doctorsWithSearch.push(this.doctor);
-                console.log(this.doctor);
-            }
-        }, error => {
-            console.log(error);
-        });
-        return this.doctorsWithSearch;
     }
 };
 DoctorService.ctorParameters = () => [
@@ -2646,74 +2144,6 @@ DoctorService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], DoctorService);
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/examination-type.service.ts":
-/*!******************************************************!*\
-  !*** ./src/app/services/examination-type.service.ts ***!
-  \******************************************************/
-/*! exports provided: ExaminationTypeService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExaminationTypeService", function() { return ExaminationTypeService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _models_examinationType__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/examinationType */ "./src/app/models/examinationType.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-
-
-
-
-
-let ExaminationTypeService = class ExaminationTypeService {
-    constructor(http) {
-        this.http = http;
-        this.urlExaminationType = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].examinationType;
-        this.examinationTypes = new Array();
-    }
-    getAllTypes() {
-        this.http.get(this.urlExaminationType + '/all').subscribe((data) => {
-            for (const c of data) {
-                this.type = new _models_examinationType__WEBPACK_IMPORTED_MODULE_3__["ExaminationType"](c.label, c.price);
-                this.addType(this.type);
-            }
-        }, error => {
-            console.log(error);
-        });
-        console.log(this.type);
-        return this.examinationTypes;
-    }
-    addType(t) {
-        if (this.getType(t.label) === null) {
-            this.examinationTypes.push(t);
-        }
-    }
-    getType(name) {
-        if (this.examinationTypes.length === 0) {
-            return null;
-        }
-        for (const u of this.examinationTypes) {
-            if (u.label === name) {
-                return u;
-            }
-        }
-        return null;
-    }
-};
-ExaminationTypeService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
-];
-ExaminationTypeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], ExaminationTypeService);
 
 
 
@@ -2734,9 +2164,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _models_examination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/examination */ "./src/app/models/examination.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _models_examinationKind__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../models/examinationKind */ "./src/app/models/examinationKind.ts");
-/* harmony import */ var _models_examinationStatus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../models/examinationStatus */ "./src/app/models/examinationStatus.ts");
-
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user.service */ "./src/app/services/user.service.ts");
 
 
 
@@ -2744,46 +2172,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ExaminationService = class ExaminationService {
-    constructor(http) {
+    constructor(http, userService) {
         this.http = http;
+        this.userService = userService;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].examination;
         this.listExaminations = new Array();
         this.getAllExaminations();
     }
-    whichKindExamination(kind) {
-        if (kind === 'EXAMINATION') {
-            return _models_examinationKind__WEBPACK_IMPORTED_MODULE_5__["ExaminationKind"].EXAMINATION;
-        }
-        else {
-            return _models_examinationKind__WEBPACK_IMPORTED_MODULE_5__["ExaminationKind"].OPERATION;
-        }
-    }
-    whichStatusExamination(status) {
-        if (status === 'APPROVED') {
-            return _models_examinationStatus__WEBPACK_IMPORTED_MODULE_6__["ExaminationStatus"].APPROVED;
-        }
-        else if (status === 'AWAITING') {
-            return _models_examinationStatus__WEBPACK_IMPORTED_MODULE_6__["ExaminationStatus"].AWAITING;
-        }
-        else if (status === 'PREDEF_BOOKED') {
-            return _models_examinationStatus__WEBPACK_IMPORTED_MODULE_6__["ExaminationStatus"].PREDEF_BOOKED;
-        }
-        else {
-            return _models_examinationStatus__WEBPACK_IMPORTED_MODULE_6__["ExaminationStatus"].PREDEF_AVAILABLE;
-        }
-    }
     getAllExaminations() {
         this.http.get(this.url + '/all').subscribe((data) => {
-            this.listExaminations = new Array();
             for (const c of data) {
-                this.examination = new _models_examination__WEBPACK_IMPORTED_MODULE_3__["Examination"](this.whichKindExamination(c.kind.toString()), this.whichStatusExamination(c.status.toString()), c.examinationType, c.discount, c.doctorRating, c.clinicRating, c.nurse, c.clinic, c.patient, c.doctors, c.id);
-                this.listExaminations.push(this.examination);
+                this.examination = new _models_examination__WEBPACK_IMPORTED_MODULE_3__["Examination"](c.id, c.kind, c.status, c.discount);
+                this.addExamination(this.examination);
                 console.log(this.examination);
             }
         }, error => {
             console.log(error);
         });
-        console.log(this.listExaminations);
         return this.listExaminations;
     }
     addExamination(e) {
@@ -2804,7 +2209,8 @@ let ExaminationService = class ExaminationService {
     }
 };
 ExaminationService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
+    { type: _user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"] }
 ];
 ExaminationService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -2829,8 +2235,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _models_medicalRecord__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/medicalRecord */ "./src/app/models/medicalRecord.ts");
+/* harmony import */ var _models_medicalRecord__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/medicalRecord */ "./src/app/models/medicalRecord.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 
 
@@ -2840,43 +2246,42 @@ let MedicalRecordService = class MedicalRecordService {
     constructor(http) {
         this.http = http;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].medicalRecord;
-        this.listMedicalRecord = new Array();
-        this.getAllMedicalRecords();
+        this.listRecords = new Array();
+        this.getAllRecords();
     }
-    addMedicalRecord(mr) {
-        if (this.getMedicalRecord(mr.id) === null) {
-            this.listMedicalRecord.push(mr);
-        }
-    }
-    getAllMedicalRecords() {
+    getAllRecords() {
+        console.log(this.url);
         this.http.get(this.url + '/all').subscribe((data) => {
-            this.listMedicalRecord = new Array();
             for (const c of data) {
-                // Ostalo je da se doda examinaton_report u konstruktoru
-                console.log(c.id);
-                this.medicalRecord = new _models_medicalRecord__WEBPACK_IMPORTED_MODULE_4__["MedicalRecord"](c.id, c.height, c.weight, c.bloodType, c.allergies, c.patient);
-                this.listMedicalRecord.push(this.medicalRecord);
-                console.log(this.medicalRecord);
+                this.record = new _models_medicalRecord__WEBPACK_IMPORTED_MODULE_3__["MedicalRecord"](c.height, c.weight, c.bloodType, c.allergies);
+                this.addRecord(this.record);
+                console.log(this.record);
+                console.log(c.allergies);
             }
         }, error => {
             console.log(error);
         });
-        console.log(this.listMedicalRecord);
-        return this.listMedicalRecord;
+        return this.listRecords;
     }
-    getMedicalRecord(id) {
-        if (this.listMedicalRecord.length === 0) {
+    addRecord(e) {
+        if (this.getRecord(e.height) === null) {
+            this.listRecords.push(e);
+        }
+    }
+    getRecord(height) {
+        if (this.listRecords.length === 0) {
             return null;
         }
-        for (const e of this.listMedicalRecord) {
-            if (e.id === id) {
+        for (const e of this.listRecords) {
+            if (e.height === height) {
                 return e;
             }
         }
+        return null;
     }
 };
 MedicalRecordService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }
 ];
 MedicalRecordService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -3245,7 +2650,6 @@ const environment = {
     examination: '/examination',
     medicalRecord: '/medicalRecord',
     clinicalCentreAdmin: '/clinical-centre-admin',
-    examinationType: '/examination-type'
 };
 /*
  * For easier debugging in development mode, you can import the following file
