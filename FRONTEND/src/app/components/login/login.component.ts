@@ -7,6 +7,7 @@ import {Role} from '../../models/role';
 import {UserService} from '../../services/user.service';
 import {DoctorService} from '../../services/doctor.service';
 import { NurseService } from 'src/app/services/nurse.service';
+import { MedicalRecordService } from 'src/app/services/medical-record.service';
 
 
 export class LoginUser {
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private doctorService:DoctorService,
     private nurseService:NurseService,
+    private recordService:MedicalRecordService
   ) { }
 
   ngOnInit() {
