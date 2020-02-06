@@ -1,6 +1,8 @@
 package com.service;
+import com.dtos.CodebookDTO;
 import com.model.ClinicalCenterAdministrator;
 
+import com.model.Codebook;
 import com.repository.ClinicalCenterAdministratorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -71,8 +73,7 @@ public class ClinicalCenterAdministratorService {
                 repo.save(p1);
                 return true;
             }
-<<<<<<< Updated upstream
-=======
+
         } return false;
 
     }
@@ -80,20 +81,5 @@ public class ClinicalCenterAdministratorService {
 
 
 
-        public Codebook returnCodebook() {
-            return codebookRepo.findAll().get(0);
-        }
 
-        public Codebook addCodebook(CodebookDTO codebookDTO) {
-
-            if(codebookDTO.getDiagnose() == null)
-                if(codebookDTO.getMedicine() == null)
-                    return null;
-                else return addMedicine(codebookDTO);
-            else return addDiagnose(codebookDTO);
->>>>>>> Stashed changes
-        }
-
-        return false;
-    }
 }
