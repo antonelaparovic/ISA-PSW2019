@@ -1,10 +1,13 @@
 package com.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class MedicalRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +22,7 @@ public class MedicalRecord {
     @Column(columnDefinition = "VARCHAR(3)")
     private String bloodType;
 
-    @Column
+    @Column(columnDefinition = "VARCHAR")
     private String allergies;
 
     @OneToOne
@@ -28,13 +31,75 @@ public class MedicalRecord {
     @OneToMany(mappedBy = "medicalRecord", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<ExaminationReport> examinationReports = new HashSet<>();
 
-    public MedicalRecord(){}
-    public MedicalRecord(Long id, Integer height, Integer weight, String bloodType, String allergies, Patient patient) {
+    MedicalRecord()
+    {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public void setHeight(Integer height) {
         this.height = height;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
         this.weight = weight;
+    }
+
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(String bloodType) {
         this.bloodType = bloodType;
+    }
+
+    public String getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(String allergies) {
         this.allergies = allergies;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
         this.patient = patient;
+    }
+
+    public Set<ExaminationReport> getExaminationReports() {
+        return examinationReports;
+    }
+
+    public void setExaminationReports(Set<ExaminationReport> examinationReports) {
+        this.examinationReports = examinationReports;
+    }
+
+    @Override
+    public String toString() {
+        return "MedicalRecord{" +
+                "id=" + id +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", bloodType='" + bloodType + '\'' +
+                ", allergies='" + allergies + '\'' +
+                '}';
     }
 }

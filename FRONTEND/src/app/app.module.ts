@@ -23,13 +23,17 @@ import { MedicalHistoryPageComponent } from './components/medical-history-page/m
 import { ClinicsPageComponent } from './components/clinics-page/clinics-page.component';
 import {NursePageComponent} from './components/nurse-page/nurse-page.component';
 import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
+
+import { ClinicSearchComponent } from './components/clinic-search/clinic-search.component';
+import { PatientDoctorsListComponent } from './components/patient-doctors-list/patient-doctors-list.component';
+import { PatientDoctorSearchComponent } from './components/patient-doctor-search/patient-doctor-search.component';
+
 import { CCAdminProfileComponent } from './components/ccadmin-profile/ccadmin-profile.component';
 import { AllPatientsPageComponent } from './components/allpatients-page/allpatients-page.component';
-<<<<<<< Updated upstream
 
-=======
 import { CodebookComponent } from './components/codebook/codebook.component';
->>>>>>> Stashed changes
+
+
 
 
 @NgModule({
@@ -46,8 +50,14 @@ import { CodebookComponent } from './components/codebook/codebook.component';
     ClinicsPageComponent,
     NursePageComponent,
     NurseProfileComponent,
+
+    ClinicSearchComponent,
+    PatientDoctorsListComponent,
+    PatientDoctorSearchComponent
+
     CCAdminProfileComponent,
     AllPatientsPageComponent
+
 
   ],
   imports: [
@@ -67,8 +77,14 @@ import { CodebookComponent } from './components/codebook/codebook.component';
     DemoMaterialModule,
   ],
   entryComponents: [
+
+    ClinicSearchComponent,
+    PatientDoctorsListComponent,
+    PatientDoctorSearchComponent,
+
     CCAdminProfileComponent,
     AllPatientsPageComponent
+
   ],
   providers: [],
   bootstrap: [AppComponent]

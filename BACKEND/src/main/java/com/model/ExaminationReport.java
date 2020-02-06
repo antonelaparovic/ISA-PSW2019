@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-
 public class ExaminationReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,4 +32,6 @@ public class ExaminationReport {
 
     @OneToOne()
     private Examination examination;
+
+
 }

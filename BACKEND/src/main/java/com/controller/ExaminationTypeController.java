@@ -1,7 +1,7 @@
 package com.controller;
 
-import com.model.MedicalRecord;
-import com.service.MedicalRecordService;
+import com.model.ExaminationType;
+import com.service.ExaminationTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,13 +13,13 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200"})
-public class MedicalRecordController {
+public class ExaminationTypeController {
 
     @Autowired
-    MedicalRecordService medicalRecordService;
+    ExaminationTypeService examinationTypeService;
 
-    @GetMapping(value = "medicalRecord/all")
-    public ResponseEntity<List<MedicalRecord>> allMedicalRecords() {
-        return new ResponseEntity<>(medicalRecordService.findAll(), HttpStatus.OK);
+    @GetMapping(value = "examination-type/all")
+    public ResponseEntity<List<ExaminationType>> all() {
+        return new ResponseEntity<>(examinationTypeService.findAll(), HttpStatus.OK);
     }
 }
