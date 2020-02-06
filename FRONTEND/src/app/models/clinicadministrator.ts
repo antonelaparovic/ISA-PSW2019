@@ -1,4 +1,4 @@
-export class Clinicadministrator {
+export class ClinicAdministrator {
 
     email: string;
     password: string;
