@@ -11,6 +11,9 @@ import { ClinicsPageComponent } from './components/clinics-page/clinics-page.com
 import { DoctorProfileComponent } from './components/doctor-profile/doctor-profile.component';
 import {NursePageComponent} from './components/nurse-page/nurse-page.component';
 import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
+import {CCAdminProfileComponent} from './components/ccadmin-profile/ccadmin-profile.component';
+import {AllPatientsPageComponent} from './components/allpatients-page/allpatients-page.component';
+import { CodebookComponent} from './components/codebook/codebook.component';
 
 const routes: Routes = [
   {
@@ -34,6 +37,20 @@ const routes: Routes = [
     component: DoctorPageComponent
   },
   {
+    path:'clinicalCenterAdministrator/profile',
+    component: CCAdminProfileComponent
+  },
+<<<<<<< Updated upstream
+=======
+
+  {
+    path:'clinicalCenterAdministrator/codebook',
+    component: CodebookComponent
+  },
+  
+
+>>>>>>> Stashed changes
+  {
     path:'doctor/profile',
     component: DoctorProfileComponent
   },
@@ -44,6 +61,9 @@ const routes: Routes = [
   {
     path:'nurse/profile',
     component: NurseProfileComponent
+  },{
+    path:'nurse/allpatients',
+    component: AllPatientsPageComponent
   },
   {
     path:'patient/profile',

@@ -23,9 +23,18 @@ import { MedicalHistoryPageComponent } from './components/medical-history-page/m
 import { ClinicsPageComponent } from './components/clinics-page/clinics-page.component';
 import {NursePageComponent} from './components/nurse-page/nurse-page.component';
 import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
+
 import { ClinicSearchComponent } from './components/clinic-search/clinic-search.component';
 import { PatientDoctorsListComponent } from './components/patient-doctors-list/patient-doctors-list.component';
 import { PatientDoctorSearchComponent } from './components/patient-doctor-search/patient-doctor-search.component';
+
+import { CCAdminProfileComponent } from './components/ccadmin-profile/ccadmin-profile.component';
+import { AllPatientsPageComponent } from './components/allpatients-page/allpatients-page.component';
+
+import { CodebookComponent } from './components/codebook/codebook.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -41,9 +50,15 @@ import { PatientDoctorSearchComponent } from './components/patient-doctor-search
     ClinicsPageComponent,
     NursePageComponent,
     NurseProfileComponent,
+
     ClinicSearchComponent,
     PatientDoctorsListComponent,
     PatientDoctorSearchComponent
+
+    CCAdminProfileComponent,
+    AllPatientsPageComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -62,9 +77,14 @@ import { PatientDoctorSearchComponent } from './components/patient-doctor-search
     DemoMaterialModule,
   ],
   entryComponents: [
+
     ClinicSearchComponent,
     PatientDoctorsListComponent,
     PatientDoctorSearchComponent,
+
+    CCAdminProfileComponent,
+    AllPatientsPageComponent
+
   ],
   providers: [],
   bootstrap: [AppComponent]

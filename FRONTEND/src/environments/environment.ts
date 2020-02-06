@@ -14,6 +14,8 @@ export const environment = {
   medicalRecord: '/medicalRecord',
   clinicalCentreAdmin: '/clinical-centre-admin',
   examinationType: '/examination-type'
+  clinicalCenterAdmininistrator: '/clinicalCenterAdministrator',
+  codebook: '/codebook',
 };
 
 /*
