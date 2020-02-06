@@ -1,6 +1,7 @@
 package com.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Clinic {
 
     @Id
@@ -21,11 +23,14 @@ public class Clinic {
     @Column(nullable = false)
     private String description;
 
+    @Column(nullable = false)
+    private double clinicRating;
+
     @JsonIgnore
     @OneToMany(mappedBy = "clinic", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Examination> examinations=new HashSet<>();
 
-    @JsonIgnore
+
     @OneToMany(mappedBy = "clinic", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Doctor> doctors=new HashSet<>();
 
@@ -41,8 +46,8 @@ public class Clinic {
     @OneToMany(mappedBy = "clinic", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<ClinicAdministrator> clinicAdministrators=new HashSet<>();
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "clinic", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "clinic", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Set<ExaminationType> examinationTypes=new HashSet<>();
 
 
@@ -129,5 +134,18 @@ public class Clinic {
 
     public void setExaminationTypes(Set<ExaminationType> examinationTypes) {
         this.examinationTypes = examinationTypes;
+    }
+
+    @Override
+    public String toString() {
+        return "Clinic{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", description='" + description + '\'' +
+                ", clinicRating=" + clinicRating +
+                ", examinations=" + examinations +
+                ", doctors=" + doctors +
+                '}';
     }
 }
