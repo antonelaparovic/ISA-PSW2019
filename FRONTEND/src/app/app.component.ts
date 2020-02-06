@@ -38,7 +38,10 @@ export class AppComponent {
   public isNurse() {
     return this.userService.isNurse();
   }
-
+  
+  public isCCAdmin() {
+    return this.userService.isCCAdmin();
+  }
   public onLogout() {
     this.userService.logout();
   }
