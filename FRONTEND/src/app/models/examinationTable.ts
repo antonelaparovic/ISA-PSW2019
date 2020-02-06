@@ -1,26 +1,11 @@
 export class ExaminationTable{
-    id:number;
-     kind: String;
-  interval: String;
-    status: String;
-  type: String;
-   doctors: String;
-   room: String;
-    discount: number;
-  nurse: String;
-    patient: String;
+     kind: string;
+   doctors:string;
+   clinic: string;
 
-    constructor(id:number,kind: String,  status: String, type: String,
-      room: String, discount: number, nurse: String, patient: String,doctors:String,interval:String) {
-      this.id=id;
+    constructor(kind: string,doctors:string,clinic:string) {
       this.kind = kind;
-      this.status = status;
-      this.type = type;
-      this.room = room;
-      this.discount = discount;
-      this.nurse = nurse;
-      this.patient = patient;
       this.doctors=doctors;
-      this.interval=interval;
+      this.clinic=clinic;
   }
 }
