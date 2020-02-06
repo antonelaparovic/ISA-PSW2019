@@ -16,10 +16,10 @@ import java.util.List;
 public class MedicalRecordController {
 
     @Autowired
-    MedicalRecordService recordService;
+    MedicalRecordService medicalRecordService;
 
-    @GetMapping(value = "/medicalRecord/all")
-    public ResponseEntity<List<MedicalRecord>> all() {
-        return new ResponseEntity<>(recordService.findAll(), HttpStatus.OK);
+    @GetMapping(value = "medicalRecord/all")
+    public ResponseEntity<List<MedicalRecord>> allMedicalRecords() {
+        return new ResponseEntity<>(medicalRecordService.findAll(), HttpStatus.OK);
     }
 }
