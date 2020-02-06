@@ -96,7 +96,7 @@ export class UserService{
         }
       }
 
-      public isClinicadministrator() {
+      public isClinicAdministrator() {
         if (this.isLoggedIn()) {
           return this.user.role === Role.CLINICADMINISTRATOR;
         }

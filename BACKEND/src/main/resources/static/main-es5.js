@@ -51,7 +51,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<mat-sidenav-container class=\"sidenav-container\">\r\n    <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n      [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === true\">\r\n      <mat-toolbar>Menu</mat-toolbar>\r\n        <mat-nav-list *ngIf = \"isNone()\">\r\n          <a mat-list-item routerLink=\"/login\">Login</a>\r\n          <a mat-list-item routerLink=\"/patient/register\">Register</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isPatient()\">\r\n          <a mat-list-item routerLink=\"/patient/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalRecord\">Medical record</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalHistory\">Medical history</a>\r\n          <a mat-list-item routerLink=\"/patient/clinics\">Clinics</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isDoctor()\">\r\n          <a mat-list-item routerLink=\"/doctor/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isNurse()\">\r\n          <a mat-list-item routerLink=\"/nurse/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isClinicadministrator()\">\r\n          <a mat-list-item routerLink=\"/clinicadministrator/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <mat-toolbar>\r\n        <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\">\r\n          <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n        </button>\r\n        <span>Clinical Centre</span>\r\n      </mat-toolbar>\r\n      <!-- Add Content Here -->\r\n      <router-outlet></router-outlet>\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>";
+    __webpack_exports__["default"] = "<mat-sidenav-container class=\"sidenav-container\">\r\n    <mat-sidenav #drawer class=\"sidenav\" fixedInViewport [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n      [mode]=\"(isHandset$ | async) ? 'over' : 'side'\" [opened]=\"(isHandset$ | async) === true\">\r\n      <mat-toolbar>Menu</mat-toolbar>\r\n        <mat-nav-list *ngIf = \"isNone()\">\r\n          <a mat-list-item routerLink=\"/login\">Login</a>\r\n          <a mat-list-item routerLink=\"/patient/register\">Register</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isPatient()\">\r\n          <a mat-list-item routerLink=\"/patient/profile\">Profile</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalRecord\">Medical record</a>\r\n          <a mat-list-item routerLink=\"/patient/medicalHistory\">Medical history</a>\r\n          <a mat-list-item routerLink=\"/patient/clinics\">Clinics</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n  \r\n        <mat-nav-list *ngIf=\"isDoctor()\">\r\n          <a mat-list-item routerLink=\"/doctor/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isNurse()\">\r\n          <a mat-list-item routerLink=\"/nurse/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n        <mat-nav-list *ngIf=\"isClinicAdministrator()\">\r\n          <a mat-list-item routerLink=\"/clinicadministrator/profile\">Profile</a>\r\n          <a mat-list-item (click)=\"onLogout()\">Logout</a>\r\n        </mat-nav-list>\r\n\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <mat-toolbar>\r\n        <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"drawer.toggle()\">\r\n          <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n        </button>\r\n        <span>Clinical Centre</span>\r\n      </mat-toolbar>\r\n      <!-- Add Content Here -->\r\n      <router-outlet></router-outlet>\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>";
     /***/
   },
 
@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<p>WELCOME ADMIN!</p>\n";
+    __webpack_exports__["default"] = "<p>WELCOME CLINICADMINISTRATOR!</p>\n";
     /***/
   },
 
@@ -1009,10 +1009,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       component: _components_doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_11__["DoctorProfileComponent"]
     }, {
       path: 'clinicadministrator/home',
-      component: _components_clinicadministrator_page_clinicadministrator_page_component__WEBPACK_IMPORTED_MODULE_14__["ClinicadministratorPageComponent"]
+      component: _components_clinicadministrator_page_clinicadministrator_page_component__WEBPACK_IMPORTED_MODULE_14__["ClinicAdministratorPageComponent"]
     }, {
       path: 'clinicadministrator/profile',
-      component: _components_clinicadministrator_profile_clinicadministrator_profile_component__WEBPACK_IMPORTED_MODULE_15__["ClinicadministratorProfileComponent"]
+      component: _components_clinicadministrator_profile_clinicadministrator_profile_component__WEBPACK_IMPORTED_MODULE_15__["ClinicAdministratorProfileComponent"]
     }, {
       path: 'nurse/home',
       component: _components_nurse_page_nurse_page_component__WEBPACK_IMPORTED_MODULE_12__["NursePageComponent"]
@@ -1153,9 +1153,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return this.userService.isNurse();
         }
       }, {
-        key: "isClinicadministrator",
-        value: function isClinicadministrator() {
-          return this.userService.isClinicadministrator();
+        key: "isClinicAdministrator",
+        value: function isClinicAdministrator() {
+          return this.userService.isClinicAdministrator();
         }
       }, {
         key: "onLogout",
@@ -1362,7 +1362,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _components_register_patient_register_patient_component__WEBPACK_IMPORTED_MODULE_13__["RegisterPatientComponent"], _components_patient_page_patient_page_component__WEBPACK_IMPORTED_MODULE_14__["PatientPageComponent"], _components_doctor_page_doctor_page_component__WEBPACK_IMPORTED_MODULE_15__["DoctorPageComponent"], _components_patient_profile_patient_profile_component__WEBPACK_IMPORTED_MODULE_16__["PatientProfileComponent"], _components_doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_17__["DoctorProfileComponent"], _components_medical_record_page_medical_record_page_component__WEBPACK_IMPORTED_MODULE_18__["MedicalRecordPageComponent"], _components_medical_history_page_medical_history_page_component__WEBPACK_IMPORTED_MODULE_19__["MedicalHistoryPageComponent"], _components_clinics_page_clinics_page_component__WEBPACK_IMPORTED_MODULE_20__["ClinicsPageComponent"], _components_nurse_page_nurse_page_component__WEBPACK_IMPORTED_MODULE_21__["NursePageComponent"], _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__["NurseProfileComponent"], _components_clinicadministrator_page_clinicadministrator_page_component__WEBPACK_IMPORTED_MODULE_23__["ClinicadministratorPageComponent"], _components_clinicadministrator_profile_clinicadministrator_profile_component__WEBPACK_IMPORTED_MODULE_24__["ClinicadministratorProfileComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _components_register_patient_register_patient_component__WEBPACK_IMPORTED_MODULE_13__["RegisterPatientComponent"], _components_patient_page_patient_page_component__WEBPACK_IMPORTED_MODULE_14__["PatientPageComponent"], _components_doctor_page_doctor_page_component__WEBPACK_IMPORTED_MODULE_15__["DoctorPageComponent"], _components_patient_profile_patient_profile_component__WEBPACK_IMPORTED_MODULE_16__["PatientProfileComponent"], _components_doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_17__["DoctorProfileComponent"], _components_medical_record_page_medical_record_page_component__WEBPACK_IMPORTED_MODULE_18__["MedicalRecordPageComponent"], _components_medical_history_page_medical_history_page_component__WEBPACK_IMPORTED_MODULE_19__["MedicalHistoryPageComponent"], _components_clinics_page_clinics_page_component__WEBPACK_IMPORTED_MODULE_20__["ClinicsPageComponent"], _components_nurse_page_nurse_page_component__WEBPACK_IMPORTED_MODULE_21__["NursePageComponent"], _components_nurse_profile_nurse_profile_component__WEBPACK_IMPORTED_MODULE_22__["NurseProfileComponent"], _components_clinicadministrator_page_clinicadministrator_page_component__WEBPACK_IMPORTED_MODULE_23__["ClinicAdministratorPageComponent"], _components_clinicadministrator_profile_clinicadministrator_profile_component__WEBPACK_IMPORTED_MODULE_24__["ClinicAdministratorProfileComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"], ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrModule"].forRoot({
         timeOut: 2000,
         positionClass: 'toast-top-right',
@@ -1400,7 +1400,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/components/clinicadministrator-page/clinicadministrator-page.component.ts ***!
     \*******************************************************************************************/
 
-  /*! exports provided: ClinicadministratorPageComponent */
+  /*! exports provided: ClinicAdministratorPageComponent */
 
   /***/
   function srcAppComponentsClinicadministratorPageClinicadministratorPageComponentTs(module, __webpack_exports__, __webpack_require__) {
@@ -1410,8 +1410,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "ClinicadministratorPageComponent", function () {
-      return ClinicadministratorPageComponent;
+    __webpack_require__.d(__webpack_exports__, "ClinicAdministratorPageComponent", function () {
+      return ClinicAdministratorPageComponent;
     });
     /* harmony import */
 
@@ -1426,22 +1426,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
 
-    var ClinicadministratorPageComponent =
+    var ClinicAdministratorPageComponent =
     /*#__PURE__*/
     function () {
-      function ClinicadministratorPageComponent() {
-        _classCallCheck(this, ClinicadministratorPageComponent);
+      function ClinicAdministratorPageComponent() {
+        _classCallCheck(this, ClinicAdministratorPageComponent);
       }
 
-      _createClass(ClinicadministratorPageComponent, [{
+      _createClass(ClinicAdministratorPageComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
       }]);
 
-      return ClinicadministratorPageComponent;
+      return ClinicAdministratorPageComponent;
     }();
 
-    ClinicadministratorPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+    ClinicAdministratorPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-clinicadministrator-page',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./clinicadministrator-page.component.html */
@@ -1449,7 +1449,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./clinicadministrator-page.component.css */
       "./src/app/components/clinicadministrator-page/clinicadministrator-page.component.css")).default]
-    })], ClinicadministratorPageComponent);
+    })], ClinicAdministratorPageComponent);
     /***/
   },
 
@@ -1479,7 +1479,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/components/clinicadministrator-profile/clinicadministrator-profile.component.ts ***!
     \*************************************************************************************************/
 
-  /*! exports provided: ClinicadministratorProfileComponent */
+  /*! exports provided: ClinicAdministratorProfileComponent */
 
   /***/
   function srcAppComponentsClinicadministratorProfileClinicadministratorProfileComponentTs(module, __webpack_exports__, __webpack_require__) {
@@ -1489,8 +1489,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "ClinicadministratorProfileComponent", function () {
-      return ClinicadministratorProfileComponent;
+    __webpack_require__.d(__webpack_exports__, "ClinicAdministratorProfileComponent", function () {
+      return ClinicAdministratorProfileComponent;
     });
     /* harmony import */
 
@@ -1547,11 +1547,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! src/app/models/role */
     "./src/app/models/role.ts");
 
-    var ClinicadministratorProfileComponent =
+    var ClinicAdministratorProfileComponent =
     /*#__PURE__*/
     function () {
-      function ClinicadministratorProfileComponent(clinicadministratorService, formBuilder, router, userService) {
-        _classCallCheck(this, ClinicadministratorProfileComponent);
+      function ClinicAdministratorProfileComponent(clinicadministratorService, formBuilder, router, userService) {
+        _classCallCheck(this, ClinicAdministratorProfileComponent);
 
         this.clinicadministratorService = clinicadministratorService;
         this.formBuilder = formBuilder;
@@ -1560,20 +1560,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.submitted = false;
         this.user = JSON.parse(userService.isLoggedIn());
         console.log(this.user);
-        this.selectedClinicadministrator = clinicadministratorService.getClinicadministrator(this.user.email);
-        console.log(this.selectedClinicadministrator);
+        this.selectedClinicAdministrator = clinicadministratorService.getClinicAdministrator(this.user.email);
+        console.log(this.selectedClinicAdministrator);
       }
 
-      _createClass(ClinicadministratorProfileComponent, [{
+      _createClass(ClinicAdministratorProfileComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.clinicadministratorForm = this.formBuilder.group({
-            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicadministrator.email, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].email]),
-            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicadministrator.password, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')]),
-            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicadministrator.name, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
-            surname: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicadministrator.surname, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
-            number: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicadministrator.number, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(9)]),
-            clinic: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicadministrator.clinic, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])
+          this.clinicAdministratorForm = this.formBuilder.group({
+            email: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicAdministrator.email, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].email]),
+            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicAdministrator.password, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')]),
+            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicAdministrator.name, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            surname: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicAdministrator.surname, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]),
+            number: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicAdministrator.number, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(9)]),
+            clinic: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](this.selectedClinicAdministrator.clinic, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])
           });
         }
       }, {
@@ -1581,23 +1581,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onSubmit() {
           this.submitted = true; // Stop here if form is invalid
 
-          if (this.clinicadministratorForm.invalid) {
+          if (this.clinicAdministratorForm.invalid) {
             return;
           }
 
-          this.clinicadministrator = new src_app_models_clinicadministrator__WEBPACK_IMPORTED_MODULE_2__["Clinicadministrator"](this.f.email.value, this.f.password.value, this.f.name.value, this.f.surname.value, this.f.number.value, this.f.clinic.value);
+          this.clinicAdministrator = new src_app_models_clinicadministrator__WEBPACK_IMPORTED_MODULE_2__["ClinicAdministrator"](this.f.email.value, this.f.password.value, this.f.name.value, this.f.surname.value, this.f.number.value, this.f.clinic.value);
           this.user = new src_app_models_user__WEBPACK_IMPORTED_MODULE_4__["User"](this.f.email.value, this.f.password.value, src_app_models_role__WEBPACK_IMPORTED_MODULE_8__["Role"].CLINICADMINISTRATOR);
-          this.editClinicadministrator();
+          this.editClinicAdministrator();
         }
       }, {
-        key: "editClinicadministrator",
-        value: function editClinicadministrator() {
+        key: "editClinicAdministrator",
+        value: function editClinicAdministrator() {
           var _this = this;
 
-          this.clinicadministratorService.editClinicadministrator(this.clinicadministrator).subscribe(function (data) {
+          this.clinicadministratorService.editClinicAdministrator(this.clinicAdministrator).subscribe(function (data) {
             _this.userService.setUser(_this.user);
 
-            _this.clinicadministratorService.setClinicadministrator(_this.clinicadministrator);
+            _this.clinicadministratorService.setClinicAdministrator(_this.clinicAdministrator);
 
             _this.router.navigate(['/clinicadministrator/home']);
           }, function (error) {
@@ -1607,16 +1607,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "f",
         get: function get() {
-          return this.clinicadministratorForm.controls;
+          return this.clinicAdministratorForm.controls;
         }
       }]);
 
-      return ClinicadministratorProfileComponent;
+      return ClinicAdministratorProfileComponent;
     }();
 
-    ClinicadministratorProfileComponent.ctorParameters = function () {
+    ClinicAdministratorProfileComponent.ctorParameters = function () {
       return [{
-        type: src_app_services_clinicadministrator_service__WEBPACK_IMPORTED_MODULE_5__["ClinicadministratorService"]
+        type: src_app_services_clinicadministrator_service__WEBPACK_IMPORTED_MODULE_5__["ClinicAdministratorService"]
       }, {
         type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]
       }, {
@@ -1626,7 +1626,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }];
     };
 
-    ClinicadministratorProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+    ClinicAdministratorProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-clinicadministrator-profile',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./clinicadministrator-profile.component.html */
@@ -1634,7 +1634,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./clinicadministrator-profile.component.css */
       "./src/app/components/clinicadministrator-profile/clinicadministrator-profile.component.css")).default]
-    })], ClinicadministratorProfileComponent);
+    })], ClinicAdministratorProfileComponent);
     /***/
   },
 
@@ -2204,7 +2204,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
           } else if (this.user.role === _models_role__WEBPACK_IMPORTED_MODULE_5__["Role"].CLINICADMINISTRATOR && this.loginUser.password === this.user.password) {
             console.log(this.user);
-            this.clinicadministatorService.loginClinicadministrator(this.user).subscribe(function (data) {
+            this.clinicadministatorService.loginClinicAdministrator(this.user).subscribe(function (data) {
               console.log(data);
 
               if (data !== null) {
@@ -2258,7 +2258,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: src_app_services_nurse_service__WEBPACK_IMPORTED_MODULE_8__["NurseService"]
       }, {
-        type: src_app_services_clinicadministrator_service__WEBPACK_IMPORTED_MODULE_9__["ClinicadministratorService"]
+        type: src_app_services_clinicadministrator_service__WEBPACK_IMPORTED_MODULE_9__["ClinicAdministratorService"]
       }];
     };
 
@@ -3520,7 +3520,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/models/clinicadministrator.ts ***!
     \***********************************************/
 
-  /*! exports provided: Clinicadministrator */
+  /*! exports provided: ClinicAdministrator */
 
   /***/
   function srcAppModelsClinicadministratorTs(module, __webpack_exports__, __webpack_require__) {
@@ -3530,8 +3530,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "Clinicadministrator", function () {
-      return Clinicadministrator;
+    __webpack_require__.d(__webpack_exports__, "ClinicAdministrator", function () {
+      return ClinicAdministrator;
     });
     /* harmony import */
 
@@ -3540,8 +3540,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
 
-    var Clinicadministrator = function Clinicadministrator(email, password, name, surname, number, clinic) {
-      _classCallCheck(this, Clinicadministrator);
+    var ClinicAdministrator = function ClinicAdministrator(email, password, name, surname, number, clinic) {
+      _classCallCheck(this, ClinicAdministrator);
 
       this.email = email;
       this.name = name;
@@ -4092,7 +4092,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/services/clinicadministrator.service.ts ***!
     \*********************************************************/
 
-  /*! exports provided: ClinicadministratorService */
+  /*! exports provided: ClinicAdministratorService */
 
   /***/
   function srcAppServicesClinicadministratorServiceTs(module, __webpack_exports__, __webpack_require__) {
@@ -4102,8 +4102,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "ClinicadministratorService", function () {
-      return ClinicadministratorService;
+    __webpack_require__.d(__webpack_exports__, "ClinicAdministratorService", function () {
+      return ClinicAdministratorService;
     });
     /* harmony import */
 
@@ -4142,60 +4142,60 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ./user.service */
     "./src/app/services/user.service.ts");
 
-    var ClinicadministratorService =
+    var ClinicAdministratorService =
     /*#__PURE__*/
     function () {
-      function ClinicadministratorService(http, userService) {
-        _classCallCheck(this, ClinicadministratorService);
+      function ClinicAdministratorService(http, userService) {
+        _classCallCheck(this, ClinicAdministratorService);
 
         this.http = http;
         this.userService = userService;
-        this.urlClinicadministrator = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].doctor;
-        this.listClinicadministrators = new Array();
-        this.getAllClinicadministrators();
+        this.urlClinicAdministrator = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].clinicAdministrator;
+        this.listClinicAdministrators = new Array();
+        this.getAllClinicAdministrators();
       }
 
-      _createClass(ClinicadministratorService, [{
-        key: "newClinicadministrator",
-        value: function newClinicadministrator(clinicadministrator) {
-          return this.http.post(this.urlClinicadministrator + '/register', clinicadministrator);
+      _createClass(ClinicAdministratorService, [{
+        key: "newClinicAdministrator",
+        value: function newClinicAdministrator(clinicAdministrator) {
+          return this.http.post(this.urlClinicAdministrator + '/register', clinicAdministrator);
         }
       }, {
-        key: "loginClinicadministrator",
-        value: function loginClinicadministrator(clinicadministrator) {
-          this.userService.setToken(clinicadministrator);
-          return this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + '/login', clinicadministrator, {
+        key: "loginClinicAdministrator",
+        value: function loginClinicAdministrator(clinicAdministrator) {
+          this.userService.setToken(clinicAdministrator);
+          return this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + '/login', clinicAdministrator, {
             responseType: 'text'
           });
         }
       }, {
-        key: "editClinicadministrator",
-        value: function editClinicadministrator(clinicadministrator) {
-          return this.http.post(this.urlClinicadministrator + '/edit', clinicadministrator, {
+        key: "editClinicAdministrator",
+        value: function editClinicAdministrator(clinicAdministrator) {
+          return this.http.post(this.urlClinicAdministrator + '/edit', clinicAdministrator, {
             responseType: 'text'
           });
         }
       }, {
-        key: "addClinicadministrator",
-        value: function addClinicadministrator(d) {
-          if (this.getClinicadministrator(d.email) === null) {
-            this.listClinicadministrators.push(d);
+        key: "addClinicAdministrator",
+        value: function addClinicAdministrator(d) {
+          if (this.getClinicAdministrator(d.email) === null) {
+            this.listClinicAdministrators.push(d);
           }
         }
       }, {
-        key: "getClinicadministrator",
-        value: function getClinicadministrator(email) {
-          if (this.listClinicadministrators.length === 0) {
+        key: "getClinicAdministrator",
+        value: function getClinicAdministrator(email) {
+          if (this.listClinicAdministrators.length === 0) {
             return null;
           }
 
-          console.log(this.listClinicadministrators);
+          console.log(this.listClinicAdministrators);
           var _iteratorNormalCompletion3 = true;
           var _didIteratorError3 = false;
           var _iteratorError3 = undefined;
 
           try {
-            for (var _iterator3 = this.listClinicadministrators[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+            for (var _iterator3 = this.listClinicAdministrators[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
               var u = _step3.value;
 
               if (u.email === email) {
@@ -4220,14 +4220,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return null;
         }
       }, {
-        key: "setClinicadministrator",
-        value: function setClinicadministrator(p) {
+        key: "setClinicAdministrator",
+        value: function setClinicAdministrator(p) {
           var _iteratorNormalCompletion4 = true;
           var _didIteratorError4 = false;
           var _iteratorError4 = undefined;
 
           try {
-            for (var _iterator4 = this.listClinicadministrators[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+            for (var _iterator4 = this.listClinicAdministrators[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
               var p1 = _step4.value;
 
               if (p1.email === p.email) {
@@ -4255,11 +4255,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
       }, {
-        key: "getAllClinicadministrators",
-        value: function getAllClinicadministrators() {
+        key: "getAllClinicAdministrators",
+        value: function getAllClinicAdministrators() {
           var _this7 = this;
 
-          this.http.get(this.urlClinicadministrator + '/all').subscribe(function (data) {
+          this.http.get(this.urlClinicAdministrator + '/all').subscribe(function (data) {
             var _iteratorNormalCompletion5 = true;
             var _didIteratorError5 = false;
             var _iteratorError5 = undefined;
@@ -4267,9 +4267,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             try {
               for (var _iterator5 = data[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
                 var c = _step5.value;
-                _this7.clinicadministrator = new _models_clinicadministrator__WEBPACK_IMPORTED_MODULE_2__["Clinicadministrator"](c.email, c.password, c.name, c.surname, c.number, c.clinic);
+                _this7.clinicAdministrator = new _models_clinicadministrator__WEBPACK_IMPORTED_MODULE_2__["ClinicAdministrator"](c.email, c.password, c.name, c.surname, c.number, c.clinic);
 
-                _this7.addClinicadministrator(_this7.clinicadministrator);
+                _this7.addClinicAdministrator(_this7.clinicAdministrator);
               }
             } catch (err) {
               _didIteratorError5 = true;
@@ -4288,14 +4288,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }, function (error) {
             console.log(error);
           });
-          return this.listClinicadministrators;
+          return this.listClinicAdministrators;
         }
       }]);
 
-      return ClinicadministratorService;
+      return ClinicAdministratorService;
     }();
 
-    ClinicadministratorService.ctorParameters = function () {
+    ClinicAdministratorService.ctorParameters = function () {
       return [{
         type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]
       }, {
@@ -4303,9 +4303,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }];
     };
 
-    ClinicadministratorService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+    ClinicAdministratorService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
-    })], ClinicadministratorService);
+    })], ClinicAdministratorService);
     /***/
   },
 
@@ -5524,8 +5524,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
       }, {
-        key: "isClinicadministrator",
-        value: function isClinicadministrator() {
+        key: "isClinicAdministrator",
+        value: function isClinicAdministrator() {
           if (this.isLoggedIn()) {
             return this.user.role === _models_role__WEBPACK_IMPORTED_MODULE_4__["Role"].CLINICADMINISTRATOR;
           }
