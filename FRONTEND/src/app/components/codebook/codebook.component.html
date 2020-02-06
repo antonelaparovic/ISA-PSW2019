@@ -1,0 +1,89 @@
+<div class="row">  
+    <div class="col">
+            <div class="container" style="width:40%">
+                    <form [formGroup]="addMedicine" style="text-align:center"
+                        (ngSubmit)="addCodebookMedicine()">
+                        <span class="text-nowrap">Add medicine</span>
+                
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="text" name="label"
+                            id="label" placeholder="Label" 
+                            formControlName="label">
+                            <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>  
+                    </div>
+                    </form>
+                </div>
+    <table  class="table">  
+        <thead>  
+            <tr>  
+                    <th scope="col">                 Id </th>
+                    <th scope="col">                 Name </th> 
+                    <th scope="col"></th>
+            </tr>  
+        </thead>  
+        <tbody>  
+
+         
+
+             <tr *ngFor="let medicine of codebook.medicines">  
+                <td>{{medicine.id}}</td>  
+                <td>{{medicine.label}}</td>  
+                <td><button (click)="deleteMedicine(medicine)" class='btn btn-primary'>Delete</button>   
+                  
+                </td>  
+              </tr>   
+        </tbody><br>  
+    </table>  
+    </div>
+
+    <div class="col">
+            <div class="container" style="width:40%">
+                    <form [formGroup]="addDiagnose" style="text-align:center"
+                        (ngSubmit)="addCodebookDiagnose()">
+                        <span class="text-nowrap">Add diagnose</span>
+                
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="text" name="title"
+                            id="title" placeholder="Title" 
+                            formControlName="title">
+                            <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>  
+                    </div>
+                    </form>
+                </div>
+    <table class="table">  
+        <thead>  
+            <tr>  
+                    <th scope="col">            Diagnose ID</th>
+                    <th scope="col">            Diagnose name</th> 
+                    <th scope="col"></th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+             <tr *ngFor="let diagnose of codebook.diagnoses">  
+                <td>{{diagnose.id}}</td>  
+                <td>{{diagnose.title}}</td>  
+                
+                <td><button (click)="deleteDiagnose(diagnose)" class='btn btn-primary'>Delete</button>   
+                  
+                </td>  
+              </tr>   
+        </tbody><br>  
+    </table>
+</div>  
+
+
+</div>
+
+
+
+
+
+
+
+
+
+

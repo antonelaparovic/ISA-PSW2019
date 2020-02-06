@@ -97,6 +97,13 @@ export class UserService{
         }
       }
 
+      public isCCAdmin() {
+        if (this.isLoggedIn()) {
+          return this.user.role === Role.CCADMIN;
+        }
+      }
+
+
       public getAllUsers(): Array<User> {
         this.http.get(this.urlUser + '/all').subscribe((data: User[]) => {
             for (const c of data) {
@@ -119,7 +126,10 @@ export class UserService{
           return  Role.DOCTOR;
         } else if (role === 'NURSE') {
           return  Role.NURSE;
-        }  else {
+        } else if (role === 'CCADMIN') {
+          return  Role.CCADMIN;
+        } else {
+          console.log("ovde je null");
           return null;
         }
     
