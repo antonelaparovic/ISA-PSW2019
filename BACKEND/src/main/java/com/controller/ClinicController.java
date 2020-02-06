@@ -21,6 +21,10 @@ public class ClinicController{
 
     @GetMapping(value = "/clinic/all")
     public ResponseEntity<List<Clinic>> all() {
+        for (Clinic var : clinicService.findAll())
+        {
+            System.out.println(var);
+        }
         return new ResponseEntity<>(clinicService.findAll(), HttpStatus.OK);
     }
 }
