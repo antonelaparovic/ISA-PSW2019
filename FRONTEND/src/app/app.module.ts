@@ -32,6 +32,8 @@ import { CCAdminProfileComponent } from './components/ccadmin-profile/ccadmin-pr
 import { AllPatientsPageComponent } from './components/allpatients-page/allpatients-page.component';
 
 import { CodebookComponent } from './components/codebook/codebook.component';
+import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
+import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
 
 
 
@@ -56,7 +58,9 @@ import { CodebookComponent } from './components/codebook/codebook.component';
     PatientDoctorSearchComponent,
     CodebookComponent,
     CCAdminProfileComponent,
-    AllPatientsPageComponent
+    AllPatientsPageComponent,
+    ClinicadministratorPageComponent,
+    ClinicadministratorProfileComponent
 
 
   ],
