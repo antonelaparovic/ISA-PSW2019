@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment';
 import {Doctor} from '../models/doctor';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {UserService} from './user.service';
 
 
@@ -10,19 +10,20 @@ import {UserService} from './user.service';
 })
 export class DoctorService {
 
+  
   urlDoctor = environment.baseUrl + environment.doctor;
   listDoctors: Array<Doctor> = new Array<Doctor>();
-  doctor:Doctor;
-
+  doctor: Doctor;
+  editD: Doctor;
+  doctorss: Array<Doctor> = new Array<Doctor>();
+  termins: Array<string> = new Array<string>();
+  doctorsWithSearch: Array<Doctor> = new Array<Doctor>();
+  termin: string;
   constructor(
     private http: HttpClient,
     private userService: UserService
-  ) { 
+  ) {
     this.getAllDoctors();
-  }
-
-  public newDoctor(doctor) {
-    return this.http.post(this.urlDoctor + '/register', doctor);
   }
 
   public loginDoctor(doctor) {
@@ -30,14 +31,8 @@ export class DoctorService {
     return this.http.post(environment.baseUrl + '/login', doctor, {responseType: 'text'});
   }
 
-  public editDoctor(doctor){
-    return this.http.post(this.urlDoctor + '/edit', doctor,{responseType: 'text'});
-  }
-
-  public addDoctor(d: Doctor) {
-    if(this.getDoctor(d.email)===null){
-      this.listDoctors.push(d);
-    }
+  public editDoctor(doctor) {
+    return this.http.post(this.urlDoctor + '/edit', doctor, {responseType: 'text'});
   }
 
   public getDoctor(email: string) {
@@ -49,22 +44,25 @@ export class DoctorService {
         return u;
       }
     }
+
     return null;
   }
 
-  public setDoctor(p: Doctor) {
+  public addDoctor(d: Doctor) {
+    if (this.getDoctor(d.email) === null) {
+      this.listDoctors.push(d);
+    }
+  }
 
-    for (const p1 of this.listDoctors) {
-      if (p1.email === p.email) {
-        p1.name = p.name;
-        p1.number = p.number;
-        p1.surname = p.surname;
-        p1.password = p.password;
-        p1.address = p.address;
-        p1.city = p.city;
-        p1.country = p.country;
-        p1.specialization = p.specialization;
-        return;
+  public setDoctor(d: Doctor) {
+    for (const d1 of this.listDoctors) {
+      if (d1.email === d.email) {
+        d1.password = d.password;
+        d1.name = d.name;
+        d1.surname = d.surname;
+        d1.phone = d.phone;
+        d1.workHoursFrom = d.workHoursFrom;
+        d1.workHoursTo = d.workHoursTo;
       }
     }
   }
@@ -72,7 +70,7 @@ export class DoctorService {
   public getAllDoctors(): Array<Doctor> {
     this.http.get(this.urlDoctor + '/all').subscribe((data: Doctor[]) => {
         for (const c of data) {
-          this.doctor = new Doctor(c.email,c.password,c.name,c.surname,c.number,c.address,c.city,c.country,c.specialization);
+          this.doctor = new Doctor(c.email, c.password, c.name, c.surname, c.phone, c.workHoursFrom, c.workHoursTo, c.specialized, c.doctorRating, c.clinic);
           this.addDoctor(this.doctor);
         }
       },
@@ -81,5 +79,59 @@ export class DoctorService {
       }
     );
     return this.listDoctors;
+  }
+
+  public getDoctorsTermins(date: string, email: string): string {
+    let params = new HttpParams();
+    params = params.append('date', date);
+    params = params.append('email', email);
+    console.log(params)
+    this.http.get(this.urlDoctor + '/terminString', {params, responseType: 'text'}).subscribe((data: string) => {
+        this.termins = new Array<string>();
+        console.log('Ispod ovde');
+        console.log(data);
+        this.termin = data;
+        this.termins.push(data);
+
+
+      },
+      error => {
+        console.log(error);
+      }
+    );
+
+    return this.termin;
+  }
+
+  public getDoctorss() {
+    return this.doctorss;
+  }
+
+  public setDoctorss(doctorss: Array<Doctor>) {
+    this.doctorss = doctorss;
+  }
+
+  public getDoctrosWithSearch(name: string, surname: string, rating: string): Array<Doctor> {
+
+    let params = new HttpParams();
+    params = params.append('name', name);
+    params = params.append('surname', surname);
+    params = params.append('rating', rating);
+    this.doctorsWithSearch = new Array<Doctor>();
+    this.http.get(this.urlDoctor + '/allWithSearch', {params}).subscribe((data: Doctor[]) => {
+        console.log(data)
+        for (const c of data) {
+          this.doctor = new Doctor(c.email, c.password, c.name, c.surname, c.phone, c.workHoursFrom, c.workHoursTo,
+            c.specialized, c.doctorRating, c.clinic);
+          this.doctorsWithSearch.push(this.doctor);
+          console.log(this.doctor);
+        }
+      },
+      error => {
+        console.log(error);
+      }
+      );
+
+    return this.doctorsWithSearch;
   }
 }

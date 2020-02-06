@@ -5,11 +5,9 @@ public class DoctorDTO {
     private String password;
     private String name;
     private String surname;
-    private String number;
-    private String address;
-    private String city;
-    private String country;
-    private String specialization;
+    private String phone;
+    private String workHoursFrom;
+    private String workHoursTo;
 
     public String getEmail() {
         return email;
@@ -43,43 +41,27 @@ public class DoctorDTO {
         this.surname = surname;
     }
 
-    public String getNumber() {
-        return number;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setPhone(String number) {
+        this.phone = number;
     }
 
-    public String getAddress() {
-        return address;
+    public String getWorkHoursFrom() {
+        return workHoursFrom;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setWorkHoursFrom(String workHoursFrom) {
+        this.workHoursFrom = workHoursFrom;
     }
 
-    public String getCity() {
-        return city;
+    public String getWorkHoursTo() {
+        return workHoursTo;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getSpecialization() {
-        return specialization;
-    }
-
-    public void setSpecialization(String specialization) {
-        this.specialization = specialization;
+    public void setWorkHoursTo(String workHoursTo) {
+        this.workHoursTo = workHoursTo;
     }
 }
