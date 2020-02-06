@@ -23,6 +23,9 @@ import { MedicalHistoryPageComponent } from './components/medical-history-page/m
 import { ClinicsPageComponent } from './components/clinics-page/clinics-page.component';
 import {NursePageComponent} from './components/nurse-page/nurse-page.component';
 import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.component';
+import { ClinicSearchComponent } from './components/clinic-search/clinic-search.component';
+import { PatientDoctorsListComponent } from './components/patient-doctors-list/patient-doctors-list.component';
+import { PatientDoctorSearchComponent } from './components/patient-doctor-search/patient-doctor-search.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.co
     MedicalHistoryPageComponent,
     ClinicsPageComponent,
     NursePageComponent,
-    NurseProfileComponent
+    NurseProfileComponent,
+    ClinicSearchComponent,
+    PatientDoctorsListComponent,
+    PatientDoctorSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +60,11 @@ import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.co
     HttpClientModule,
     MatNativeDateModule,
     DemoMaterialModule,
+  ],
+  entryComponents: [
+    ClinicSearchComponent,
+    PatientDoctorsListComponent,
+    PatientDoctorSearchComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
