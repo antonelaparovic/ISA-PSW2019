@@ -17,7 +17,7 @@ public class ExaminationController {
         @Autowired
         ExaminationService examinationService;
 
-        @GetMapping(value = "/examination/all")
+        @GetMapping(value = "examination/all")
         public ResponseEntity<List<Examination>> all() {
             return new ResponseEntity<>(examinationService.findAll(), HttpStatus.OK);
         }
