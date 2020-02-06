@@ -14,8 +14,8 @@ insert into doctor(id, email, name, password, phone, status, surname, work_hours
 
 insert into doctor(id, email, name, password, phone, status, surname, work_hours_from, work_hours_to,clinic_id, specialized_id) values (3,'doctorere@email.com','Doctorer','Doctoruut123','123467111','ACTIVE','Docicii','08','16',101,1);
 
-
-insert into clinic_administrator(id, email, name, password ,phone,surname, clinic_id) values (1, 'nemanja@email.com', 'Nemanja', 'Mirkela97' ,'123456789', 'Mirkovic', 100);
+insert into users(id, email, password, role) values (103, 'cadmin@email.com', 'Cadmin123', 3);
+insert into clinic_administrator(id, email, name, password ,number,surname, clinic_id) values (1, 'cadmin@email.com', 'CAdmin', 'Cadmin123' ,'123456789', 'CAdminic', 100);
 insert into nurse(id, email, name, password, number, surname, work_hours_from, work_hours_to, clinic_id,address,city,country) values (100,'nurse@email.com', 'Nurse', 'Nurse123','153426010', 'Nursic', '8:00', '16:00', 100,'bolnicka','Novi sad','Srbija');
 insert into users(id, email, password, role) values (101, 'nurse@email.com', 'Nurse123', 2);
 insert into room(id,kind,label,clinic_id) values (100,'OPERATION','label',101);
