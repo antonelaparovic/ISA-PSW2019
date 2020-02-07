@@ -22,7 +22,7 @@ public class ClinicAdministratorController {
     @Autowired
     private UserService userService;
 
-    @PostMapping(value = "clinicadministrator/edit")
+    @PostMapping(value = "clinicAdministrator/edit")
     public String editClinicAdministrator(@RequestBody ClinicAdministratorDTO d){
         ClinicAdministrator doct = clinicAdministratorService.getClinicAdministrator(d.getEmail());
         User u = userService.getUser(d.getEmail());
@@ -56,7 +56,7 @@ public class ClinicAdministratorController {
         return "Greska";
     }
 
-    @GetMapping(value = "clinicadministrator/all")
+    @GetMapping(value = "clinicAdministrator/all")
     public ResponseEntity< List<ClinicAdministrator>> all() {
         return new ResponseEntity<>(clinicAdministratorService.findall(), HttpStatus.OK);
     }
