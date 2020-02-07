@@ -14,6 +14,8 @@ import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.co
 import {CCAdminProfileComponent} from './components/ccadmin-profile/ccadmin-profile.component';
 import {AllPatientsPageComponent} from './components/allpatients-page/allpatients-page.component';
 import { CodebookComponent} from './components/codebook/codebook.component';
+import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
+import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,18 @@ const routes: Routes = [
     component: DoctorPageComponent
   },
   {
+    path:'doctor/profile',
+    component: DoctorProfileComponent
+  },
+  {
+    path:'clinicAdministrator/home',
+    component: ClinicadministratorPageComponent
+  },
+  {
+    path:'clinicAdministrator/profile',
+    component: ClinicadministratorProfileComponent
+  },
+  {
     path:'clinicalCenterAdministrator/profile',
     component: CCAdminProfileComponent
   },
@@ -44,12 +58,6 @@ const routes: Routes = [
   {
     path:'clinicalCenterAdministrator/codebook',
     component: CodebookComponent
-  },
-  
-
-  {
-    path:'doctor/profile',
-    component: DoctorProfileComponent
   },
   {
     path:'nurse/home',

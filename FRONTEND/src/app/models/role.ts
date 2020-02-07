@@ -3,5 +3,6 @@ export enum Role {
     DOCTOR,
     NURSE,
     CCADMIN,
+    CLINICADMINISTRATOR,
     NONE
   }

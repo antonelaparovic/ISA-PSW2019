@@ -35,6 +35,10 @@ export class AppComponent {
     return this.userService.isDoctor();
   }
 
+  public isClinicAdministrator() {
+    return this.userService.isClinicAdministrator();
+  }
+
   public isNurse() {
     return this.userService.isNurse();
   }

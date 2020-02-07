@@ -20,6 +20,11 @@
           <a mat-list-item (click)="onLogout()">Logout</a>
         </mat-nav-list>
 
+        <mat-nav-list *ngIf="isClinicAdministrator()">
+          <a mat-list-item routerLink="/clinicAdministrator/profile">Profile</a>
+          <a mat-list-item (click)="onLogout()">Logout</a>
+        </mat-nav-list>
+
         <mat-nav-list *ngIf="isNurse()">
           <a mat-list-item routerLink="/nurse/profile">Profile</a>
           <a mat-list-item routerLink="/nurse/allpatients">All patients</a>
