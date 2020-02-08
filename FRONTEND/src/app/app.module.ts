@@ -34,7 +34,8 @@ import { AllPatientsPageComponent } from './components/allpatients-page/allpatie
 import { CodebookComponent } from './components/codebook/codebook.component';
 import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
 import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
-
+import { NurseVacationRequestComponent } from './components/nurse-vacation-req/nurse-vacation-req.component';
+import { VacationRequestRegisterComponent } from './components/vacation-request-register/vacation-request-register.component';
 
 
 
@@ -52,7 +53,7 @@ import { ClinicadministratorProfileComponent } from './components/clinicadminist
     ClinicsPageComponent,
     NursePageComponent,
     NurseProfileComponent,
-
+    NurseVacationRequestComponent,
     ClinicSearchComponent,
     PatientDoctorsListComponent,
     PatientDoctorSearchComponent,
@@ -60,7 +61,8 @@ import { ClinicadministratorProfileComponent } from './components/clinicadminist
     CCAdminProfileComponent,
     AllPatientsPageComponent,
     ClinicadministratorPageComponent,
-    ClinicadministratorProfileComponent
+    ClinicadministratorProfileComponent,
+    VacationRequestRegisterComponent,
 
 
   ],
@@ -85,9 +87,10 @@ import { ClinicadministratorProfileComponent } from './components/clinicadminist
     ClinicSearchComponent,
     PatientDoctorsListComponent,
     PatientDoctorSearchComponent,
-
+    NurseVacationRequestComponent,
     CCAdminProfileComponent,
-    AllPatientsPageComponent
+    AllPatientsPageComponent,
+    VacationRequestRegisterComponent
 
   ],
   providers: [],

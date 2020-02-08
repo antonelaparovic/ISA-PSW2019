@@ -66,6 +66,8 @@ export class NurseService{
           p1.surname = p.surname;
           p1.city = p.city;
           p1.password = p.password;
+          p1.workHoursFrom=p.workHoursFrom;
+          p1.workHoursTo=p.workHoursTo;
           return;
         }
       }
@@ -75,7 +77,7 @@ export class NurseService{
     public getAllNurses(): Array<Nurse> {
       this.http.get(this.urlNurse + '/all').subscribe((data: Nurse[]) => {
           for (const c of data) {
-            this.nurse = new Nurse(c.email,c.password,c.name,c.surname,c.number,c.address,c.city,c.country);
+            this.nurse = new Nurse(c.email,c.password,c.name,c.surname,c.number,c.address,c.city,c.country, c.workHoursFrom, c.workHoursTo);
             this.addNurse(this.nurse);
           }
         },

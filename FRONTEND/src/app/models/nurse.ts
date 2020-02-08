@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 
 export class Nurse{
     
@@ -9,9 +10,11 @@ export class Nurse{
     city: string;
     address: string;
     country: string;
+    workHoursTo: Time;
+    workHoursFrom: Time;
   
 
-    constructor(email: string, password: string, name: string, surname: string, number1: string, address: string, city: string, country: string) {
+    constructor(email: string, password: string, name: string, surname: string, number1: string, address: string, city: string, country: string, workHoursTo: Time, workHoursFrom: Time) {
 
       this.email = email;
       this.name = name;
@@ -22,6 +25,8 @@ export class Nurse{
       this.address = address;
       this.city = city;
       this.country = country;
+      this.workHoursFrom = workHoursFrom;
+      this.workHoursTo = workHoursTo;
 
     }
 }
