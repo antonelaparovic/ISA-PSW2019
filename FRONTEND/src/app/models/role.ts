@@ -1,8 +1,9 @@
 export enum Role {
-    PATIENT,
-    DOCTOR,
-    NURSE,
-    CCADMIN,
-    CLINICADMINISTRATOR,
-    NONE
+  PATIENT,
+  DOCTOR,
+  NURSE,
+  CCADMIN,
+  NONE,
+  CLINICADMINISTRATOR,
+ 
   }

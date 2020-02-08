@@ -16,6 +16,8 @@ import {AllPatientsPageComponent} from './components/allpatients-page/allpatient
 import { CodebookComponent} from './components/codebook/codebook.component';
 import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
 import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
+import {NurseVacationRequestComponent} from './components/nurse-vacation-req/nurse-vacation-req.component';
+import { VacationRequestRegisterComponent } from './components/vacation-request-register/vacation-request-register.component';
 
 const routes: Routes = [
   {
@@ -56,6 +58,10 @@ const routes: Routes = [
   },
 
   {
+    path:'clinicalCenterAdministrator/VacationRequests',
+    component: VacationRequestRegisterComponent
+  },
+  {
     path:'clinicalCenterAdministrator/codebook',
     component: CodebookComponent
   },
@@ -69,6 +75,10 @@ const routes: Routes = [
   },{
     path:'nurse/allpatients',
     component: AllPatientsPageComponent
+  },
+  {
+    path: 'nurse/VacationRequest',
+    component: NurseVacationRequestComponent,
   },
   {
     path:'patient/profile',

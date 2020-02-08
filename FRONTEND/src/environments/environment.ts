@@ -17,6 +17,7 @@ export const environment = {
   clinicalCenterAdmininistrator: '/clinicalCenterAdministrator',
   codebook: '/codebook',
   clinicAdministrator: '/clinicAdministrator',
+  zahtev: '/zahtev',
 };
 
 /*
