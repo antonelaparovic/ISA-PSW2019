@@ -1,14 +1,13 @@
 package com.dtos;
 
-import com.model.Doctor;
-import com.model.Interval;
 import com.model.Nurse;
+import com.model.Interval;
 import com.model.OffStatus;
 import com.model.OffType;
 
 import javax.persistence.*;
 
-public class TimeOffNUrseDTO {
+public class TimeOffNurseDTO {
 
     private OffType type;
 

@@ -3,7 +3,8 @@ package com.model;
 import javax.persistence.*;
 
 @Entity
-public class TimeOffNurse {
+public class NurseOff {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,21 +15,12 @@ public class TimeOffNurse {
     @Enumerated(EnumType.STRING)
     private OffStatus status;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Interval interval;
-
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Nurse nurse;
 
+    public NurseOff()
+    {
 
-    public TimeOffNurse(OffType type, OffStatus status, Nurse nurse, Interval interval) {
-        this.type = type;
-        this.status = status;
-        this.nurse = nurse;
-        this.interval = interval;
-    }
-
-    public TimeOffNurse() {
     }
 
     public Long getId() {
@@ -62,14 +54,5 @@ public class TimeOffNurse {
     public void setNurse(Nurse nurse) {
         this.nurse = nurse;
     }
-
-    public Interval getInterval() {
-        return interval;
-    }
-
-    public void setInterval(Interval interval) {
-        this.interval = interval;
-    }
 }
-
 

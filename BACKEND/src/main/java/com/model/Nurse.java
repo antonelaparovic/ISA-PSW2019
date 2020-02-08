@@ -51,6 +51,15 @@ public class Nurse {
     private Clinic clinic;
 
     @JsonIgnore
+    @OneToMany(mappedBy = "nurse", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<NurseOff> timeOffNurses = new HashSet<>();
+
+    @JsonIgnore
+    @Enumerated(EnumType.STRING)
+    private NurseStatus status;
+
+
+    @JsonIgnore
     @OneToMany(mappedBy = "nurse", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Examination> examinations = new HashSet<>();
 
@@ -143,6 +152,22 @@ public class Nurse {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    public Set<NurseOff> getTimeOffNurses() {
+        return timeOffNurses;
+    }
+
+    public NurseStatus getStatus() {
+        return status;
+    }
+    public void setTimeOffNurses(Set<NurseOff> timeOffNurses) {
+        this.timeOffNurses = timeOffNurses;
+    }
+
+    public void setStatus(NurseStatus status) {
+        this.status = status;
+    }
+
 }
 
 
