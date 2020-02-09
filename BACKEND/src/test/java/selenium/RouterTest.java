@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
+import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -55,7 +55,7 @@ public class RouterTest {
     }
     // 3.12
     @Test
-    public void Test1() {
+    public void Test1() throws InterruptedException {
         //this.browser.get("http://localhost:8081");
 
         WebElement element = this.browser.findElement(By.xpath("//*[@id=\"email\"]"));
@@ -74,8 +74,8 @@ public class RouterTest {
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebElement button4 = this.browser.findElement(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/app-clinics-page/button[2]"));
         button4.click();
-        browser.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        WebElement button5 = this.browser.findElement(By.xpath("//*[@id=\"mat-dialog-0\"]/app-predef-examination/mat-dialog-actions/button"));
+        browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebElement button5 = this.browser.findElement(By.xpath("/html/body/div[2]/div[2]/div/mat-dialog-container/app-predef-examination/mat-dialog-actions/button"));
         button5.click();
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         button4.click();
@@ -85,6 +85,30 @@ public class RouterTest {
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
+    @Test
+    public void Test2(){
+        WebElement element = this.browser.findElement(By.xpath("//*[@id=\"email\"]"));
+        assertNotNull(element);
+        element.sendKeys("patienttim27@gmail.com");
+        WebElement element2 = this.browser.findElement(By.xpath("//*[@id=\"password\"]"));
+        element2.sendKeys("Patient123");
+        WebElement button = this.browser.findElement(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/app-login/div/div/div/div/mat-card/form/button"));
+        button.click();
+        browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebElement button2 = this.browser.findElement(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/mat-toolbar/button"));
+        button2.click();
+        browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebElement button3 = this.browser.findElement(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav/div/mat-nav-list/a[4]/div"));
+        button3.click();
+        browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebElement button4 = this.browser.findElement(By.xpath("/html/body/app-root/mat-sidenav-container/mat-sidenav-content/app-clinics-page/button[1]"));
+        button4.click();
+        browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebElement element3 = this.browser.findElement(By.xpath("//*[@id=\"date\"]"));
+        element3.sendKeys("2/20/2020");
+        browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+    }
 
     @AfterMethod
     public void tearDown() {
