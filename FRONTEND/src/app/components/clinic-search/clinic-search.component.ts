@@ -28,15 +28,18 @@ export class ClinicSearchComponent implements OnInit {
     return day !== 0 && day !== 6;
   }
 
-  constructor(private formBuilder: FormBuilder, private examinationTypeService: ExaminationTypeService , private dialogRef: MatDialogRef<ClinicSearchComponent>,
+  constructor(private clinicService: ClinicService,
+              private formBuilder: FormBuilder,
+              private examinationTypeService: ExaminationTypeService,
+              private dialogRef: MatDialogRef<ClinicSearchComponent>,
               @Inject(MAT_DIALOG_DATA) data) {
     this.types = examinationTypeService.getAllTypes();
   }
 
   ngOnInit() {
     this.SearchClinicsGroup = this.formBuilder.group({
-      date: new FormControl('', [Validators.required]),
-      type: new FormControl('', [Validators.required]),
+      date: new FormControl(''),
+      type: new FormControl(''),
     });
   }
   get f() {
@@ -44,10 +47,26 @@ export class ClinicSearchComponent implements OnInit {
   }
 
   save() {
-    this.dialogRef.close(this.SearchClinicsGroup.value);
+    if (this.SearchClinicsGroup.invalid) {
+      return;
+    }
+
+    console.log(this.f.type.value);
+    this.clinicService.setType(this.f.type.value);
+    const a = new Date(this.f.date.value);
+
+    const date = a.toLocaleDateString();
+    console.log(date);
+
+    this.clinics = this.clinicService.getClinicsWithType(this.f.type.value, date);
+    this.result.date = date;
+    this.result.clinics = this.clinics;
+    this.dialogRef.close(this.result);
   }
 
   close() {
     this.dialogRef.close();
   }
+
+
 }

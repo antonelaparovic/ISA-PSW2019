@@ -41,7 +41,7 @@ export class PatientDoctorSearchComponent implements OnInit {
       return;
     }
 
-    this.doctors = this.doctorService.getDoctrosWithSearch(this.f.name.value, this.f.surname.value, this.f.rating.value);
+    this.doctors = this.doctorService.getDoctorsWithSearch(this.f.name.value, this.f.surname.value, this.f.rating.value);
     console.log(this.doctors);
     this.dialogRef.close(this.doctors);
   }
