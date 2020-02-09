@@ -20,7 +20,7 @@ export class MedicalRecordPageComponent implements OnInit {
   loggedUser: string = this.userService.isLoggedIn();
   user: User;
   mr: MedicalRecord;
-  displayedColumns: string[] = ['Height', 'Weight','BloodType','Allergies','ExaminationReports'];
+  displayedColumns: string[] = ['Height', 'Weight','BloodType','Allergies'];
   dataSource= new MatTableDataSource<MedicalRecord>();
   rec:Array<MedicalRecord>=new Array<MedicalRecord>();
 

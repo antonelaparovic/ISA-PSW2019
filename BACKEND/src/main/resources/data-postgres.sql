@@ -25,6 +25,7 @@ insert into doctor(id, email, name, password, phone, status, surname, work_hours
 
 
 insert into users(id, email, password, role) values (171, 'cadmin@email.com', 'Cadmin123', 4);
+
 insert into clinic_administrator(id, email, name, password ,number,surname, clinic_id) values (1, 'cadmin@email.com', 'CAdmin', 'Cadmin123' ,'123456789', 'CAdminic', 100);
 
 insert into nurse(id, email, name, password, number, surname, work_hours_from, work_hours_to, clinic_id,address,city,country) values (100,'nurse@email.com', 'Nurse', 'Nurse123','153426010', 'Nursic', '8:00', '16:00', 100,'bolnicka','Novi sad','Srbija');

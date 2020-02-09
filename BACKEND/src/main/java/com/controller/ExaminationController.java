@@ -30,7 +30,7 @@ public class ExaminationController {
         ClinicService clinicService;
 
         @Autowired
-    ExaminationTypeService examinationTypeService;
+        ExaminationTypeService examinationTypeService;
 
         @GetMapping(value = "examination/all")
             public ResponseEntity<List<Examination>> all() {
@@ -54,7 +54,7 @@ public class ExaminationController {
         }
 
         @PostMapping(value = "/examination/makePredefExamination")
-        public ResponseEntity<Examination> makePredefExamination(@RequestParam(value = "id", required = true) String id,
+        public ResponseEntity<Boolean> makePredefExamination(@RequestParam(value = "id", required = true) String id,
                                                              @RequestParam(value = "email", required = true) String email) {
             Examination e = new Examination();
             Long idEx = Long.parseLong(id);
@@ -64,9 +64,9 @@ public class ExaminationController {
             boolean uspesno = examinationService.editPredefBooked(e,p);
             this.examinationService.SendEmailPredef(e,p);
             if(uspesno == true)
-                return new ResponseEntity<>(e, HttpStatus.OK);
+                return new ResponseEntity<>(true, HttpStatus.OK);
             else
-                return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
         }
 
 
@@ -119,24 +119,6 @@ public class ExaminationController {
         examinationService.addExamination(e);
         this.examinationService.awaitingExamination(e,patient);
         return new ResponseEntity<>(true, HttpStatus.CREATED);
-    }
-
-    @GetMapping(value = "/examination/getMHforP")
-    public ResponseEntity<List<Examination>> getMHforP(@RequestParam(value = "email", required = true) String email) {
-        List<Examination> tmp = examinationService.findAll();
-        List<Examination> ret = new ArrayList<>();
-
-        for(Examination e : tmp) {
-            if(e.getPatient() != null) {
-                if (e.getPatient().getEmail().equals(email)) {
-                    if (e.getStatus() != ExaminationStatus.AWAITING) {
-                        ret.add(e);
-                    }
-                }
-            }
-        }
-
-        return new ResponseEntity<>(ret, HttpStatus.OK);
     }
 
 
