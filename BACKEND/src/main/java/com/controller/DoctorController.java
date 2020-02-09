@@ -68,4 +68,23 @@ public class DoctorController {
     public ResponseEntity<List<Doctor>> all() {
         return new ResponseEntity<>(doctorService.findall(), HttpStatus.OK);
     }
+
+    @GetMapping(value = "doctor/allWithSearch")
+    public ResponseEntity<List<Doctor>> doctorsWithSearch(@RequestParam(value = "name", required = true) String name,
+                                                          @RequestParam(value = "surname", required = true) String surname,
+                                                          @RequestParam(value = "rating", required = true) String rating) {
+        List<Doctor> tmp = doctorService.findall();
+        List<Doctor> ret = new ArrayList<>();
+
+        for(Doctor d : tmp) {
+            if(d.getName().equals(name) && d.getSurname().equals(surname) && d.getDoctorRating() >= Integer.parseInt(rating)) {
+                ret.add(d);
+            }
+        }
+
+        System.out.println(ret.size());
+
+        return new ResponseEntity<>(ret, HttpStatus.OK);
+    }
+
 }
