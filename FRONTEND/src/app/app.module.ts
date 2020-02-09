@@ -34,6 +34,8 @@ import { AllPatientsPageComponent } from './components/allpatients-page/allpatie
 import { CodebookComponent } from './components/codebook/codebook.component';
 import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
 import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
+import { ClinicProfileComponent } from './components/clinic-profile/clinic-profile.component';
+import { ClinicDoctorsComponent } from './components/clinic-doctors/clinic-doctors.component';
 
 
 
@@ -60,7 +62,9 @@ import { ClinicadministratorProfileComponent } from './components/clinicadminist
     CCAdminProfileComponent,
     AllPatientsPageComponent,
     ClinicadministratorPageComponent,
-    ClinicadministratorProfileComponent
+    ClinicadministratorProfileComponent,
+    ClinicProfileComponent,
+    ClinicDoctorsComponent
 
 
   ],
