@@ -1,6 +1,8 @@
 package com.service;
 
 import com.model.Examination;
+import com.model.ExaminationStatus;
+import com.model.Patient;
 import com.repository.ExaminationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,8 @@ public class ExaminationService {
 
     @Autowired
     ExaminationRepo examinationRepo;
+    @Autowired
+    MailService mailService;
 
     public List<Examination> findAll() {
         return  examinationRepo.findAll();
