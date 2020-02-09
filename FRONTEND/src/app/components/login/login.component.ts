@@ -16,6 +16,7 @@ import { ClinicService } from 'src/app/services/clinic.service';
 import { ExaminationTypeService } from 'src/app/services/examination-type.service';
 import { Patient } from 'src/app/models/patient';
 import { PatientStatus } from 'src/app/models/patientStatus';
+import { ClinicAdministratorService } from 'src/app/services/clinic-administrator.service';
 
 
 
@@ -51,6 +52,8 @@ export class LoginComponent implements OnInit {
     private examinationService:ExaminationService,
     private clinicService:ClinicService,
     private examinationTypeService:ExaminationTypeService,
+    private clinicAdministratorService:ClinicAdministratorService,
+
     private recordService:MedicalRecordService,
 
     private ccadminService:ClinicalCenterAdministratorService,
@@ -110,6 +113,22 @@ export class LoginComponent implements OnInit {
           if (data !== null) {
             console.log('Successful logged in');
             this.router.navigate(['/doctor/home']);
+          } else {
+            console.log('Login error');
+          }
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    } else if (this.user.role === Role.CLINICADMINISTRATOR && this.loginUser.password === this.user.password) {
+      console.log(this.user);
+      this.clinicAdministratorService.loginClinicAdministrator(this.user).subscribe(
+        data => {
+          console.log(data);
+          if (data !== null) {
+            console.log('Successful logged in');
+            this.router.navigate(['/clinicAdministrator/home']);
           } else {
             console.log('Login error');
           }

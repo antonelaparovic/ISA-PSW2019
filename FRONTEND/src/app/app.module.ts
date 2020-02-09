@@ -32,8 +32,14 @@ import { CCAdminProfileComponent } from './components/ccadmin-profile/ccadmin-pr
 import { AllPatientsPageComponent } from './components/allpatients-page/allpatients-page.component';
 
 import { CodebookComponent } from './components/codebook/codebook.component';
+
 import { PredefExaminationComponent } from './components/predef-examination/predef-examination.component';
 import { PatientNewExaminationComponent } from './components/patient-new-examination/patient-new-examination.component';
+
+import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
+import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
+import { NurseVacationRequestComponent } from './components/nurse-vacation-req/nurse-vacation-req.component';
+import { VacationRequestRegisterComponent } from './components/vacation-request-register/vacation-request-register.component';
 
 
 
@@ -52,7 +58,7 @@ import { PatientNewExaminationComponent } from './components/patient-new-examina
     ClinicsPageComponent,
     NursePageComponent,
     NurseProfileComponent,
-
+    NurseVacationRequestComponent,
     ClinicSearchComponent,
     PatientDoctorsListComponent,
     PatientDoctorSearchComponent,
@@ -60,7 +66,10 @@ import { PatientNewExaminationComponent } from './components/patient-new-examina
     CCAdminProfileComponent,
     AllPatientsPageComponent,
     PredefExaminationComponent,
-    PatientNewExaminationComponent
+    PatientNewExaminationComponent,
+    ClinicadministratorPageComponent,
+    ClinicadministratorProfileComponent,
+    VacationRequestRegisterComponent,
 
 
   ],
@@ -85,11 +94,13 @@ import { PatientNewExaminationComponent } from './components/patient-new-examina
     ClinicSearchComponent,
     PatientDoctorsListComponent,
     PatientDoctorSearchComponent,
-
+    NurseVacationRequestComponent,
     CCAdminProfileComponent,
     AllPatientsPageComponent,
     PredefExaminationComponent,
-    PatientNewExaminationComponent
+    PatientNewExaminationComponent,
+    VacationRequestRegisterComponent
+
 
   ],
   providers: [],

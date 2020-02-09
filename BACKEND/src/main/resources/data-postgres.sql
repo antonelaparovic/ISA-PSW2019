@@ -27,6 +27,10 @@ insert into doctor(id, email, name, password, phone, status, surname, work_hours
 insert into clinic_administrator(id, email, name, password ,phone,surname, clinic_id) values (1, 'nemanja@email.com', 'Nemanja', 'Mirkela97' ,'123456789', 'Mirkovic', 100);
 
 
+
+insert into users(id, email, password, role) values (103, 'cadmin@email.com', 'Cadmin123', 4);
+insert into clinic_administrator(id, email, name, password ,number,surname, clinic_id) values (1, 'cadmin@email.com', 'CAdmin', 'Cadmin123' ,'123456789', 'CAdminic', 100);
+
 insert into nurse(id, email, name, password, number, surname, work_hours_from, work_hours_to, clinic_id,address,city,country) values (100,'nurse@email.com', 'Nurse', 'Nurse123','153426010', 'Nursic', '8:00', '16:00', 100,'bolnicka','Novi sad','Srbija');
 insert into nurse(id, email, name, password, number, surname, work_hours_from, work_hours_to, clinic_id,address,city,country) values (101,'nurseee@email.com', 'Nursee', 'Nurse12345','153426510', 'Nursic', '8:00', '16:00', 101,'sabacka','Sabac','Srbija');
 insert into nurse(id, email, name, password, number, surname, work_hours_from, work_hours_to, clinic_id,address,city,country) values (102,'nurse015@email.com', 'Nursere', 'N12345678','153426710', 'Nursic', '8:00', '16:00', 100,'radnicka','Sabac','Srbija');
@@ -62,6 +66,7 @@ insert into medicine(id, chemical_composition, label, usage) values (1231, 'nnnn
 insert into medicine(id, chemical_composition, label, usage) values (2222, 'opiis', 'Bromazepan', 'smirenje');
 insert into codebook(id) values ('333555');
 
+
 insert into interval(id,end_time,start_time) values (150, '2020.02.20 10:00', '2020.02.20 09:00');
 insert into interval(id,end_time,start_time) values (151, '2020.02.20 12:00', '2020.02.20 11:00');
 insert into interval(id,end_time,start_time) values (152, '2020.02.21 14:00', '2020.02.21 13:00');
@@ -72,6 +77,7 @@ insert into interval(id,end_time,start_time) values (156, '2020.02.27 10:00', '2
 insert into interval(id,end_time,start_time) values (160, '2020.02.27 13:00', '2020.02.27 12:00');
 insert into interval(id,end_time,start_time) values (161, '2020.02.28 16:00', '2020.02.28 15:00');
 insert into interval(id,end_time,start_time) values (162, '2020.02.28 11:00', '2020.02.28 10:00');
+
 insert into interval(id,end_time,start_time) values (163, '2020.02.28 09:00', '2020.02.28 08:00');
 
 
@@ -98,3 +104,7 @@ insert into examining(examination_id,doctor_id) values (207,2);
 
 insert into examination_report(id,comment, time_created, diagnose_id, doctor_id, examination_id, medical_record_id) values (100,'Zavrsen pregled','01.01.2020. 12:30', 100, 1, 200,100);
 insert into examination_report(id,comment, time_created, diagnose_id, doctor_id, examination_id, medical_record_id) values (101,'Izvestaj 2','02.01.2020. 08:30', 101, 2, 201,100);
+
+insert into interval(id,end_time,start_time) values (163, '2020.02.29 09:00', '2020.02.29 08:00');
+
+

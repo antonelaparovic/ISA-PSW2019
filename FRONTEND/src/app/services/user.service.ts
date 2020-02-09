@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import {Router} from '@angular/router';
 import {Role} from '../models/role';
 import {HttpClient} from '@angular/common/http';
-import { Nurse } from '../models/nurse';
 import { environment } from 'src/environments/environment';
 
 
@@ -110,6 +109,11 @@ export class UserService{
         }
       }
 
+      public isClinicAdministrator() {
+        if (this.isLoggedIn()) {
+          return this.user.role === Role.CLINICADMINISTRATOR;
+        }
+      }
 
       public getAllUsers(): Array<User> {
         this.http.get(this.urlUser + '/all').subscribe((data: User[]) => {
@@ -135,6 +139,8 @@ export class UserService{
           return  Role.NURSE;
         } else if (role === 'CCADMIN') {
           return  Role.CCADMIN;
+        } else if (role === 'CLINICADMINISTRATOR') {
+          return  Role.CLINICADMINISTRATOR;
         } else {
           console.log("ovde je null");
           return null;

@@ -4,5 +4,6 @@ public enum Role {
     PATIENT,
     DOCTOR,
     NURSE,
-    CCADMIN
+    CCADMIN,
+    CLINICADMINISTRATOR,
 }
