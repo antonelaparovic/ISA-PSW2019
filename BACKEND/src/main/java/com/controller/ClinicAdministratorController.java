@@ -1,9 +1,11 @@
 package com.controller;
 
 import com.dtos.ClinicAdministratorDTO;
+import com.dtos.ClinicDTO;
 import com.model.ClinicAdministrator;
 import com.model.User;
 import com.service.ClinicAdministratorService;
+import com.service.ClinicService;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,11 @@ public class ClinicAdministratorController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ClinicService clinicService;
+
+
 
     @PostMapping(value = "clinicAdministrator/edit")
     public String editClinicAdministrator(@RequestBody ClinicAdministratorDTO d){
