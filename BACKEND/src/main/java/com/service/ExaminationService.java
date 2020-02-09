@@ -46,4 +46,15 @@ public class ExaminationService {
         }
         return false;
     }
+
+    public void SendEmailPredef(Examination examination,Patient patient) {
+        String subject = "Successfully scheduled examination";
+        String text = "Your have successfully scheduled an " + examination.getKind().toString().toLowerCase() +" " + System.lineSeparator() +
+                "Clinic: "+examination.getClinic().getName().toString() + " on address: "+examination.getClinic().getAddress().toString()+ System.lineSeparator() +
+                " "+examination.getExaminationType().getLabel()+ " , with price: " + examination.getExaminationType().getPrice() +"RSD";
+
+        mailService.Send(patient.getEmail(), subject, text);
+    }
+
+
 }
