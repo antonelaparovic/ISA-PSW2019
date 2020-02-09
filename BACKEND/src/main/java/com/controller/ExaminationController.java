@@ -20,6 +20,36 @@ public class ExaminationController {
         @GetMapping(value = "examination/all")
         public ResponseEntity<List<Examination>> all() {
             return new ResponseEntity<>(examinationService.findAll(), HttpStatus.OK);
+        @GetMapping(value = "/examination/allPredefExaminations")
+        public ResponseEntity<List<Examination>> allPredefExaminations() {
+            List<Examination> pom = examinationService.findAll();
+            List<Examination> ret = new ArrayList<>();
+
+            for(Examination e : pom)
+            {
+                if(e.getStatus() == ExaminationStatus.PREDEF_AVAILABLE)
+                    {
+                    ret.add(e);
+                    }
+            }
+
+            return new ResponseEntity<>(ret, HttpStatus.OK);
+        }
+
+        @PostMapping(value = "/examination/makePredefExamination")
+        public ResponseEntity<Examination> makePredefExamination(@RequestParam(value = "id", required = true) String id,
+                                                             @RequestParam(value = "email", required = true) String email) {
+            Examination e = new Examination();
+            Long idEx = Long.parseLong(id);
+            e = examinationService.findOneById(idEx);
+            Patient p = patientService.getPatient(email);
+
+            boolean uspesno = examinationService.editPredefBooked(e,p);
+            this.examinationService.SendEmailPredef(e,p);
+            if(uspesno == true)
+                return new ResponseEntity<>(e, HttpStatus.OK);
+            else
+                return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
         }
     }
 
