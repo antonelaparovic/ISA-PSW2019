@@ -105,4 +105,16 @@ export class ExaminationService {
 
     return null;
   }
+
+
+  public newExamination(date: string, patientEmail: string, doctorEmail: string, type: string, clinicId: string, kind: string) {
+    let params = new HttpParams();
+    params = params.append('date', date);
+    params = params.append('patientEmail', patientEmail);
+    params = params.append('doctorEmail', doctorEmail);
+    params = params.append('type', type);
+    params = params.append('clinicId', clinicId);
+    params = params.append('kind', kind);
+    return this.http.post(this.url + '/addExamination', params);
+  }
 }
