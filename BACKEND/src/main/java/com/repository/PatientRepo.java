@@ -15,4 +15,5 @@ public interface PatientRepo extends JpaRepository<Patient, Long> {
     List<Patient> findAllByEmail(String email);
     Patient findByEmail(String email);
     Page<Patient> findAll(Pageable   pageable);
+    Patient findOneById(Long id);
 }
