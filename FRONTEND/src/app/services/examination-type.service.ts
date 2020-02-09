@@ -11,7 +11,7 @@ export class ExaminationTypeService {
   urlExaminationType = environment.baseUrl + environment.examinationType;
   examinationTypes: Array<ExaminationType> = new Array<ExaminationType>();
   type: ExaminationType;
-
+  typeEx:ExaminationType;
   constructor(private http: HttpClient) { }
 
   public getAllTypes(): Array<ExaminationType> {

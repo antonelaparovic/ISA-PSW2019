@@ -11,6 +11,11 @@ import { NurseService } from 'src/app/services/nurse.service';
 import { MedicalRecordService } from 'src/app/services/medical-record.service';
 
 import { ClinicalCenterAdministratorService } from 'src/app/services/clinicalCenterAdministrator.service';
+import { ExaminationService } from 'src/app/services/examination.service';
+import { ClinicService } from 'src/app/services/clinic.service';
+import { ExaminationTypeService } from 'src/app/services/examination-type.service';
+import { Patient } from 'src/app/models/patient';
+import { PatientStatus } from 'src/app/models/patientStatus';
 
 
 
@@ -33,6 +38,8 @@ export class LoginComponent implements OnInit {
   private submitted = false;
   private user:User;
   private loginUser:LoginUser;
+  
+  private patient: Patient;
 
   constructor(
     private patientService: PatientService,
@@ -41,7 +48,9 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private doctorService:DoctorService,
     private nurseService:NurseService,
-
+    private examinationService:ExaminationService,
+    private clinicService:ClinicService,
+    private examinationTypeService:ExaminationTypeService,
     private recordService:MedicalRecordService,
 
     private ccadminService:ClinicalCenterAdministratorService,

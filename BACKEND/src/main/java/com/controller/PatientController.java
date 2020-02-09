@@ -15,6 +15,7 @@ import com.model.Patient;
 import com.model.PatientStatus;
 import com.service.PatientService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController

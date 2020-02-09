@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 import { Patient } from 'src/app/models/patient';
 import { PatientService } from 'src/app/services/patient.service';
+import { ExaminationStatus } from 'src/app/models/examinationStatus';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { PatientService } from 'src/app/services/patient.service';
 export class MedicalHistoryPageComponent implements OnInit {
 
   exTable: ExaminationTable;
-  displayedColumns: string[] = ['kind', 'clinic', 'doctor'];
+  displayedColumns: string[] = ['kind', 'clinic', 'doctor','label','price'];
   dataSource = new MatTableDataSource<ExaminationTable>();
   examinations: Array<Examination> = this.examinationService.getAllExaminations();
   exTables: Array<ExaminationTable>=new Array<ExaminationTable>();

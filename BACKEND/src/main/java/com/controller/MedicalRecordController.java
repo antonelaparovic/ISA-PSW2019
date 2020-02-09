@@ -22,4 +22,6 @@ public class MedicalRecordController {
     public ResponseEntity<List<MedicalRecord>> allMedicalRecords() {
         return new ResponseEntity<>(medicalRecordService.findAll(), HttpStatus.OK);
     }
+
+
 }

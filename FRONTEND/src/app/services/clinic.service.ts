@@ -16,6 +16,8 @@ export class ClinicService {
   clinic: Clinic;
   clinicsTypes: Array<Clinic> = new Array<Clinic>();
   examinationTypes: Array<ExaminationType> = new Array<ExaminationType>();
+  clinicEx:Clinic;
+  type: string;
   constructor( private http: HttpClient, private examinationTypeService: ExaminationTypeService) {
     this.examinationTypes = examinationTypeService.getAllTypes();
     this.getAllClinics();

@@ -36,6 +36,8 @@ public class Doctor {
     @Column(columnDefinition = "VARCHAR(11)", unique = true, nullable = false)
     private String phone;
 
+    @Column(nullable = false)
+    private double doctorRating;
 
     @Column(nullable = false)
     private String workHoursFrom;

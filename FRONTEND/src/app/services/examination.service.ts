@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Examination } from '../models/examination';
-import { HttpClient } from '@angular/common/http';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { UserService } from './user.service';
 import { ExaminationKind } from '../models/examinationKind';

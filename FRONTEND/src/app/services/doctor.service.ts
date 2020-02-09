@@ -19,6 +19,9 @@ export class DoctorService {
   termins: Array<string> = new Array<string>();
   doctorsWithSearch: Array<Doctor> = new Array<Doctor>();
   termin: string;
+  doctorEx:Doctor;
+  date: string;
+  intervals: Array<string[]> = new Array<string[]>();
   constructor(
     private http: HttpClient,
     private userService: UserService
