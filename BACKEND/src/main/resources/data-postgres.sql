@@ -14,8 +14,8 @@ insert into doctor(id, email, name, password, phone, status, surname, work_hours
 
 insert into doctor(id, email, name, password, phone, status, surname, work_hours_from, work_hours_to,clinic_id, specialized_id) values (3,'doctorere@email.com','Doctorer','Doctoruut123','123467111','ACTIVE','Docicii','08','16',101,1);
 
-
-insert into clinic_administrator(id, email, name, password ,phone,surname, clinic_id) values (1, 'nemanja@email.com', 'Nemanja', 'Mirkela97' ,'123456789', 'Mirkovic', 100);
+insert into users(id, email, password, role) values (103, 'cadmin@email.com', 'Cadmin123', 4);
+insert into clinic_administrator(id, email, name, password ,number,surname, clinic_id) values (1, 'cadmin@email.com', 'CAdmin', 'Cadmin123' ,'123456789', 'CAdminic', 100);
 insert into nurse(id, email, name, password, number, surname, work_hours_from, work_hours_to, clinic_id,address,city,country) values (100,'nurse@email.com', 'Nurse', 'Nurse123','153426010', 'Nursic', '8:00', '16:00', 100,'bolnicka','Novi sad','Srbija');
 insert into users(id, email, password, role) values (101, 'nurse@email.com', 'Nurse123', 2);
 insert into room(id,kind,label,clinic_id) values (100,'OPERATION','label',101);
@@ -35,4 +35,17 @@ insert into users(id, email, password, role) values (111,'ccadmin@email.com', 'C
 insert into medicine(id, chemical_composition, label, usage) values (1231, 'nnnneeesto', 'Brufen', 'uvek');
 insert into medicine(id, chemical_composition, label, usage) values (2222, 'opiis', 'Bromazepan', 'smirenje');
 insert into codebook(id) values ('333555');
+
+
+insert into interval(id,end_time,start_time) values (150, '2020.02.20 10:00', '2020.02.20 09:00');
+insert into interval(id,end_time,start_time) values (151, '2020.02.20 12:00', '2020.02.20 11:00');
+insert into interval(id,end_time,start_time) values (152, '2020.02.21 14:00', '2020.02.21 13:00');
+insert into interval(id,end_time,start_time) values (153, '2020.02.21 09:00', '2020.02.21 08:00');
+insert into interval(id,end_time,start_time) values (154, '2020.02.22 11:00', '2020.02.22 10:00');
+insert into interval(id,end_time,start_time) values (155, '2020.02.06 10:00', '2020.02.06 09:00');
+insert into interval(id,end_time,start_time) values (156, '2020.02.27 10:00', '2020.02.27 09:00');
+insert into interval(id,end_time,start_time) values (160, '2020.02.27 13:00', '2020.02.27 12:00');
+insert into interval(id,end_time,start_time) values (161, '2020.02.28 16:00', '2020.02.28 15:00');
+insert into interval(id,end_time,start_time) values (162, '2020.02.28 11:00', '2020.02.28 10:00');
+insert into interval(id,end_time,start_time) values (163, '2020.02.29 09:00', '2020.02.29 08:00');
 

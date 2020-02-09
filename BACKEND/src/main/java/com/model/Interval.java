@@ -11,8 +11,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "interval")
-public class Interval{
-
+public class Interval {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,6 +30,10 @@ public class Interval{
 
     @JsonIgnore
     @OneToMany(mappedBy = "interval", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<TimeOffNurse> timeOffNurseset = new HashSet<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "interval", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Examination> examinations = new HashSet<>();
 
 
@@ -41,6 +44,7 @@ public class Interval{
         this.startTime = start;
         this.endTime = end;
         this.timeOffDoctorset = new HashSet<>();
+        this.timeOffNurseset = new HashSet<>();
         this.examinations = new HashSet<>();
     }
 
@@ -72,8 +76,15 @@ public class Interval{
         return timeOffDoctorset;
     }
 
+    public Set<TimeOffNurse> getTimeOffNurseset() {
+        return timeOffNurseset;
+    }
     public void setTimeOffDoctorset(Set<TimeOffDoctor> timeOffDoctorset) {
         this.timeOffDoctorset = timeOffDoctorset;
+    }
+
+    public void setTimeOffNurseset(Set<TimeOffNurse> timeOffNurseset) {
+        this.timeOffNurseset = timeOffNurseset;
     }
 
     public Set<Examination> getExaminations() {

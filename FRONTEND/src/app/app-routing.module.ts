@@ -14,6 +14,10 @@ import {NurseProfileComponent} from './components/nurse-profile/nurse-profile.co
 import {CCAdminProfileComponent} from './components/ccadmin-profile/ccadmin-profile.component';
 import {AllPatientsPageComponent} from './components/allpatients-page/allpatients-page.component';
 import { CodebookComponent} from './components/codebook/codebook.component';
+import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
+import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
+import {NurseVacationRequestComponent} from './components/nurse-vacation-req/nurse-vacation-req.component';
+import { VacationRequestRegisterComponent } from './components/vacation-request-register/vacation-request-register.component';
 
 const routes: Routes = [
   {
@@ -37,19 +41,29 @@ const routes: Routes = [
     component: DoctorPageComponent
   },
   {
+    path:'doctor/profile',
+    component: DoctorProfileComponent
+  },
+  {
+    path:'clinicAdministrator/home',
+    component: ClinicadministratorPageComponent
+  },
+  {
+    path:'clinicAdministrator/profile',
+    component: ClinicadministratorProfileComponent
+  },
+  {
     path:'clinicalCenterAdministrator/profile',
     component: CCAdminProfileComponent
   },
 
   {
+    path:'clinicalCenterAdministrator/VacationRequests',
+    component: VacationRequestRegisterComponent
+  },
+  {
     path:'clinicalCenterAdministrator/codebook',
     component: CodebookComponent
-  },
-  
-
-  {
-    path:'doctor/profile',
-    component: DoctorProfileComponent
   },
   {
     path:'nurse/home',
@@ -61,6 +75,10 @@ const routes: Routes = [
   },{
     path:'nurse/allpatients',
     component: AllPatientsPageComponent
+  },
+  {
+    path: 'nurse/VacationRequest',
+    component: NurseVacationRequestComponent,
   },
   {
     path:'patient/profile',

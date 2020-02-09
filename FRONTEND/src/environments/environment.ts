@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080',
+  baseUrl: 'http://localhost:8081',
   user: '/user',
   patient: '/patient',
   doctor: '/doctor',
@@ -16,6 +16,8 @@ export const environment = {
   examinationType: '/examination-type',
   clinicalCenterAdmininistrator: '/clinicalCenterAdministrator',
   codebook: '/codebook',
+  clinicAdministrator: '/clinicAdministrator',
+  zahtev: '/zahtev',
 };
 
 /*
