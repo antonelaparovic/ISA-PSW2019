@@ -47,4 +47,12 @@ export class ExaminationTypeService {
 
     return null;
   }
+
+  public setTypeEx(examinationType:ExaminationType){
+    this.typeEx=examinationType;
+  }
+
+  public getTypeEx(){
+    return this.typeEx;
+  }
 }
