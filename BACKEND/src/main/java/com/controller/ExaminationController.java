@@ -70,8 +70,8 @@ public class ExaminationController {
         }
 
 
-    @PostMapping(value = "/examination/addExaminationPatient")
-    public ResponseEntity<Boolean> addExaminationPatient(@RequestParam(value = "date", required = true) String date,
+    @PostMapping(value = "/examination/addExamination")
+    public ResponseEntity<Boolean> addExamination(@RequestParam(value = "date", required = true) String date,
                                                          @RequestParam(value = "patientEmail", required = true) String patientEmail,
                                                          @RequestParam(value = "doctorEmail", required = true) String doctorEmail,
                                                          @RequestParam(value = "type", required = true) String type,
