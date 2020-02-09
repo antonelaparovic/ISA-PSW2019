@@ -16,6 +16,13 @@ import {AllPatientsPageComponent} from './components/allpatients-page/allpatient
 import { CodebookComponent} from './components/codebook/codebook.component';
 import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
 import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
+<<<<<<< Updated upstream
+=======
+import {NurseVacationRequestComponent} from './components/nurse-vacation-req/nurse-vacation-req.component';
+import { VacationRequestRegisterComponent } from './components/vacation-request-register/vacation-request-register.component';
+import {DiagnoseComponent} from './components/diagnose/diagnose.component';
+import {MedicineComponent} from './components/medicine/medicine.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   {
@@ -82,7 +89,15 @@ const routes: Routes = [
   },{
     path:'patient/clinics',
     component: ClinicsPageComponent
-  }
+  },
+  {
+    path: 'clinicalCenterAdministrator/addDiagnose',
+    component: DiagnoseComponent,
+  },
+  {
+    path: 'clinicalCenterAdministrator/addMedicine',
+    component: MedicineComponent,
+  },
 ];
 
 @NgModule({

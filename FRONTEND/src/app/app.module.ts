@@ -34,7 +34,14 @@ import { AllPatientsPageComponent } from './components/allpatients-page/allpatie
 import { CodebookComponent } from './components/codebook/codebook.component';
 import { ClinicadministratorPageComponent } from './components/clinicadministrator-page/clinicadministrator-page.component';
 import { ClinicadministratorProfileComponent } from './components/clinicadministrator-profile/clinicadministrator-profile.component';
+<<<<<<< Updated upstream
 
+=======
+import { NurseVacationRequestComponent } from './components/nurse-vacation-req/nurse-vacation-req.component';
+import { VacationRequestRegisterComponent } from './components/vacation-request-register/vacation-request-register.component';
+import { MedicineComponent } from './components/medicine/medicine.component';
+import { DiagnoseComponent } from './components/diagnose/diagnose.component';
+>>>>>>> Stashed changes
 
 
 
@@ -60,7 +67,14 @@ import { ClinicadministratorProfileComponent } from './components/clinicadminist
     CCAdminProfileComponent,
     AllPatientsPageComponent,
     ClinicadministratorPageComponent,
+<<<<<<< Updated upstream
     ClinicadministratorProfileComponent
+=======
+    ClinicadministratorProfileComponent,
+    VacationRequestRegisterComponent,
+    MedicineComponent, 
+    DiagnoseComponent,
+>>>>>>> Stashed changes
 
 
   ],
@@ -87,7 +101,14 @@ import { ClinicadministratorProfileComponent } from './components/clinicadminist
     PatientDoctorSearchComponent,
 
     CCAdminProfileComponent,
+<<<<<<< Updated upstream
     AllPatientsPageComponent
+=======
+    AllPatientsPageComponent,
+    VacationRequestRegisterComponent,
+    MedicineComponent, 
+    DiagnoseComponent,
+>>>>>>> Stashed changes
 
   ],
   providers: [],

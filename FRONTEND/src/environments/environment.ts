@@ -12,11 +12,16 @@ export const environment = {
   clinic: '/clinic',
   examination: '/examination',
   medicalRecord: '/medicalRecord',
-  clinicalCentreAdmin: '/clinical-centre-admin',
   examinationType: '/examination-type',
   clinicalCenterAdmininistrator: '/clinicalCenterAdministrator',
   codebook: '/codebook',
   clinicAdministrator: '/clinicAdministrator',
+<<<<<<< Updated upstream
+=======
+  zahtev: '/zahtev',
+  diagnose: '/diagnose',
+  medicine: '/medicine',
+>>>>>>> Stashed changes
 };
 
 /*

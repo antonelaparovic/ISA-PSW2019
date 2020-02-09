@@ -33,6 +33,8 @@
 
         <mat-nav-list *ngIf="isCCAdmin()">
           <a mat-list-item routerLink="/clinicalCenterAdministrator/profile">Profile</a>
+          <a mat-list-item routerLink="/clinicalCenterAdministrator/addDiagnose">Add Diagnose</a>
+          <a mat-list-item routerLink="/clinicalCenterAdministrator/addMedicine">Add Medicine</a>
           <a mat-list-item (click)="onLogout()">Logout</a>
         </mat-nav-list>
     </mat-sidenav>

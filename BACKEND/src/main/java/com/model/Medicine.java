@@ -13,15 +13,46 @@ public class Medicine {
     private Long id;
 
     @Column(unique = true, columnDefinition = "VARCHAR(30)", nullable = false)
-    private String label;
+    private String title;
 
     @Column(nullable = false)
-    private String chemicalComposition;
+    private String description;
 
     @Column(nullable = false)
-    private String usage;
+    private String strenght;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "medicine", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private Set<Prescription> prescriptions = new HashSet<>();
+    public Medicine() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getStrenght() {
+        return strenght;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setStrenght(String strenght) {this.strenght = strenght;}
+
 }

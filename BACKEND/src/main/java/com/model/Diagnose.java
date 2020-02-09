@@ -22,4 +22,16 @@ public class Diagnose {
     @JsonIgnore
     @OneToMany(mappedBy = "diagnose", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<ExaminationReport> examinationReports = new HashSet<>();
+
+    public Long getId() { return id;
+    }
+
+    public void setId(Long id) { this.id = id;
+    }
+
+    public void setTitle(String title) { this.title=title;
+    }
+
+    public void setDescription(String description) { this.description=description;
+    }
 }
