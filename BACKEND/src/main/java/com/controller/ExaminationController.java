@@ -1,14 +1,10 @@
 package com.controller;
 
-import com.model.Examination;
-import com.service.ExaminationService;
+import com.model.*;
 import com.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -37,8 +33,10 @@ public class ExaminationController {
     ExaminationTypeService examinationTypeService;
 
         @GetMapping(value = "examination/all")
-        public ResponseEntity<List<Examination>> all() {
-            return new ResponseEntity<>(examinationService.findAll(), HttpStatus.OK);
+            public ResponseEntity<List<Examination>> all() {
+                return new ResponseEntity<>(examinationService.findAll(), HttpStatus.OK);
+            }
+
         @GetMapping(value = "/examination/allPredefExaminations")
         public ResponseEntity<List<Examination>> allPredefExaminations() {
             List<Examination> pom = examinationService.findAll();
@@ -70,5 +68,77 @@ public class ExaminationController {
             else
                 return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
         }
+
+
+    @PostMapping(value = "/examination/addExaminationPatient")
+    public ResponseEntity<Boolean> addExaminationPatient(@RequestParam(value = "date", required = true) String date,
+                                                         @RequestParam(value = "patientEmail", required = true) String patientEmail,
+                                                         @RequestParam(value = "doctorEmail", required = true) String doctorEmail,
+                                                         @RequestParam(value = "type", required = true) String type,
+                                                         @RequestParam(value = "clinicId", required = true) String clinicId,
+                                                         @RequestParam(value = "kind", required = true) String kind){
+
+        Doctor doctor = doctorService.getDoctor(doctorEmail);
+        Patient patient = patientService.getPatient(patientEmail);
+        Clinic clinic = clinicService.findOneById(Long.parseLong(clinicId));
+
+        if(patient == null || doctor == null || clinic == null) {
+            return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
+        }
+
+        ExaminationType examinationType = examinationTypeService.findByName(type);
+        Interval interval = new Interval();
+        Examination e = new Examination();
+        Set<Doctor> doctors = new HashSet<Doctor>();
+
+        String[] parts = date.split(" ");
+        String[] datum = parts[0].split("-");
+        String[] vreme = parts[1].split(":");
+
+        int godina = Integer.parseInt(datum[0]);
+        int mesec = Integer.parseInt(datum[1]);
+        int dan = Integer.parseInt(datum[2]);
+        int sat = Integer.parseInt(vreme[0]);
+        int minut = Integer.parseInt(vreme[1]);
+
+        interval.setStartTime(LocalDateTime.of(godina,mesec,dan,sat,minut));
+        interval.setEndTime(LocalDateTime.of(godina,mesec,dan,sat+1,minut));
+        e.setStatus(ExaminationStatus.AWAITING);
+        e.setPatient(patient);
+        e.setExaminationType(examinationType);
+        e.setClinic(clinic);
+        doctors.add(doctor);
+        e.setDoctors(doctors);
+        e.setInterval(interval);
+
+        if(kind.equals("Examination")) {
+            e.setKind(ExaminationKind.EXAMINATION);
+        }else
+            e.setKind(ExaminationKind.OPERATION);
+
+        examinationService.addExamination(e);
+        this.examinationService.awaitingExamination(e,patient);
+        return new ResponseEntity<>(true, HttpStatus.CREATED);
     }
+
+    @GetMapping(value = "/examination/getMHforP")
+    public ResponseEntity<List<Examination>> getMHforP(@RequestParam(value = "email", required = true) String email) {
+        List<Examination> tmp = examinationService.findAll();
+        List<Examination> ret = new ArrayList<>();
+
+        for(Examination e : tmp) {
+            if(e.getPatient() != null) {
+                if (e.getPatient().getEmail().equals(email)) {
+                    if (e.getStatus() != ExaminationStatus.AWAITING) {
+                        ret.add(e);
+                    }
+                }
+            }
+        }
+
+        return new ResponseEntity<>(ret, HttpStatus.OK);
+    }
+
+
+}
 

@@ -16,6 +16,9 @@ public class PatientService {
     @Autowired
     private PatientRepo repo;
 
+    @Autowired
+    private MailService mailService;
+
     public List<Patient> findall() {
         return repo.findAll();
     }

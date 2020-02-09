@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 import { Patient } from 'src/app/models/patient';
 import { PatientService } from 'src/app/services/patient.service';
+import { ExaminationStatus } from 'src/app/models/examinationStatus';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { PatientService } from 'src/app/services/patient.service';
 export class MedicalHistoryPageComponent implements OnInit {
 
   exTable: ExaminationTable;
-  displayedColumns: string[] = ['kind', 'clinic', 'doctor'];
+  displayedColumns: string[] = ['kind', 'clinic', 'doctor','label','price'];
   dataSource = new MatTableDataSource<ExaminationTable>();
   examinations: Array<Examination> = this.examinationService.getAllExaminations();
   exTables: Array<ExaminationTable>=new Array<ExaminationTable>();
@@ -38,23 +39,26 @@ export class MedicalHistoryPageComponent implements OnInit {
 
   all() {
     for (const c of this.examinations) {
+      if (c.status !== ExaminationStatus.PREDEF_AVAILABLE){
       if (c.patient.email === this.user.email) {
         this.tmp.push(c);
+        console.log(this.tmp);
         for(const s of c.doctors){
           this.str=s.name+ " ";
         }
-        this.exTable= new ExaminationTable(this.kindExamination(c.kind.toString()),this.str,c.clinic.name);
+        this.exTable= new ExaminationTable(this.kindExamination(c.kind.toString()),this.str,c.clinic.name,c.examinationType.label,c.examinationType.price.toString());
         this.exTables.push(this.exTable);
         console.log(this.exTable);
       }
     }
+  }
     this.dataSource = new MatTableDataSource(this.exTables);
     console.log(this.exTables);
     this.str="";
   }
 
     kindExamination(kind: string) {
-    if (kind === 'EXAMINATION') {
+    if (kind === '0') {
       return "EXAMINATION";
     } else {
       return "OPERATION";

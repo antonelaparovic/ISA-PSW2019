@@ -36,6 +36,8 @@ public class Doctor {
     @Column(columnDefinition = "VARCHAR(11)", unique = true, nullable = false)
     private String phone;
 
+    @Column(nullable = false)
+    private double doctorRating;
 
     @Column(nullable = false)
     private String workHoursFrom;
@@ -64,6 +66,7 @@ public class Doctor {
     private DoctorStatus status;
 
     public Doctor() {
+        this.doctorRating=0.0;
     }
 
     public Long getId() {
@@ -172,4 +175,11 @@ public class Doctor {
         this.workHoursTo = workHoursTo;
     }
 
+    public double getDoctorRating() {
+        return doctorRating;
+    }
+
+    public void setDoctorRating(double doctorRating) {
+        this.doctorRating = doctorRating;
+    }
 }

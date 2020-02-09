@@ -15,12 +15,12 @@ import { ExaminationType } from './examinationType';
     doctorRating: number;
     specialized: ExaminationType;
   
-    constructor(email: string, password: string, name: string, surname: string, number1: string, workHoursFrom: string, workHoursTo: string, specialized?: ExaminationType, doctorRating?: number, clinic?: Clinic) {
+    constructor(email: string, password: string, name: string, surname: string, phone: string, workHoursFrom: string, workHoursTo: string, specialized?: ExaminationType, doctorRating?: number, clinic?: Clinic) {
       this.email = email;
       this.password = password;
       this.name = name;
       this.surname = surname;
-      this.phone = number1;
+      this.phone = phone;
       this.workHoursFrom = workHoursFrom;
       this.workHoursTo = workHoursTo;
       this.doctorRating = doctorRating;

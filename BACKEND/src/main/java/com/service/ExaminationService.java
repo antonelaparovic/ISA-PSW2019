@@ -57,4 +57,13 @@ public class ExaminationService {
     }
 
 
+    public void addExamination(Examination e){
+        examinationRepo.save(e);
+    }
+
+    public void awaitingExamination(Examination examination, Patient patient) {
+        String subject = "Examination is on pending approval";
+        String text = "Your " + examination.getKind().toString() + " with name " + "'" + examination.getExaminationType().getLabel() + "' "  + "is on the waiting list for approval.";
+        mailService.Send(patient.getEmail(), subject, text);
+    }
 }

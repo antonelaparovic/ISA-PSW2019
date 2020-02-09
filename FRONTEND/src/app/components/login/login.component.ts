@@ -11,6 +11,11 @@ import { NurseService } from 'src/app/services/nurse.service';
 import { MedicalRecordService } from 'src/app/services/medical-record.service';
 
 import { ClinicalCenterAdministratorService } from 'src/app/services/clinicalCenterAdministrator.service';
+import { ExaminationService } from 'src/app/services/examination.service';
+import { ClinicService } from 'src/app/services/clinic.service';
+import { ExaminationTypeService } from 'src/app/services/examination-type.service';
+import { Patient } from 'src/app/models/patient';
+import { PatientStatus } from 'src/app/models/patientStatus';
 import { ClinicAdministratorService } from 'src/app/services/clinic-administrator.service';
 
 
@@ -34,6 +39,8 @@ export class LoginComponent implements OnInit {
   private submitted = false;
   private user:User;
   private loginUser:LoginUser;
+  
+  private patient: Patient;
 
   constructor(
     private patientService: PatientService,
@@ -42,6 +49,9 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private doctorService:DoctorService,
     private nurseService:NurseService,
+    private examinationService:ExaminationService,
+    private clinicService:ClinicService,
+    private examinationTypeService:ExaminationTypeService,
     private clinicAdministratorService:ClinicAdministratorService,
 
     private recordService:MedicalRecordService,
@@ -73,7 +83,6 @@ export class LoginComponent implements OnInit {
     this.f.password.value
   )
     this.user=this.userService.getUser(this.f.email.value);
-    console.log(this.user);
     this.attemptLogin();
   }
 
@@ -87,10 +96,12 @@ export class LoginComponent implements OnInit {
             console.log('Successful logged in');
             this.router.navigate(['/patient/home']);
           } else {
+            alert('Wrong email or password.');
             console.log('Login error');
           }
         },
         error => {
+          alert('Wrong email or password.');
           console.log(error);
         }
       );

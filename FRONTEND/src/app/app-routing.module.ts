@@ -92,7 +92,8 @@ const routes: Routes = [
   },{
     path:'patient/clinics',
     component: ClinicsPageComponent
-  }
+  }, 
+  
 ];
 
 @NgModule({

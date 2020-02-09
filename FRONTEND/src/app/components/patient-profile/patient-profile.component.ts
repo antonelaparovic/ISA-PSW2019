@@ -72,7 +72,7 @@ export class PatientProfileComponent implements OnInit {
       this.f.city.value,
       this.f.country.value,
       this.f.insuranceID.value,
-      PatientStatus.AWAITING
+      PatientStatus.AWAITING_APPROVAL
     );
 
     this.user=new User(this.f.email.value,this.f.password.value,Role.PATIENT);

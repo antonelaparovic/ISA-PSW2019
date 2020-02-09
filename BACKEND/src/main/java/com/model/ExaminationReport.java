@@ -18,7 +18,7 @@ public class ExaminationReport {
     @Column(nullable = false)
     private String comment;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private MedicalRecord medicalRecord;
 
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)

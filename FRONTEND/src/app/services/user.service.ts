@@ -27,6 +27,13 @@ export class UserService{
       }
     }
 
+    public setLoggedUser(user: User) {
+      this.user = user;
+    }
+  
+    public getLoggedUser() {
+      return this.user;
+    }
     
   public getUser(email: string) {
     if ( this.users.length === 0) {

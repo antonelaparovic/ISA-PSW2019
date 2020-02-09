@@ -16,6 +16,8 @@ export class ClinicService {
   clinic: Clinic;
   clinicsTypes: Array<Clinic> = new Array<Clinic>();
   examinationTypes: Array<ExaminationType> = new Array<ExaminationType>();
+  clinicEx:Clinic;
+  type: string;
   constructor( private http: HttpClient, private examinationTypeService: ExaminationTypeService) {
     this.examinationTypes = examinationTypeService.getAllTypes();
     this.getAllClinics();
@@ -62,10 +64,12 @@ export class ClinicService {
   public newClinic(clinic) {
     return this.http.post(this.urlClinic + '/clinical-centre-admin/addClinic', clinic);
   }
-  public getClinicsWithType(type: string): Array<Clinic> {
+
+  public getClinicsWithType(type: string, date: string): Array<Clinic> {
 
     let params = new HttpParams();
     params = params.append('type', type);
+    params = params.append('date', date);
     this.clinicsTypes = new Array<Clinic>();
     this.http.get(this.urlClinic + '/allWithTypes', {params}).subscribe((data: Clinic[]) => {
         for (const c of data) {
@@ -82,6 +86,22 @@ export class ClinicService {
 
   public getClinicsWithTypes() {
     return this.clinicsTypes;
+  }
+
+  public setClinicEx(clinic:Clinic){
+    this.clinic=clinic;
+  }
+
+  public getClinicEx(){
+    return this.clinic;
+  }
+
+  public setType(type: string) {
+    this.type = type;
+  }
+
+  public getType() {
+    return this.type;
   }
 
 }
