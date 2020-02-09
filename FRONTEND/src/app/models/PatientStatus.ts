@@ -1,4 +1,4 @@
 export enum PatientStatus {
-    AWAITING,
-    APPROVED
-  }
+  APPROVED,
+  AWAITING_APPROVAL
+}
