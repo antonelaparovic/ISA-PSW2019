@@ -84,18 +84,15 @@ export class DoctorService {
     return this.listDoctors;
   }
 
-  public getDoctorsTermins(date: string, email: string): string {
+  public getDoctorsTermins(date: string, email: string): Array<string> {
     let params = new HttpParams();
     params = params.append('date', date);
     params = params.append('email', email);
     console.log(params)
-    this.http.get(this.urlDoctor + '/terminString', {params, responseType: 'text'}).subscribe((data: string) => {
+    this.http.get(this.urlDoctor + '/terminString', {params}).subscribe((data: string[]) => {
         this.termins = new Array<string>();
-        console.log('Ispod ovde');
-        console.log(data);
-        this.termin = data;
-        this.termins.push(data);
-
+        this.termins = data;
+        this.intervals.push(this.termins);
 
       },
       error => {
@@ -103,7 +100,7 @@ export class DoctorService {
       }
     );
 
-    return this.termin;
+    return this.termins;
   }
 
   public getDoctorss() {
@@ -114,7 +111,7 @@ export class DoctorService {
     this.doctorss = doctorss;
   }
 
-  public getDoctrosWithSearch(name: string, surname: string, rating: string): Array<Doctor> {
+  public getDoctorsWithSearch(name: string, surname: string, rating: string): Array<Doctor> {
 
     let params = new HttpParams();
     params = params.append('name', name);
@@ -126,6 +123,7 @@ export class DoctorService {
         for (const c of data) {
           this.doctor = new Doctor(c.email, c.password, c.name, c.surname, c.phone, c.workHoursFrom, c.workHoursTo,
             c.specialized, c.doctorRating, c.clinic);
+            console.log(c);
           this.doctorsWithSearch.push(this.doctor);
           console.log(this.doctor);
         }
@@ -136,5 +134,30 @@ export class DoctorService {
       );
 
     return this.doctorsWithSearch;
+  }
+
+  public setDoctorEx(doctor:Doctor){
+    this.doctorEx=doctor;
+  }
+
+  public getDoctorEx(){
+    return this.doctorEx;
+  }
+
+  public setExaminationsInterval(intervals: Array<string[]>) {
+    this.intervals = intervals;
+    console.log(this.intervals);
+  }
+
+  public getExaminationsInterval() {
+    return this.intervals;
+  }
+
+  public setDate(date) {
+    this.date = date;
+  }
+
+  public getDate() {
+    return this.date;
   }
 }
