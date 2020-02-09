@@ -57,4 +57,7 @@ public class ExaminationService {
     }
 
 
+    public void addExamination(Examination e){
+        examinationRepo.save(e);
+    }
 }
