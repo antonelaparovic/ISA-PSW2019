@@ -30,4 +30,20 @@ public class ExaminationService {
     {
         return examinationRepo.findOneById(id);
     }
+
+    public boolean editPredefBooked(Examination e, Patient p) {
+        List<Examination> tmp = findAll();
+        if(tmp.size() == 0)
+            return false;
+
+        for(Examination e1 : tmp) {
+            if(e1.getId() == e.getId()) {
+                e1.setPatient(p);
+                e1.setStatus(ExaminationStatus.PREDEF_BOOKED);
+                examinationRepo.save(e1);
+                return true;
+            }
+        }
+        return false;
+    }
 }
