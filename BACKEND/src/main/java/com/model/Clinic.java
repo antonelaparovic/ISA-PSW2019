@@ -148,4 +148,12 @@ public class Clinic {
                 ", doctors=" + doctors +
                 '}';
     }
+
+    public double getClinicRating() {
+        return clinicRating;
+    }
+
+    public void setClinicRating(double clinicRating) {
+        this.clinicRating = clinicRating;
+    }
 }
