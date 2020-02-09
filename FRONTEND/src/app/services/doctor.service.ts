@@ -88,7 +88,7 @@ export class DoctorService {
     let params = new HttpParams();
     params = params.append('date', date);
     params = params.append('email', email);
-    console.log(params)
+    console.log(params);
     this.http.get(this.urlDoctor + '/terminString', {params}).subscribe((data: string[]) => {
         this.termins = new Array<string>();
         this.termins = data;
