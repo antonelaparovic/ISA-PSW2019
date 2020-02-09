@@ -52,4 +52,11 @@ export class PatientDoctorsListComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  schedule(element){
+    this.doctorService.setDoctorEx(element);
+    const dialog = this.searchDialog.open(PatientNewExaminationComponent); dialog.afterClosed().subscribe(data => {
+      this.dialogRef.close();
+    }); 
+  }
+
 }
