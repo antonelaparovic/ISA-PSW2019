@@ -32,6 +32,8 @@ export class RegisterPatientComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(8),
         Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')]),
+      passwordC: new FormControl('', [Validators.required, Validators.minLength(8),
+        Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')]),
       name: new FormControl('', [Validators.required]),
       surname: new FormControl('', [Validators.required]),
       address: new FormControl('', [Validators.required]),
@@ -53,6 +55,10 @@ export class RegisterPatientComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
+    if (this.f.password.value !== this.f.passwordC.value) {
+      alert('Passwords don\'t match. Please re-enter your password');
+      return;
+    }
 
     this.patient = new Patient(
       this.f.email.value,
@@ -64,7 +70,7 @@ export class RegisterPatientComponent implements OnInit {
       this.f.city.value,
       this.f.country.value,
       this.f.insuranceID.value,
-      PatientStatus.AWAITING
+      PatientStatus.AWAITING_APPROVAL
     );
 
     this.user=new User(this.f.email.value,this.f.password.value,Role.PATIENT);
@@ -79,6 +85,7 @@ export class RegisterPatientComponent implements OnInit {
         console.log(this.user);
         this.patientService.addPatient(this.patient);
         this.router.navigate(['/login']);
+        alert('Wait for approval');
       },
       error => {
         alert('Error registration patient');
