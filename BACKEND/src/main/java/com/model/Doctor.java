@@ -66,6 +66,7 @@ public class Doctor {
     private DoctorStatus status;
 
     public Doctor() {
+        this.doctorRating=0.0;
     }
 
     public Long getId() {
@@ -174,4 +175,11 @@ public class Doctor {
         this.workHoursTo = workHoursTo;
     }
 
+    public double getDoctorRating() {
+        return doctorRating;
+    }
+
+    public void setDoctorRating(double doctorRating) {
+        this.doctorRating = doctorRating;
+    }
 }
