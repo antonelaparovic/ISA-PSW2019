@@ -33,8 +33,10 @@ public class ExaminationController {
     ExaminationTypeService examinationTypeService;
 
         @GetMapping(value = "examination/all")
-        public ResponseEntity<List<Examination>> all() {
-            return new ResponseEntity<>(examinationService.findAll(), HttpStatus.OK);
+            public ResponseEntity<List<Examination>> all() {
+                return new ResponseEntity<>(examinationService.findAll(), HttpStatus.OK);
+            }
+
         @GetMapping(value = "/examination/allPredefExaminations")
         public ResponseEntity<List<Examination>> allPredefExaminations() {
             List<Examination> pom = examinationService.findAll();
