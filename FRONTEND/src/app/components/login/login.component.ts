@@ -80,7 +80,6 @@ export class LoginComponent implements OnInit {
     this.f.password.value
   )
     this.user=this.userService.getUser(this.f.email.value);
-    console.log(this.user);
     this.attemptLogin();
   }
 
@@ -94,10 +93,12 @@ export class LoginComponent implements OnInit {
             console.log('Successful logged in');
             this.router.navigate(['/patient/home']);
           } else {
+            alert('Wrong email or password.');
             console.log('Login error');
           }
         },
         error => {
+          alert('Wrong email or password.');
           console.log(error);
         }
       );
